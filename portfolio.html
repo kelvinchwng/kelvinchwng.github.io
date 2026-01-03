@@ -11,7 +11,7 @@
   <link href="css/min/theme.css" rel="stylesheet">
   <link href="css/aos.css" rel="stylesheet">
 
-  <!-- Vega-Lite (ready for when you add charts) -->
+  <!-- Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -164,6 +164,16 @@
     }
     .cc-grid-6 .chart-slot { min-height: 210px; }
 
+    /* CC1: force the two charts side-by-side (and stack on mobile) */
+    .cc1-charts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    @media only screen and (max-width: 768px) {
+      .cc1-charts { grid-template-columns: 1fr; }
+    }
+
     /* Notes box */
     .note-box a { color: rgba(0,0,0,0.75); }
     .note-box a:hover { color: rgba(0,0,0,0.95); }
@@ -258,23 +268,12 @@
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
               <p class="text-muted small mb-0 mt-1">Display charts on your own site (embedding basics).</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc1-chart1">Chart placeholder</div>
-                </div>
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc1-chart2">Chart placeholder</div>
-                </div>
-              </div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Chart JSON</a> ·
-                  <a class="link-dark" href="#">Data</a>
-                </div>
+              <div class="cc1-charts mt-3">
+                <figure class="chart-slot" id="cc1-chart1"></figure>
+                <figure class="chart-slot" id="cc1-chart2"></figure>
               </div>
             </section>
+
 
             <!-- CC2 -->
             <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc2">
@@ -625,7 +624,13 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
-    AOS.init({ });
+    AOS.init({ })
+
+    // CC1 charts 
+    let cc1_chart1 = "portfolio/charts/cc1_chart1.json"
+    let cc1_chart2 = "portfolio/charts/cc1_chart2.json"
+    vegaEmbed('#cc1-chart1', cc1_chart1)
+    vegaEmbed('#cc1-chart2', cc1_chart2)
   </script>
 </body>
 </html>

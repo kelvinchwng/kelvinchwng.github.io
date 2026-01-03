@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
+    "description": "Chart that uses repeated layers to make multiple calls to an API",
+
+    "title": {
+      "text": "Unemployment - 3 Countries",
+      "subtitle":"% rate | Source: STATCAN, FRED, ONS via ECO API",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+    "height":300,
+    "width":270,
+
+    "encoding": {
+      "x": {"field": "date", "type": "temporal", "title": null, "axis": {"grid": false}},
+      "y": {"field": "value", "type": "quantitative", "title": null, "axis": {"grid": false}},
+      "color":{"field":"Country", "title":null, "legend":{"orient": "top-left"}}
+    },
+
+    "layer": [
+      
+      {"data": {"url": "https://api.economicsobservatory.com/gbr/unem?vega"},
+      "transform": [
+        {"calculate": "'United Kingdom'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"red"}
+      },
+
+      {"data": {"url": "https://api.economicsobservatory.com/can/unem?vega"},
+      "transform": [
+        {"calculate": "'Canada'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"green"}
+      },
+
+      {"data": {"url": "https://api.economicsobservatory.com/usa/unem?vega"},
+      "transform": [
+        {"calculate": "'United States'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"red"}
+      }
+    ]
+}
