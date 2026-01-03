@@ -644,16 +644,9 @@
   <script>
     AOS.init({ })
 
-    // Embed options for responsive, centered charts
-    const embedOpts = {
-      actions: false,
-      width: "container",
-      renderer: "svg"
-    };
-
     // CC1 charts 
-    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json', embedOpts);
-    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json', embedOpts);
+    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json', {actions: true});
+    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json', {actions: true});
   </script>
 </body>
 </html>
