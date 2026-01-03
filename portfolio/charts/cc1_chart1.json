@@ -1,5 +1,5 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
     "description": "Chart that uses repeated layers to make multiple calls to an API",
 
