@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-
 <html class="h-100" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
-<meta content="Kelvin Ng - PP434 Data Visualisation Portfolio" name="description"/>
-<link href="img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<title>Portfolio · Kelvin Ng · PP434</title>
-<link href="css/min/theme.css" rel="stylesheet"/>
-<link href="css/aos.css" rel="stylesheet"/>
-<!-- Vega-Lite (ready for when you add charts) -->
-<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-<style>/* Fonts (match index.html) */
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+  <meta content="Kelvin Ng - PP434 Data Science Portfolio Tasks" name="description">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <title>PP434 Data Science Portfolio</title>
+  <link href="css/min/theme.css" rel="stylesheet">
+  <link href="css/aos.css" rel="stylesheet">
+
+  <!-- Vega-Lite (ready for when you add charts) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <style>
+    /* Fonts (match index.html) */
     @font-face {
       font-family: 'Inter';
       font-style: normal;
@@ -47,7 +49,25 @@
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     }
-    /* Cards + separators (template-native, like index.html) */
+
+    /* Hide scrollbars (keep scrolling) */
+    html, body, .container-fluid, .row, main, .py-vh-3, .page-hero {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overflow-x: clip;
+    }
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar,
+    .container-fluid::-webkit-scrollbar,
+    .row::-webkit-scrollbar,
+    main::-webkit-scrollbar,
+    .py-vh-3::-webkit-scrollbar,
+    .page-hero::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    /* Cards + separators */
     .page-hero { background: #f8f9fa; }
     .card-soft {
       background: #f8f9fa;
@@ -65,57 +85,65 @@
 
     /* Jump-to pills */
     .pill-row {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-      padding-bottom: .25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5rem;
+      overflow: hidden;
+      height: auto;
+      max-height: none;
+      white-space: normal;
+      padding-bottom: 0;
+      padding-top: 2px;
     }
+    .pill-row::-webkit-scrollbar { width: 0; height: 0; }
+    .pill-row { scrollbar-width: none; }
     .pill-row a {
       display: inline-block;
-      margin-right: .5rem;
-      margin-bottom: .5rem;
+      margin: 0;
       padding: .4rem .75rem;
       border-radius: 999px;
       background: #fff;
       color: rgba(0,0,0,0.7);
       text-decoration: none;
       box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+      transition: transform .15s ease, color .15s ease;
     }
     .pill-row a:hover { color: rgba(0,0,0,0.95); transform: translateY(-1px); }
 
-    /* CC headers: consistent sizing */
-    
-/* CC header layout (don’t rely on Bootstrap gap utilities) */
-.cc-headrow{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  gap: .75rem;
-}
-.cc-header{
-  display:flex;
-  align-items:center;
-  gap: .75rem;
-}
-.cc-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 28px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
-  font-weight: 700;
-  font-size: .75rem;
-  line-height: 1;
-  letter-spacing: .02em;
-}
+    /* CC header layout */
+    .cc-headrow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+    .cc-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .cc-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      font-size: .75rem;
+      line-height: 1;
+      letter-spacing: .02em;
+      transform: translateY(-1px);
+    }
     .cc-title {
       font-size: 1.35rem;
       line-height: 1.15;
       font-weight: 700;
+      margin: 0;
     }
 
     /* Chart slots */
@@ -136,845 +164,468 @@
     }
     .cc-grid-6 .chart-slot { min-height: 210px; }
 
-    /* Notes box: simple always-visible area (no dropdowns) */
+    /* Notes box */
     .note-box a { color: rgba(0,0,0,0.75); }
     .note-box a:hover { color: rgba(0,0,0,0.95); }
 
-    /* Mobile tidy-up (match index.html feel) */
+    /* Mobile tidy-up */
     @media only screen and (max-width: 768px) {
       .px-vw-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
       .p-5 { padding: 1.5rem !important; }
       .navbar { padding-left: 0 !important; padding-right: 0 !important; }
-      .nav-link { padding: 0.25rem 0.5rem !important; font-size: 0.875rem; }
+      #navScroll .nav-link { padding: 0.25rem 0.5rem !important; font-size: 0.875rem; }
       h1 { font-size: 1.7rem !important; }
       .chart-slot { min-height: 220px; }
       .cc-grid-6 .chart-slot { min-height: 180px; }
       .cc-title { font-size: 1.2rem; }
     }
-</style>
+  </style>
 </head>
+
 <body class="position-relative d-flex h-100 w-100" data-bs-spy="scroll" data-bs-target="#navScroll">
-<div class="h-100 container-fluid position-relative">
-<div class="h-100 row d-flex align-items-stretch position-relative z-1">
-<div class="p-0 col-12 d-flex align-items-start flex-column">
-<header class="mb-auto py-vh-2 col-12 px-vw-5">
-<nav class="navbar navbar-expand-lg navbar-dark d-flex px-3" id="navScroll" tabindex="0">
-<a class="navbar-brand d-flex align-items-center flex-grow-1 link-opacity-50-hover link-dark" href="index.html">
-<div class="fw-bold fs-4">
-       Kelvin Ng
+  <div class="h-100 container-fluid position-relative">
+    <div class="h-100 row d-flex align-items-stretch position-relative z-1">
+      <div class="p-0 col-12 d-flex align-items-start flex-column">
+
+        <!-- Header -->
+        <header class="mb-auto py-vh-2 col-12 px-vw-5">
+          <nav class="navbar navbar-expand-lg navbar-dark d-flex px-3" id="navScroll" tabindex="0">
+            <a class="navbar-brand d-flex align-items-center flex-grow-1 link-opacity-50-hover link-dark" href="index.html">
+              <div class="fw-bold fs-4">Kelvin Ng</div>
+            </a>
+            <div class="col-auto ps-2 ms-2">
+              <ul class="nav ms-auto mb-2 mb-lg-0 ms-2 list-inline list-unstyled align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark link-opacity-50-hover" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark" href="portfolio.html"><span class="fw-bold">Portfolio</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark link-opacity-50-hover" href="project.html">Project</a>
+                </li>
+                <li class="nav-item">
+                  <a aria-label="GitHub" class="nav-link pe-2 link-dark link-opacity-50-hover" href="https://github.com/kelvinchwng" rel="noreferrer" target="_blank">
+                    <svg fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a aria-label="LinkedIn" class="nav-link link-dark link-opacity-50-hover" href="https://linkedin.com/in/kelvinchwng" rel="noreferrer" target="_blank">
+                    <svg fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main -->
+        <main class="mb-auto col-12 px-vw-5">
+
+          <!-- Hero -->
+          <div class="page-hero rounded p-5" data-aos="fade-up">
+            <h1 class="text-black mb-2"><strong>PP434 Data Science Portfolio</strong></h1>
+            <p class="lead text-muted mb-0">Coding Challenges for PP434 Automated Data Visualisation for Policymaking 2025-2026</p>
+            <p class="lead text-muted mb-0">Candidate Number 67247</p>
+            <div class="section-sep"></div>
+            <div aria-label="Jump to challenges" class="pill-row">
+              <a href="#cc1">CC1</a>
+              <a href="#cc2">CC2</a>
+              <a href="#cc3">CC3</a>
+              <a href="#cc4">CC4</a>
+              <a href="#cc5">CC5</a>
+              <a href="#cc6">CC6</a>
+              <a href="#cc7">CC7</a>
+              <a href="#cc8">CC8</a>
+              <a href="#cc9">CC9</a>
+              <a href="#cc10">CC10</a>
+            </div>
+          </div>
+
+          <div class="py-vh-3">
+
+            <!-- CC1 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc1">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC1</span>
+                  <h2 class="cc-title mb-0">Hosting</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Display charts on your own site (embedding basics).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc1-chart1">Chart placeholder</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc1-chart2">Chart placeholder</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Chart JSON</a> ·
+                  <a class="link-dark" href="#">Data</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC2 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc2">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC2</span>
+                  <h2 class="cc-title mb-0">Building</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Create your own visualisations (design + encoding).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc2-chart1">Chart placeholder</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc2-chart2">Chart placeholder</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Chart JSON</a> ·
+                  <a class="link-dark" href="#">Data</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC3 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc3">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC3</span>
+                  <h2 class="cc-title mb-0">Debate</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Use visualisations to support a short policy argument.</p>
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-0"><strong>Policy topic (≤25 words):</strong> …</div>
+              </div>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc3-chart1">Chart placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Commentary (≤25 words):</strong> …</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc3-chart2">Chart placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Commentary (≤25 words):</strong> …</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Chart JSON</a> ·
+                  <a class="link-dark" href="#">Data</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC4 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc4">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC4</span>
+                  <h2 class="cc-title mb-0">Replication</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Replicate and improve an existing chart.</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-4">
+                  <div class="small text-muted mb-2"><strong>Original</strong></div>
+                  <div class="chart-slot empty" style="min-height: 220px;">Add original image or link</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="small text-muted mb-2"><strong>Replication</strong></div>
+                  <div class="chart-slot empty" id="cc4-chart1" style="min-height: 220px;">Chart placeholder</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="small text-muted mb-2"><strong>Improved</strong></div>
+                  <div class="chart-slot empty" id="cc4-chart2" style="min-height: 220px;">Chart placeholder</div>
+                </div>
+              </div>
+              <div class="small text-muted mt-2"><strong>Improvements (≤25 words):</strong> …</div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Replication JSON</a> ·
+                  <a class="link-dark" href="#">Improved JSON</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC5 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc5">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC5</span>
+                  <h2 class="cc-title mb-0">Accessing Data</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">API + scraper (programmatic data access).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>API chart</strong></div>
+                  <div class="chart-slot empty" id="cc5-chart1">Chart placeholder</div>
+                  <div class="card-soft-inner p-3 mt-2 small">
+                    <div class="text-muted"><strong>API description:</strong></div>
+                    <div class="text-muted">Base URL: <code>…</code></div>
+                    <div class="text-muted">Full URL used: <code>…</code></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>Scraped chart</strong></div>
+                  <div class="chart-slot empty" id="cc5-chart2">Chart placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Description (≤25 words):</strong> …</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Notebook</a> ·
+                  <a class="link-dark" href="#">API spec</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC6 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc6">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC6</span>
+                  <h2 class="cc-title mb-0">Loops</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Dashboard built efficiently (batch charts / automation).</p>
+              <div class="row g-3 mt-3 cc-grid-6">
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart1">1</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart2">2</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart3">3</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart4">4</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart5">5</div>
+                </div>
+                <div class="col-md-4">
+                  <div class="chart-slot empty" id="cc6-chart6">6</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Notebook</a> ·
+                  <a class="link-dark" href="#">Data</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC7 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc7">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC7</span>
+                  <h2 class="cc-title mb-0">Maps</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Base maps + choropleths (Scotland &amp; Wales).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>Scotland</strong></div>
+                  <div class="chart-slot empty" id="cc7-chart1">Map placeholder</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>Wales</strong></div>
+                  <div class="chart-slot empty" id="cc7-chart2">Map placeholder</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">GeoJSON</a> ·
+                  <a class="link-dark" href="#">Chart JSON</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC8 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc8">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC8</span>
+                  <h2 class="cc-title mb-0">Big Data</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Extract a story from very large datasets (prices etc.).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc8-chart1">Chart placeholder</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc8-chart2">Chart placeholder</div>
+                </div>
+              </div>
+              <div class="small text-muted mt-2"><strong>Explanation (≤50 words):</strong> …</div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Notebook</a> ·
+                  <a class="link-dark" href="#">Chart JSON</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC9 -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc9">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC9</span>
+                  <h2 class="cc-title mb-0">Interactive Charts</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Two interactive visualisations (beyond tooltips).</p>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc9-chart1">Interactive placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Interactivity:</strong> …</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="chart-slot empty" id="cc9-chart2">Interactive placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Interactivity:</strong> …</div>
+                </div>
+              </div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Chart JSON</a> ·
+                  <a class="link-dark" href="#">Data</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- CC10 -->
+            <section class="card-soft rounded p-4 mb-2" data-aos="fade-up" id="cc10">
+              <div class="cc-headrow">
+                <div class="cc-header">
+                  <span class="cc-badge">CC10</span>
+                  <h2 class="cc-title mb-0">Advanced Analysis &amp; Machine Learning</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+              <p class="text-muted small mb-0 mt-1">Advanced analytics + ML output (clear hypothesis &amp; takeaway).</p>
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-0"><strong>Hypothesis (≤25 words):</strong> …</div>
+              </div>
+              <div class="row g-3 mt-3">
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>Advanced analytics</strong></div>
+                  <div class="chart-slot empty" id="cc10-chart1">Chart placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Method:</strong> …</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small text-muted mb-2"><strong>Machine learning</strong></div>
+                  <div class="chart-slot empty" id="cc10-chart2">Chart placeholder</div>
+                  <div class="small text-muted mt-2"><strong>Method:</strong> …</div>
+                </div>
+              </div>
+              <div class="small text-muted mt-2"><strong>Findings (≤25 words):</strong> …</div>
+              <div class="note-box card-soft-inner p-3 mt-3">
+                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted">
+                  <strong>Links:</strong>
+                  <a class="link-dark" href="#">Notebook</a> ·
+                  <a class="link-dark" href="#">Model</a> ·
+                  <a class="link-dark" href="#">Chart JSON</a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-auto col-12 py-vh-3 px-vw-5">
+          <div class="row d-flex justify-content-between small">
+            <div class="col-12 col-md-auto d-flex justify-content-center">
+              <ul class="nav bg-light rounded px-3 align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                      <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="project.html">Project</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="https://github.com/kelvinchwng" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="https://linkedin.com/in/kelvinchwng" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md text-center text-md-end py-2">
+              Made by <a href="https://templatedeck.com" class="link-fancy" target="_blank">templatedeck.com</a>
+            </div>
+          </div>
+        </footer>
+
       </div>
-</a>
-<div class="col-auto ps-2 ms-2">
-<ul class="nav ms-auto mb-2 mb-lg-0 ms-2 list-inline list-unstyled align-items-center">
-<li class="nav-item">
-<a class="nav-link pe-3 link-dark link-opacity-50-hover" href="index.html">
-         Home
-        </a>
-</li>
-<li class="nav-item">
-<a class="nav-link pe-3 link-dark" href="portfolio.html">
-<span class="fw-bold">
-          Portfolio
-         </span>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link pe-3 link-dark link-opacity-50-hover" href="project.html">
-         Project
-        </a>
-</li>
-<li class="nav-item">
-<a aria-label="GitHub" class="nav-link pe-2 link-dark link-opacity-50-hover" href="https://github.com/kelvinchwng" rel="noreferrer" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
-<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-</path>
-</svg>
-</a>
-</li>
-<li class="nav-item">
-<a aria-label="LinkedIn" class="nav-link link-dark link-opacity-50-hover" href="https://linkedin.com/in/kelvinchwng" rel="noreferrer" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
-</nav>
-</header>
-<main class="mb-auto col-12 px-vw-5">
+    </div>
+  </div>
 
-<!-- Hero -->
-<div class="page-hero rounded p-5 overflow-x-hidden" data-aos="fade-up">
-<h1 class="text-black mb-2">
-<strong>
-        Portfolio
-       </strong>
-</h1>
-<p class="lead text-muted mb-0">
-       10 coding challenges for PP434: Automated Data Visualisation for Policymaking.
-      </p>
-<div class="section-sep">
-</div>
-<div aria-label="Jump to challenges" class="pill-row">
-<a href="#cc1">
-        CC1
-       </a>
-<a href="#cc2">
-        CC2
-       </a>
-<a href="#cc3">
-        CC3
-       </a>
-<a href="#cc4">
-        CC4
-       </a>
-<a href="#cc5">
-        CC5
-       </a>
-<a href="#cc6">
-        CC6
-       </a>
-<a href="#cc7">
-        CC7
-       </a>
-<a href="#cc8">
-        CC8
-       </a>
-<a href="#cc9">
-        CC9
-       </a>
-<a href="#cc10">
-        CC10
-       </a>
-</div>
-</div>
-<div class="py-vh-3 overflow-x-hidden">
-<!-- CC1 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc1">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC1
-         </span>
-<h2 class="cc-title mb-0">
-          Hosting
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Display charts on your own site (embedding basics).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc1-chart1">
-          Chart placeholder
-         </div>
-</div>
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc1-chart2">
-          Chart placeholder
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Chart JSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Data
-         </a>
-</div>
-</div>
-</section>
-<!-- CC2 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc2">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC2
-         </span>
-<h2 class="cc-title mb-0">
-          Building
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Create your own visualisations (design + encoding).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc2-chart1">
-          Chart placeholder
-         </div>
-</div>
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc2-chart2">
-          Chart placeholder
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Chart JSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Data
-         </a>
-</div>
-</div>
-</section>
-<!-- CC3 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc3">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC3
-         </span>
-<h2 class="cc-title mb-0">
-          Debate
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Use visualisations to support a short policy argument.
-       </p>
-<div class="card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-0">
-<strong>
-          Policy topic (≤25 words):
-         </strong>
-         …
-        </div>
-</div>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc3-chart1">
-          Chart placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Commentary (≤25 words):
-          </strong>
-          …
-         </div>
-</div>
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc3-chart2">
-          Chart placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Commentary (≤25 words):
-          </strong>
-          …
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Chart JSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Data
-         </a>
-</div>
-</div>
-</section>
-<!-- CC4 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc4">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC4
-         </span>
-<h2 class="cc-title mb-0">
-          Replication
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Replicate and improve an existing chart.
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-4">
-<div class="small text-muted mb-2">
-<strong>
-           Original
-          </strong>
-</div>
-<div class="chart-slot empty" style="min-height: 220px;">
-          Add original image or link
-         </div>
-</div>
-<div class="col-md-4">
-<div class="small text-muted mb-2">
-<strong>
-           Replication
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc4-chart1" style="min-height: 220px;">
-          Chart placeholder
-         </div>
-</div>
-<div class="col-md-4">
-<div class="small text-muted mb-2">
-<strong>
-           Improved
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc4-chart2" style="min-height: 220px;">
-          Chart placeholder
-         </div>
-</div>
-</div>
-<div class="small text-muted mt-2">
-<strong>
-         Improvements (≤25 words):
-        </strong>
-        …
-       </div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Replication JSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Improved JSON
-         </a>
-</div>
-</div>
-</section>
-<!-- CC5 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc5">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC5
-         </span>
-<h2 class="cc-title mb-0">
-          Accessing Data
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        API + scraper (programmatic data access).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           API chart
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc5-chart1">
-          Chart placeholder
-         </div>
-<div class="card-soft-inner p-3 mt-2 small">
-<div class="text-muted">
-<strong>
-            API description:
-           </strong>
-</div>
-<div class="text-muted">
-           Base URL:
-           <code>
-            …
-           </code>
-</div>
-<div class="text-muted">
-           Full URL used:
-           <code>
-            …
-           </code>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           Scraped chart
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc5-chart2">
-          Chart placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Description (≤25 words):
-          </strong>
-          …
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Notebook
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          API spec
-         </a>
-</div>
-</div>
-</section>
-<!-- CC6 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc6">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC6
-         </span>
-<h2 class="cc-title mb-0">
-          Loops
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Dashboard built efficiently (batch charts / automation).
-       </p>
-<div class="row g-3 mt-3 cc-grid-6">
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart1">
-          1
-         </div>
-</div>
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart2">
-          2
-         </div>
-</div>
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart3">
-          3
-         </div>
-</div>
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart4">
-          4
-         </div>
-</div>
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart5">
-          5
-         </div>
-</div>
-<div class="col-md-4">
-<div class="chart-slot empty" id="cc6-chart6">
-          6
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Notebook
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Data
-         </a>
-</div>
-</div>
-</section>
-<!-- CC7 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc7">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC7
-         </span>
-<h2 class="cc-title mb-0">
-          Maps
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Base maps + choropleths (Scotland &amp; Wales).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           Scotland
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc7-chart1">
-          Map placeholder
-         </div>
-</div>
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           Wales
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc7-chart2">
-          Map placeholder
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          GeoJSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Chart JSON
-         </a>
-</div>
-</div>
-</section>
-<!-- CC8 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc8">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC8
-         </span>
-<h2 class="cc-title mb-0">
-          Big Data
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Extract a story from very large datasets (prices etc.).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc8-chart1">
-          Chart placeholder
-         </div>
-</div>
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc8-chart2">
-          Chart placeholder
-         </div>
-</div>
-</div>
-<div class="small text-muted mt-2">
-<strong>
-         Explanation (≤50 words):
-        </strong>
-        …
-       </div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Notebook
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Chart JSON
-         </a>
-</div>
-</div>
-</section>
-<!-- CC9 -->
-<section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc9">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC9
-         </span>
-<h2 class="cc-title mb-0">
-          Interactive Charts
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Two interactive visualisations (beyond tooltips).
-       </p>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc9-chart1">
-          Interactive placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Interactivity:
-          </strong>
-          …
-         </div>
-</div>
-<div class="col-md-6">
-<div class="chart-slot empty" id="cc9-chart2">
-          Interactive placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Interactivity:
-          </strong>
-          …
-         </div>
-</div>
-</div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Chart JSON
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Data
-         </a>
-</div>
-</div>
-</section>
-<!-- CC10 -->
-<section class="card-soft rounded p-4 mb-2" data-aos="fade-up" id="cc10">
-<div class="cc-headrow">
-<div class="cc-header">
-<span class="cc-badge">
-          CC10
-         </span>
-<h2 class="cc-title mb-0">
-          Advanced Analysis &amp; Machine Learning
-         </h2>
-</div>
-<a class="small link-dark link-opacity-50-hover" href="#navScroll">
-         Back to top
-        </a>
-</div>
-<p class="text-muted small mb-0 mt-1">
-        Advanced analytics + ML output (clear hypothesis &amp; takeaway).
-       </p>
-<div class="card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-0">
-<strong>
-          Hypothesis (≤25 words):
-         </strong>
-         …
-        </div>
-</div>
-<div class="row g-3 mt-3">
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           Advanced analytics
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc10-chart1">
-          Chart placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Method:
-          </strong>
-          …
-         </div>
-</div>
-<div class="col-md-6">
-<div class="small text-muted mb-2">
-<strong>
-           Machine learning
-          </strong>
-</div>
-<div class="chart-slot empty" id="cc10-chart2">
-          Chart placeholder
-         </div>
-<div class="small text-muted mt-2">
-<strong>
-           Method:
-          </strong>
-          …
-         </div>
-</div>
-</div>
-<div class="small text-muted mt-2">
-<strong>
-         Findings (≤25 words):
-        </strong>
-        …
-       </div>
-<div class="note-box card-soft-inner p-3 mt-3">
-<div class="small text-muted mb-1">
-<strong>
-          Notes:
-         </strong>
-         …
-        </div>
-<div class="small text-muted">
-<strong>
-          Links:
-         </strong>
-<a class="link-dark" href="#">
-          Notebook
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Model
-         </a>
-         ·
-         <a class="link-dark" href="#">
-          Chart JSON
-         </a>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="mt-auto col-12 py-vh-3 px-vw-5">
-<div class="row d-flex justify-content-between small">
-<div class="col-12 col-md-auto d-flex justify-content-center">
-<ul class="nav bg-light rounded px-3 align-items-center">
-<li class="nav-item">
-<a aria-label="Go home!" class="nav-link link-dark px-0" href="index.html">
-<svg class="bi bi-house-fill" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z">
-</path>
-<path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z">
-</path>
-</svg>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link link-dark" href="portfolio.html">
-         Portfolio
-        </a>
-</li>
-<li class="nav-item">
-<a class="nav-link link-dark" href="project.html">
-         Project
-        </a>
-</li>
-</ul>
-</div>
-<div class="col-12 col-md text-center text-md-end py-2">
-      Made by
-      <a class="link-fancy" href="https://templatedeck.com" rel="noreferrer" target="_blank">
-       templatedeck.com
-      </a>
-</div>
-</div>
-</footer>
-</div>
-</div>
-</div>
-
-  <script src="js/bootstrap.bundle.min.js" async></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
     AOS.init({ });
   </script>
-
 </body>
 </html>
