@@ -15,53 +15,10 @@
   <link rel="stylesheet" href="css/min/theme.css">
   <link rel="stylesheet" href="css/aos.css">
   
-  <style>
-    .bg-img {
-          background-image: url(./img/webp/background.png);
-      }
-
-      /* Mobile responsiveness improvements */
-      @media only screen and (max-width: 768px) {
-          .bg-img {
-              display: none !important;
-          }
-          .col-11 {
-              width: 100% !important;
-              max-width: 100% !important;
-          }
-          .px-vw-5 {
-              padding-left: 1rem !important;
-              padding-right: 1rem !important;
-          }
-          .p-5 {
-              padding: 1.5rem !important;
-          }
-          h1 {
-              font-size: 1.5rem !important;
-          }
-          .navbar {
-              padding-left: 0 !important;
-              padding-right: 0 !important;
-          }
-          .nav-link {
-              padding: 0.25rem 0.5rem !important;
-              font-size: 0.875rem;
-          }
-          .d-flex.align-items-center.p-4 {
-              padding: 1rem !important;
-          }
-      }
-
-      a.card-link {
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      a.card-link:hover {
-          transform: translateX(5px);
-      }
-  </style>
   
   <style>
-    @font-face {
+    /* Inter (self-hosted) */
+@font-face {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 300;
@@ -89,7 +46,118 @@
           url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
           url('./fonts/inter-v12-latin-700.woff') format('woff');
     }
-  </style>
+
+    /* --- Page tweaks (index.html) --- */
+    .bg-img {
+      background-image: url("./img/webp/background.png");
+    }
+
+    /* Hero */
+    .hero-header {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    .hero-avatar {
+      flex: 0 0 auto;
+    }
+    .hero-avatar img {
+      display: block;
+      width: 96px;
+      height: 96px;
+      object-fit: cover;
+    }
+
+    /* Coursework rows */
+.course-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.course-list .course-item + .course-item {
+  margin-top: 0.75rem;
+}
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: 16px;
+}
+.course-icon-link {
+  display: block;
+  flex: 0 0 auto;
+  border-radius: 9999px;
+}
+.course-icon-link:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 4px;
+}
+.course-icon-link img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  transition: transform .2s ease;
+}
+.course-icon-link:hover img {
+  transform: translateY(-1px);
+}
+.course-content p {
+  margin-bottom: 0;
+}
+
+/* Small screens: tighten spacing so things don't feel cramped */
+    @media (max-width: 576px) {
+      .hero-header {
+        gap: 0.9rem;
+      }
+      .hero-avatar img {
+        width: 72px;
+        height: 72px;
+      }
+      .course-item {
+        gap: 0.9rem;
+      }
+      .course-icon-link img {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    /* Mobile responsiveness improvements */
+    @media (max-width: 768px) {
+      .bg-img {
+        display: none !important;
+      }
+      .col-11 {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .px-vw-5 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      .p-5 {
+        padding: 1.5rem !important;
+      }
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      .navbar {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .nav-link {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.875rem;
+      }
+      .course-item.p-4 {
+        padding: 1rem !important;
+      }
+    }
+  
+</style>
+
 
 </head>
 
@@ -97,7 +165,7 @@
 <body class="position-relative d-flex h-100 w-100" data-bs-spy="scroll" data-bs-target="#navScroll">
   <div class="h-100 container-fluid position-relative">
     <div class="h-100 row d-flex align-items-stretch position-relative z-1">
-        <div class="p-0 col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-5 d-flex align-items-start flex-column shadow position-relative">
+        <div class="p-0 col-11 col-sm-10 col-md-9 col-lg-8 col-xl-7 col-xxl-5 d-flex align-items-start flex-column position-relative">
           <header class="mb-auto py-vh-2 col-12 px-vw-5">
             <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark d-flex px-3" tabindex="0">
               <a class="navbar-brand d-flex align-items-center flex-grow-1 link-opacity-50-hover link-dark" href="index.html">
@@ -131,11 +199,11 @@
   
          <main class="mb-auto col-12 px-vw-5">
           <div class="bg-light rounded p-5 overflow-x-hidden" data-aos="fade-left">
-            <div class="d-flex align-items-center mb-4">
-              <div class="me-4 flex-shrink-0">
-                <img src="img/webp/person.jpeg" class="rounded-circle shadow-sm" style="width: 90px; height: 90px; object-fit: cover;" alt="Kelvin Ng">
+            <div class="hero-header mb-4">
+              <div class="hero-avatar flex-shrink-0">
+                <img src="img/webp/person.jpeg" class="rounded-circle shadow-sm js-hero-avatar" alt="Kelvin Ng">
               </div>
-              <h2 class="text-black mb-0"><strong>Hi, I'm Kelvin.</strong> I am a 2nd Year Master of Public Administration (MPA) student at the London School of Economics.</h2>
+              <h2 class="text-black mb-0 js-hero-text"><strong>Hi, I'm Kelvin.</strong> I am a 2nd Year Master of Public Administration (MPA) student at the London School of Economics.</h2>
             </div>
 
             <p class="lead py-4">This site showcases my work for PP434 Automated Data Visualisation for Policymaking.</p>
@@ -151,54 +219,67 @@
           </div>
 
           <div class="py-vh-3 overflow-x-hidden">
-            <h2 class="h6 mb-4 px-4" data-aos="fade-left" data-aos-delay="200">PP434 Coursework (click on the icons):</h2>
+  <h2 class="h6 mb-4 px-4" data-aos="fade-left" data-aos-delay="200">PP434 Coursework (click on the icons):</h2>
 
-            <div class="d-flex align-items-center p-4" data-aos="fade-left" data-aos-delay="200">
-              <a href="portfolio.html" class="me-4">
-                <img loading="lazy" src="img/webp/icon1.png" width="80" height="80" class="rounded-circle shadow-sm" alt="Portfolio icon">
-              </a>
-              <div class="flex-grow-1">
-                <h3 class="h5 text-dark mb-1">Data Science Portfolio</h3>
-                <p class="text-muted mb-0">Weekly challenges: hosting, chart building, APIs, scrapers, maps, dashboards, interactivity, and machine learning.</p>
-              </div>
-            </div>
+  <ul class="course-list">
+    <li class="course-item p-4 js-course-item" data-aos="fade-left" data-aos-delay="200">
+      <a href="portfolio.html" class="course-icon-link" aria-label="Open Data Science Portfolio">
+        <img loading="lazy" src="img/webp/icon1.png" class="rounded-circle shadow-sm js-course-icon" alt="Portfolio icon">
+      </a>
+      <div class="course-content flex-grow-1 js-course-content">
+        <h3 class="h5 text-dark mb-1">Data Science Portfolio</h3>
+        <p class="text-muted mb-0">Weekly challenges: hosting, chart building, APIs, scrapers, maps, dashboards, interactivity, and machine learning.</p>
+      </div>
+    </li>
 
-            <div class="d-flex align-items-center my-2 p-4" data-aos="fade-left" data-aos-delay="200">
-              <a href="project.html" class="me-4">
-                <img loading="lazy" src="img/webp/icon2.png" width="80" height="80" class="rounded-circle shadow-sm" alt="Project icon">
-              </a>
-              <div class="flex-grow-1">
-                <h3 class="h5 text-dark mb-1">Final Project</h3>
-                <p class="text-muted mb-0">Data visualisation project exploring [your topic here].</p>
-              </div>
-            </div>
-
-          </div>
+    <li class="course-item p-4 js-course-item" data-aos="fade-left" data-aos-delay="200">
+      <a href="project.html" class="course-icon-link" aria-label="Open Final Project">
+        <img loading="lazy" src="img/webp/icon2.png" class="rounded-circle shadow-sm js-course-icon" alt="Project icon">
+      </a>
+      <div class="course-content flex-grow-1 js-course-content">
+        <h3 class="h5 text-dark mb-1">Final Project</h3>
+        <p class="text-muted mb-0">Data visualisation project exploring [your topic here].</p>
+      </div>
+    </li>
+  </ul>
+</div>
+</div>
         </main>
 
         <footer class="mt-auto col-12 py-vh-3 px-vw-5">
           <div class="row d-flex justify-content-between small">
             <div class="col-12 col-md-auto d-flex justify-content-center">
               <ul class="nav bg-light rounded px-3 align-items-center">
-
-              <li class="nav-item">
-                <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewbox="0 0 16 16">
-                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-                  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
-                </svg>
-                </a>
-              </li>
-  
-              <li class="nav-item">
-                <a class="nav-link link-dark" href="portfolio.html">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link-dark" href="project.html">Project</a>
-              </li>
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewbox="0 0 16 16">
+                      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                      <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="project.html">Project</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="https://github.com/kelvinchwng" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="https://linkedin.com/in/kelvinchwng" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
-
             <div class="col-12 col-md text-center text-md-end py-2">
               Made by <a href="https://templatedeck.com" class="link-fancy" target="_blank">templatedeck.com</a>
             </div>
@@ -215,6 +296,77 @@
 <script>
   AOS.init({ });
 </script>
+
+
+<script>
+  // Keep the left-side images visually balanced with the text blocks next to them.
+  // - Hero portrait matches heading height
+  // - Coursework icons match their content height
+  (function () {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const clamp = (n, min, max) => Math.max(min, Math.min(n, max));
+    let scheduled = false;
+
+    function setSquareSize(img, target, { min = 40, maxDesktop = 160, maxMobile = 96 } = {}) {
+      const max = mq.matches ? maxMobile : maxDesktop;
+      const h = target.getBoundingClientRect().height;
+      const size = clamp(Math.round(h), min, max);
+      img.style.width = `${size}px`;
+      img.style.height = `${size}px`;
+    }
+
+    function sync() {
+      scheduled = false;
+
+      const heroImg = document.querySelector(".js-hero-avatar");
+      const heroText = document.querySelector(".js-hero-text");
+      if (heroImg && heroText) {
+        setSquareSize(heroImg, heroText, { maxDesktop: 160, maxMobile: 96 });
+      }
+
+      const items = Array.from(document.querySelectorAll(".js-course-item"));
+if (items.length) {
+  let maxH = 0;
+  items.forEach((item) => {
+    const content = item.querySelector(".js-course-content");
+    if (content) maxH = Math.max(maxH, content.getBoundingClientRect().height);
+  });
+
+  const max = mq.matches ? 96 : 120;
+  const size = clamp(Math.round(maxH), 64, max);
+
+  items.forEach((item) => {
+    const icon = item.querySelector(".js-course-icon");
+    if (!icon) return;
+    icon.style.width = `${size}px`;
+    icon.style.height = `${size}px`;
+  });
+}
+}
+
+    function requestSync() {
+      if (scheduled) return;
+      scheduled = true;
+      window.requestAnimationFrame(sync);
+    }
+
+    document.addEventListener("DOMContentLoaded", requestSync);
+    window.addEventListener("load", requestSync);
+    window.addEventListener("resize", requestSync);
+
+    // Some browsers support media query change events via addEventListener, some via addListener.
+    if (mq.addEventListener) mq.addEventListener("change", requestSync);
+    else mq.addListener(requestSync);
+
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(requestSync);
+      const heroText = document.querySelector(".js-hero-text");
+      if (heroText) ro.observe(heroText);
+      document.querySelectorAll(".js-course-content").forEach((el) => ro.observe(el));
+    }
+  })();
+</script>
+
 
 </body>
 </html>
