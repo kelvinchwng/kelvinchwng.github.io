@@ -666,21 +666,6 @@ progress {
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-top: var(--bs-gutter-y); }
 
-/* Center Vega charts inside your chart boxes */
-.chart-slot{
-  display: flex;
-  justify-content: center;   /* horizontal */
-  align-items: center;       /* vertical (optional) */
-}
-
-.chart-slot .vega-embed{
-  width: 100%;
-}
-
-.chart-slot .vega-embed .vega-view{
-  margin: 0 auto;            /* centers the actual rendered view */
-}
-
 .col {
   flex: 1 0 0%; }
 

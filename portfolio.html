@@ -156,6 +156,17 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      padding: 1rem;
+    }
+    /* Center Vega charts inside slots */
+    .chart-slot > .vega-embed {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .chart-slot > .vega-embed > div {
+      display: flex;
+      justify-content: center;
     }
     .chart-slot.empty {
       border: 1px dashed rgba(0,0,0,0.18);
@@ -170,8 +181,15 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
+
+    /* Mobile: stack all chart grids */
     @media only screen and (max-width: 768px) {
       .cc1-charts { grid-template-columns: 1fr; }
+      .row.g-3 > .col-md-6,
+      .row.g-3 > .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
 
     /* Notes box */
@@ -626,11 +644,16 @@
   <script>
     AOS.init({ })
 
+    // Embed options for responsive, centered charts
+    const embedOpts = {
+      actions: false,
+      width: "container",
+      renderer: "svg"
+    };
+
     // CC1 charts 
-    let cc1_chart1 = "portfolio/charts/cc1_chart1.json"
-    let cc1_chart2 = "portfolio/charts/cc1_chart2.json"
-    vegaEmbed('#cc1-chart1', cc1_chart1)
-    vegaEmbed('#cc1-chart2', cc1_chart2)
+    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json', embedOpts);
+    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json', embedOpts);
   </script>
 </body>
 </html>
