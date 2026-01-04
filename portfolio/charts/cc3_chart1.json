@@ -15,7 +15,7 @@
   },
   "transform": [
     {"filter": "datum.Entity != 'World'"},
-    {"calculate": "datum['Global total private investment in AI'] / 1000000000", "as": "investment"}
+    {"calculate": "datum.investment / 1000000000", "as": "investment_bn"}
   ],
   "encoding": {
     "x": {
@@ -31,7 +31,7 @@
       }
     },
     "y": {
-      "field": "investment",
+      "field": "investment_bn",
       "type": "quantitative",
       "title": null,
       "scale": {"domain": [0, 100]},
@@ -59,7 +59,7 @@
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Region"},
       {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "investment", "type": "quantitative", "title": "$ billion", "format": ".1f"}
+      {"field": "investment_bn", "type": "quantitative", "title": "$ billion", "format": ".1f"}
     ]
   },
   "layer": [

@@ -30,7 +30,7 @@
       }
     },
     "y": {
-      "field": "Newly founded AI Startups",
+      "field": "companies",
       "type": "quantitative",
       "title": null,
       "scale": {"domain": [0, 1200]},
@@ -58,7 +58,7 @@
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Region"},
       {"field": "Year", "type": "ordinal", "title": "Year"},
-      {"field": "Newly founded AI companies", "type": "quantitative", "title": "Companies"}
+      {"field": "companies", "type": "quantitative", "title": "Companies"}
     ]
   },
   "layer": [
