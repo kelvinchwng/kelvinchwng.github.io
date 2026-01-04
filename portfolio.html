@@ -639,8 +639,16 @@
     AOS.init({ })
 
     // CC1 charts 
-    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json');
-    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json');
+    vegaEmbed("#cc1-chart1", "portfolio/graphs/wk1_chart1.json", {
+      actions: true,
+      renderer: "canvas",
+      config: { autosize: { type: "fit", contains: "padding" } }
+  });
+    vegaEmbed('#cc1-chart2', 'portfolio/graphs/wk1_chart2.json', {
+      actions: true,
+      renderer: "canvas",
+      config: { autosize: { type: "fit", contains: "padding" } }
+    });
   </script>
 </body>
 </html>
