@@ -11,7 +11,7 @@
   <link href="css/min/theme.css" rel="stylesheet">
   <link href="css/aos.css" rel="stylesheet">
 
-  <!-- Vega-Lite (ready for when you add charts) -->
+  <!-- Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -146,7 +146,7 @@
       margin: 0;
     }
 
-    /* Chart slots */
+    /* Chart slots (for other CCs) */
     .chart-slot {
       min-height: 280px;
       background: #ffffff;
@@ -164,6 +164,34 @@
     }
     .cc-grid-6 .chart-slot { min-height: 210px; }
 
+    /* Column layout for charts (like Mary's portfolio) */
+    .column-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .column {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+    .column figure {
+      margin: 0;
+    }
+
+    /* Mobile: stack columns */
+    @media only screen and (max-width: 768px) {
+      .column-container { flex-direction: column; }
+      .column { min-width: 100%; }
+      .row.g-3 > .col-md-6,
+      .row.g-3 > .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
     /* Notes box */
     .note-box a { color: rgba(0,0,0,0.75); }
     .note-box a:hover { color: rgba(0,0,0,0.95); }
@@ -179,28 +207,6 @@
       .cc-grid-6 .chart-slot { min-height: 180px; }
       .cc-title { font-size: 1.2rem; }
     }
-  
-    /* CC1: simple two-chart layout (side-by-side on desktop, stacked on mobile) */
-    #cc1 .cc1-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1rem;
-      justify-content:center;
-      align-items:flex-start;
-    }
-    #cc1 .cc1-grid .cc-figure{
-      flex: 1 1 520px;
-      max-width: 640px;
-      margin: 0;
-    }
-    #cc1 .cc1-grid .vega-embed{ width:100%; }
-    @media (max-width: 768px){
-      #cc1 .cc1-grid .cc-figure{
-        flex-basis: 100%;
-        max-width: 100%;
-      }
-    }
-
   </style>
 </head>
 
@@ -280,13 +286,16 @@
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
               <p class="text-muted small mb-0 mt-1">Display charts on your own site (embedding basics).</p>
-
-              <!-- Two charts side-by-side (stacks on mobile) -->
-              <div class="cc1-grid mt-3">
-                <figure id="cc1-chart1" class="cc-figure"></figure>
-                <figure id="cc1-chart2" class="cc-figure"></figure>
+              <div class="column-container mt-3">
+                <div class="column">
+                  <figure id="cc1-chart1"></figure>
+                </div>
+                <div class="column">
+                  <figure id="cc1-chart2"></figure>
+                </div>
               </div>
             </section>
+
 
             <!-- CC2 -->
             <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="cc2">
@@ -637,14 +646,11 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
-    AOS.init({ });
-  </script>
+    AOS.init({ })
 
-  <script>
-    // CC1 embeds (update these paths if you move the JSON specs)
-    vegaEmbed("#cc1-chart1", "portfolio/graphs/cc1_chart1.json");
-    vegaEmbed("#cc1-chart2", "portfolio/graphs/cc1_chart2.json");
+    // CC1 charts 
+    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json');
+    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json');
   </script>
-
 </body>
 </html>
