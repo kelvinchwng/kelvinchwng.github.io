@@ -21,7 +21,7 @@
       "field": "Year",
       "type": "ordinal",
       "title": null,
-      "scale": {"paddingOuter": 0},
+      "scale": {"type": "point", "padding": 0},
       "axis": {
         "labelAngle": 0,
         "values": [2013, 2015, 2017, 2019, 2021, 2023],
@@ -71,7 +71,7 @@
             "fields": ["Entity"],
             "on": "pointerover"
           },
-          "value": [{"Entity": "United States"}]
+          "value": [{"Entity": "Europe"}]
         }
       ],
       "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
