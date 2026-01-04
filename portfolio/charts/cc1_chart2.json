@@ -12,7 +12,7 @@
     },
     
     "width": "container", 
-    "height": 300,
+    "height": "container",
     
     "data": {"url": "https://raw.githubusercontent.com/RDeconomist/prices/master/analysis/newItems_Updated2024.csv"},
   

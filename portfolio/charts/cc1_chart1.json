@@ -12,7 +12,7 @@
       "color": "black"
     },
 
-    "height":300,
+    "height":"container",
     "width":"container",
 
     "encoding": {
