@@ -146,9 +146,9 @@
       margin: 0;
     }
 
-    /* Chart slots (for other CCs) */
+    /* Chart slots */
     .chart-slot {
-      min-height: 280px;
+      min-height: 320px;
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 1px 0 rgba(0,0,0,0.05);
@@ -156,6 +156,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      width: 100%;
     }
     .chart-slot.empty {
       border: 1px dashed rgba(0,0,0,0.18);
@@ -163,6 +164,16 @@
       box-shadow: none;
     }
     .cc-grid-6 .chart-slot { min-height: 210px; }
+
+    /* Row layout for two charts side-by-side */
+    .cc-chart-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .cc-chart-row .chart-slot {
+      flex: 1;
+      min-width: 0;
+    }
 
     /* Column layout for charts (like Mary's portfolio) */
     .column-container {
@@ -181,10 +192,11 @@
       margin: 0;
     }
 
-    /* Mobile: stack columns */
+    /* Mobile: stack columns and chart rows */
     @media only screen and (max-width: 768px) {
       .column-container { flex-direction: column; }
       .column { min-width: 100%; }
+      .cc-chart-row { flex-direction: column; }
       .row.g-3 > .col-md-6,
       .row.g-3 > .col-md-4 {
         flex: 0 0 100%;
@@ -286,13 +298,9 @@
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
               <p class="text-muted small mb-0 mt-1">Two charts taken from <a href="https://rdeconomist.github.io/library">ChartLibrary</a> and added using the vegaEmbed function.</p>
-              <div class="column-container mt-3">
-                <div class="column">
-                  <figure id="cc1-chart1"></figure>
-                </div>
-                <div class="column">
-                  <figure id="cc1-chart2"></figure>
-                </div>
+              <div class="cc-chart-row mt-3">
+                <div class="chart-slot" id="cc1-chart1"></div>
+                <div class="chart-slot" id="cc1-chart2"></div>
               </div>
             </section>
 
