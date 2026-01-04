@@ -11,7 +11,7 @@
   <link href="css/min/theme.css" rel="stylesheet">
   <link href="css/aos.css" rel="stylesheet">
 
-  <!-- Vega-Lite -->
+  <!-- Vega-Lite (ready for when you add charts) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -157,11 +157,6 @@
       justify-content: center;
       overflow: hidden;
     }
-    /* Center the vega-embed container */
-    .chart-slot .vega-embed {
-      display: flex !important;
-      justify-content: center !important;
-    }
     .chart-slot.empty {
       border: 1px dashed rgba(0,0,0,0.18);
       color: rgba(0,0,0,0.45);
@@ -169,24 +164,23 @@
     }
     .cc-grid-6 .chart-slot { min-height: 210px; }
 
-    /* CC1: side-by-side on desktop, stacked on mobile */
+    /* CC1: force the two charts side-by-side (and stack on mobile) */
     .cc1-charts {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
-
-    /* Mobile: stack all chart grids */
     @media only screen and (max-width: 768px) {
       .cc1-charts { grid-template-columns: 1fr; }
-      .row.g-3 > .col-md-6,
-      .row.g-3 > .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
     }
 
-    /* Notes box */
+    
+    /* CC1: make embedded charts fluid + centered inside each card (keeps the action menu) */
+    #cc1 .chart-slot .vega-embed { width: 100%; }
+    #cc1 .chart-slot .vega-embed .vega-view { margin: 0 auto; }
+    #cc1 .chart-slot canvas,
+    #cc1 .chart-slot svg { max-width: 100%; height: auto; }
+/* Notes box */
     .note-box a { color: rgba(0,0,0,0.75); }
     .note-box a:hover { color: rgba(0,0,0,0.95); }
 
@@ -636,19 +630,27 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
-    AOS.init({ })
+    AOS.init({ });
 
-    // CC1 charts 
-    vegaEmbed("#cc1-chart1", "portfolio/graphs/wk1_chart1.json", {
-      actions: true,
-      renderer: "canvas",
-      config: { autosize: { type: "fit", contains: "padding" } }
-  });
-    vegaEmbed('#cc1-chart2', 'portfolio/graphs/wk1_chart2.json', {
-      actions: true,
-      renderer: "canvas",
-      config: { autosize: { type: "fit", contains: "padding" } }
-    });
+    // CC1 charts (Vega-Lite embed)
+    const cc1_embed_opts = { actions: true };
+
+    async function embedResponsiveVegaLite(targetId, specUrl) {
+      const res = await fetch(specUrl);
+      const spec = await res.json();
+
+      // Make charts responsive (centered + fluid width) while keeping action buttons
+      if (spec && typeof spec === "object") {
+        // Vega-Lite supports width:'container' + autosize fit
+        spec.autosize = spec.autosize || { type: "fit", contains: "padding" };
+        if (typeof spec.width === "number" || typeof spec.width === "undefined") spec.width = "container";
+      }
+
+      return vegaEmbed(`#${targetId}`, spec, cc1_embed_opts);
+    }
+
+    embedResponsiveVegaLite("cc1-chart1", "charts/cc1_chart1.json").catch(console.error);
+    embedResponsiveVegaLite("cc1-chart2", "charts/cc1_chart2.json").catch(console.error);
   </script>
 </body>
 </html>
