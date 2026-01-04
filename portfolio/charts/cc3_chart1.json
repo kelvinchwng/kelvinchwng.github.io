@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Private AI Investment by Region",
+    "subtitle": "$ billion (USD), 2013–2024",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "data/cc3_data1.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"filter": "datum.Entity != 'World'"},
+    {"calculate": "datum['Global total private investment in AI'] / 1000000000", "as": "investment"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": null,
+      "scale": {"paddingOuter": 0},
+      "axis": {
+        "labelAngle": 0,
+        "values": [2013, 2015, 2017, 2019, 2021, 2023],
+        "domain": true,
+        "domainColor": "#676A86"
+      }
+    },
+    "y": {
+      "field": "investment",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [0, 100]},
+      "axis": {
+        "domain": true,
+        "domainColor": "#676A86",
+        "grid": true,
+        "gridOpacity": 0.3
+      }
+    },
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field": "Entity",
+        "type": "nominal",
+        "legend": null,
+        "scale": {
+          "domain": ["United States", "China", "Europe"],
+          "range": ["#2563eb", "#ef4444", "#22c55e"]
+        }
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Region"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "investment", "type": "quantitative", "title": "$ billion", "format": ".1f"}
+    ]
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["Entity"],
+            "on": "pointerover"
+          },
+          "value": [{"Entity": "United States"}]
+        }
+      ],
+      "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    },
+    {"mark": {"type": "line", "strokeWidth": 2.5}},
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "rank"}],
+          "sort": [{"field": "Year", "order": "descending"}],
+          "groupby": ["Entity"]
+        },
+        {"filter": "datum.rank == 1"}
+      ],
+      "layer": [
+        {"mark": {"type": "circle", "size": 50}},
+        {
+          "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 11, "fontWeight": "bold"},
+          "encoding": {"text": {"field": "Entity", "type": "nominal"}}
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "grid": true,
+      "gridOpacity": 0.3
+    }
+  }
+}

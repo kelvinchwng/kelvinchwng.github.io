@@ -326,30 +326,28 @@
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC3</span>
-                  <h2 class="cc-title mb-0">Debate</h2>
+                  <h2 class="cc-title mb-0">Debate. Use a visualisation in policy commentary.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Use visualisations to support a short policy argument.</p>
+              <p class="text-muted small mb-0 mt-1">Produce two charts that support or refute (or are related to in some way)
+to a topic of policy debate.</p>
               <div class="card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-0"><strong>Policy topic (≤25 words):</strong> …</div>
+                <div class="small mb-0"><strong>Policy Topic:</strong> How does European investment in Artificial Intelligence compare with other major players, China and the United States? Inspiration taken from <a href="https://www.economicsobservatory.com/the-rise-of-artificial-intelligence-what-next-for-the-uk-economy">this blog from the Economic Observatory</a>.</div>
               </div>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc3-chart1">Chart placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Commentary (≤25 words):</strong> …</div>
-                </div>
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc3-chart2">Chart placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Commentary (≤25 words):</strong> …</div>
-                </div>
+              <div class="cc-chart-row mt-3">
+                <div class="chart-slot" id="cc3-chart1"></div>
+                <div class="chart-slot" id="cc3-chart2"></div>
+              </div>
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Commentary:</strong> US investment significantly outperforms Europe and China. However, Europe is now funding more AI startups annually than China since 2022, suggesting a growing investment appetite post-COVID.</div>
               </div>
               <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted mb-1"><strong>Notes:</strong> Investment data covers private VC funding in AI startups (Stanford AI Index 2025). Startup counts are newly-funded companies receiving &gt;$1.5m (USD) annually. Time series constructed from Stanford AI Index annual reports 2022–2025.</div>
                 <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Chart JSON</a> ·
-                  <a class="link-dark" href="#">Data</a>
+                  <strong>Sources:</strong>
+                  <a class="link-dark" href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank">Stanford AI Index 2025</a> ·
+                  <a class="link-dark" href="https://ourworldindata.org/grapher/private-investment-in-artificial-intelligence" target="_blank">OWID Data</a>
                 </div>
               </div>
             </section>
@@ -651,6 +649,10 @@
     // CC2 charts
     vegaEmbed('#cc2-chart1', 'portfolio/charts/cc2_chart1.json');
     vegaEmbed('#cc2-chart2', 'portfolio/charts/cc2_chart2.json');
+
+    // CC3 charts
+    vegaEmbed('#cc3-chart1', 'portfolio/charts/cc3_chart1.json');
+    vegaEmbed('#cc3-chart2', 'portfolio/charts/cc3_chart2.json');
   </script>
 </body>
 </html>
