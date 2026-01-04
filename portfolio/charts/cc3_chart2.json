@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Newly-Funded AI Companies",
+    "text": "Newly-Funded AI Startups by Region",
     "subtitle": "Companies receiving >$1.5m (USD) investment, 2013–2024",
     "fontSize": 16,
     "subtitleFontSize": 12,
@@ -10,7 +10,7 @@
   "width": "container",
   "height": "container",
   "data": {
-    "url": "data/cc3_data2.csv",
+    "url": "../data/cc3_data2.csv",
     "format": {"type": "csv"}
   },
   "transform": [
@@ -30,7 +30,7 @@
       }
     },
     "y": {
-      "field": "Newly founded AI companies",
+      "field": "Newly founded AI Startups",
       "type": "quantitative",
       "title": null,
       "scale": {"domain": [0, 1200]},

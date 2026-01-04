@@ -10,7 +10,7 @@
   "width": "container",
   "height": "container",
   "data": {
-    "url": "data/cc3_data1.csv",
+    "url": "../data/cc3_data1.csv",
     "format": {"type": "csv"}
   },
   "transform": [
