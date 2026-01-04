@@ -315,13 +315,9 @@
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
               <p class="text-muted small mb-0 mt-1">Create your own visualisations (design + encoding).</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc2-chart1">Chart placeholder</div>
-                </div>
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc2-chart2">Chart placeholder</div>
-                </div>
+              <div class="cc-chart-row mt-3">
+                <div class="chart-slot" id="cc2-chart1"></div>
+                <div class="chart-slot" id="cc2-chart2"></div>
               </div>
               <div class="note-box card-soft-inner p-3 mt-3">
                 <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
@@ -659,6 +655,10 @@
     // CC1 charts 
     vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json');
     vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json');
+
+    // CC2 charts
+    vegaEmbed('#cc2-chart1', 'portfolio/charts/cc2_chart1.json');
+    vegaEmbed('#cc2-chart2', 'portfolio/charts/cc2_chart2.json');
   </script>
 </body>
 </html>
