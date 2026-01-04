@@ -10,7 +10,7 @@
   "width": "container",
   "height": "container",
   "data": {
-    "url": "../data/cc3_data2.csv",
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc3_data2.csv",
     "format": {"type": "csv"}
   },
   "transform": [
