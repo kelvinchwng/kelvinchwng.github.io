@@ -9,6 +9,7 @@
   },
   "width": "container",
   "height": "container",
+  "autosize": {"type": "fit", "contains": "padding"},
   "data": {
     "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc3_data1.csv",
     "format": {"type": "csv"}
@@ -20,12 +21,11 @@
   "encoding": {
     "x": {
       "field": "Year",
-      "type": "ordinal",
+      "type": "temporal",
       "title": null,
-      "scale": {"type": "point", "padding": 0},
       "axis": {
-        "labelAngle": 0,
-        "values": [2013, 2015, 2017, 2019, 2021, 2023],
+        "title": "",
+        "grid": false,
         "domain": true,
         "domainColor": "#676A86"
       }
@@ -58,7 +58,7 @@
     "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2},
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Region"},
-      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Year", "type": "temporal", "title": "Year"},
       {"field": "investment_bn", "type": "quantitative", "title": "$ billion", "format": ".1f"}
     ]
   },
