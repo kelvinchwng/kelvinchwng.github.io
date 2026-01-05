@@ -98,14 +98,14 @@
             "range": ["#7f9cc7", "#8f3d7a", "#3f8f83", "#d8792e", "#0b2f5b"]
           },
           "legend": {
-            "orient": "right",
-            "direction": "vertical",
+            "orient": "bottom",
+            "direction": "horizontal",
             "title": null,
             "labelFontSize": 9,
             "symbolSize": 80,
             "offset": 5,
             "symbolType": "square",
-            "labelLimit": 120
+            "labelLimit": 100
           }
         }
       }
