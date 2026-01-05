@@ -125,16 +125,16 @@
             "scale": {
               "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
               "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
-            },
-            "legend": {
-              "orient": "bottom",
-              "direction": "horizontal",
-              "title": null,
-              "labelFontSize": 10,
-              "symbolStrokeWidth": 2
             }
           },
-          "value": "#ddd"
+          "value": "#ddd",
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "title": null,
+            "labelFontSize": 10,
+            "symbolStrokeWidth": 2
+          }
         },
         "strokeWidth": {
           "condition": {"test": "datum.series === 'Total'", "value": 5},
