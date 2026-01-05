@@ -10,8 +10,8 @@
     "subtitleColor": "#666",
     "subtitlePadding": 8
   },
-  "width": 550,
-  "height": 320,
+  "width": "container",
+  "height": "container",
   "background": "white",
   "data": {
     "values": [
