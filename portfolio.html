@@ -149,6 +149,7 @@
     /* Chart slots */
     .chart-slot {
       min-height: 320px;
+      height: 320px;
       background: #ffffff;
       border-radius: 12px;
       box-shadow: 0 1px 0 rgba(0,0,0,0.05);
@@ -157,6 +158,10 @@
       justify-content: center;
       overflow: hidden;
       width: 100%;
+    }
+    .chart-slot.tall {
+      min-height: 420px;
+      height: 420px;
     }
     .chart-slot.empty {
       border: 1px dashed rgba(0,0,0,0.18);
@@ -370,17 +375,17 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>Original</strong></div>
-                  <div class="chart-slot" style="min-height: 320px; padding: 1rem;">
+                  <div class="chart-slot" style="padding: 1rem;">
                     <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original Goldman Sachs Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                   </div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>Replication</strong></div>
-                  <div class="chart-slot" id="cc4-chart1" style="min-height: 320px;"></div>
+                  <div class="chart-slot" id="cc4-chart1"></div>
                 </div>
               </div>
               <div class="small text-muted mb-2 mt-3"><strong>Improved</strong></div>
-              <div class="chart-slot" id="cc4-chart2" style="min-height: 420px;"></div>
+              <div class="chart-slot tall" id="cc4-chart2"></div>
             </section>
 
             <!-- CC5 -->

@@ -1,19 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Quarterly US GDP Growth: Impacts by Policy Factor",
+    "text": "US GDP Growth: Policy Impacts by Quarter",
     "subtitle": ["Percentage point impact on quarter-over-quarter annualized GDP growth", "Source: Goldman Sachs Research. As of December 18, 2025."],
     "anchor": "start",
-    "fontSize": 18,
+    "fontSize": 16,
     "fontWeight": "bold",
     "subtitleFontSize": 11,
     "subtitleColor": "#666",
     "subtitlePadding": 8
   },
-  "width": 600,
+  "width": "container",
   "height": "container",
+  "autosize": {"type": "fit", "contains": "padding"},
   "background": "white",
-  "padding": {"right": 180},
+  "padding": {"right": 160},
   "data": {
     "values": [
       {"order": 1, "quarter": "2025 Q1", "series": "Financial conditions impulse", "value": 0.14},
@@ -158,9 +159,7 @@
       }
     },
     {
-      "transform": [
-        {"filter": "datum.order == 10 && datum.series == 'Tariff effect'"}
-      ],
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Tariff effect'"}],
       "mark": {"type": "text", "align": "left", "dx": 10, "dy": -12, "fontSize": 11, "fontWeight": "bold"},
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
@@ -182,9 +181,7 @@
       }
     },
     {
-      "transform": [
-        {"filter": "datum.order == 10 && datum.series == 'Financial conditions impulse'"}
-      ],
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Financial conditions impulse'"}],
       "mark": {"type": "text", "align": "left", "dx": 10, "dy": 12, "fontSize": 11, "fontWeight": "bold"},
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
@@ -206,9 +203,7 @@
       }
     },
     {
-      "transform": [
-        {"filter": "datum.order == 10 && datum.series == 'Immigration effect'"}
-      ],
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Immigration effect'"}],
       "mark": {"type": "text", "align": "left", "dx": 10, "dy": 4, "fontSize": 11, "fontWeight": "bold"},
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
@@ -230,9 +225,7 @@
       }
     },
     {
-      "transform": [
-        {"filter": "datum.order == 10 && datum.series == 'Fiscal impulse'"}
-      ],
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Fiscal impulse'"}],
       "mark": {"type": "text", "align": "left", "dx": 10, "dy": -8, "fontSize": 11, "fontWeight": "bold"},
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
@@ -255,22 +248,14 @@
     },
     {
       "transform": [
-        {
-          "aggregate": [{"op": "sum", "field": "value", "as": "total"}],
-          "groupby": ["quarter", "order"]
-        }
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]}
       ],
       "mark": {"type": "line", "strokeWidth": 4, "color": "#4e79a7"},
-      "encoding": {
-        "y": {"field": "total", "type": "quantitative"}
-      }
+      "encoding": {"y": {"field": "total", "type": "quantitative"}}
     },
     {
       "transform": [
-        {
-          "aggregate": [{"op": "sum", "field": "value", "as": "total"}],
-          "groupby": ["quarter", "order"]
-        }
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]}
       ],
       "mark": {"type": "point", "filled": true, "size": 70, "color": "#4e79a7"},
       "encoding": {
@@ -284,10 +269,7 @@
     },
     {
       "transform": [
-        {
-          "aggregate": [{"op": "sum", "field": "value", "as": "total"}],
-          "groupby": ["quarter", "order"]
-        },
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]},
         {"filter": "datum.order == 10"}
       ],
       "mark": {"type": "text", "align": "left", "dx": 10, "dy": 4, "fontSize": 12, "fontWeight": "bold", "color": "#4e79a7"},
@@ -299,9 +281,6 @@
   ],
   "config": {
     "view": {"stroke": null},
-    "axis": {
-      "labelFont": "sans-serif",
-      "titleFont": "sans-serif"
-    }
+    "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif"}
   }
 }
