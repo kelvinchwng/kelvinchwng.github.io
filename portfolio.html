@@ -175,10 +175,14 @@
     .cc-chart-row {
       display: flex;
       gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cc-chart-row > div {
+      flex: 1 1 300px;
+      min-width: 280px;
     }
     .cc-chart-row .chart-slot {
-      flex: 1;
-      min-width: 0;
+      width: 100%;
     }
 
     /* Column layout for charts (like Mary's portfolio) */
@@ -203,6 +207,10 @@
       .column-container { flex-direction: column; }
       .column { min-width: 100%; }
       .cc-chart-row { flex-direction: column; }
+      .cc-chart-row > div {
+        flex: 1 1 100%;
+        min-width: 100%;
+      }
       .row.g-3 > .col-md-6,
       .row.g-3 > .col-md-4 {
         flex: 0 0 100%;
@@ -374,13 +382,13 @@ channel or company has used. Your challenge this week is to replicate it, and th
                 <div class="small mb-0">The following is a replication of <a href="https://www.goldmansachs.com/insights/articles/the-global-economy-forecast-to-post-sturdy-growth-in-2026">Goldman Sachs' stacked bar chart showing different components of US GDP growth</a>. The improved version uses interactive line charts with hover highlighting to reveal how each factor evolves over time, making it easier to compare individual trajectories.</div>
               </div>
               <div class="cc-chart-row mt-3">
-                <div style="flex: 1; min-width: 0;">
+                <div>
                   <div class="small text-muted mb-2"><strong>Original</strong></div>
                   <div class="chart-slot" style="padding: 1rem;">
                     <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original Goldman Sachs Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                   </div>
                 </div>
-                <div style="flex: 1; min-width: 0;">
+                <div>
                   <div class="small text-muted mb-2"><strong>Replication</strong></div>
                   <div class="chart-slot" id="cc4-chart1"></div>
                 </div>
@@ -402,11 +410,13 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="row g-3 mt-3">
                 <div class="col-md-6">
                   <div class="small text-muted mb-2"><strong>API chart</strong></div>
-                  <div class="chart-slot empty" id="cc5-chart1">Chart placeholder</div>
+                  <div class="chart-slot" id="cc5-chart1"></div>
                   <div class="card-soft-inner p-3 mt-2 small">
-                    <div class="text-muted"><strong>API description:</strong></div>
-                    <div class="text-muted">Base URL: <code>…</code></div>
-                    <div class="text-muted">Full URL used: <code>…</code></div>
+                    <div class="text-muted"><strong>API description:</strong> World Bank Indicators API provides development data for countries worldwide. No API key required.</div>
+                    <div class="text-muted mt-1"><strong>Base URL:</strong> <code>https://api.worldbank.org/v2/</code></div>
+                    <div class="text-muted mt-1"><strong>Endpoint:</strong> <code>/country/{codes}/indicator/{indicator}</code></div>
+                    <div class="text-muted mt-1"><strong>Full URL used:</strong></div>
+                    <div class="text-muted"><code style="word-break: break-all; font-size: 0.7rem;">https://api.worldbank.org/v2/country/swe;nor;dnk/indicator/NY.GDP.PCAP.CD?format=json&per_page=1000</code></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -416,11 +426,12 @@ channel or company has used. Your challenge this week is to replicate it, and th
                 </div>
               </div>
               <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
+                <div class="small text-muted mb-1"><strong>Notes:</strong> The API returns JSON with data in the second array element [1], accessed via Vega-Lite's format property. Country names are nested objects accessed via dot notation (country.value).</div>
                 <div class="small text-muted">
                   <strong>Links:</strong>
                   <a class="link-dark" href="#">Notebook</a> ·
-                  <a class="link-dark" href="#">API spec</a>
+                  <a class="link-dark" href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation" target="_blank">API Documentation</a> ·
+                  <a class="link-dark" href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank">Indicator Page</a>
                 </div>
               </div>
             </section>
@@ -659,6 +670,9 @@ channel or company has used. Your challenge this week is to replicate it, and th
     // CC4 charts
     vegaEmbed('#cc4-chart1', 'portfolio/charts/cc4_chart1.json');
     vegaEmbed('#cc4-chart2', 'portfolio/charts/cc4_chart2.json');
+
+    // CC5 charts
+    vegaEmbed('#cc5-chart1', 'portfolio/charts/cc5_chart1.json');
   </script>
 </body>
 </html>
