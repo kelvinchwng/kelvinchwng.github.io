@@ -147,6 +147,10 @@
     }
 
     /* Chart slots */
+    /* Vega sizing safety (prevents flexbox 'squish' on first layout) */
+    .chart-slot { min-width: 0; }
+    .chart-slot .vega-embed { width: 100%; }
+
     .chart-slot {
       min-height: 400px;
       height: 400px;
@@ -203,10 +207,13 @@
       .column-container { flex-direction: column; }
       .column { min-width: 100%; }
       .cc-chart-row { flex-direction: column; }
+
       .row.g-3 > .col-md-6,
       .row.g-3 > .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
+      }
+
       /* CC4 replication: prevent horizontal squish on mobile by allowing horizontal scroll */
       #cc4-chart1 {
         overflow-x: auto !important;
@@ -214,11 +221,12 @@
         -webkit-overflow-scrolling: touch;
       }
       /* Keep Vega-Embed contents wide enough so the chart doesn't compress */
+      #cc4-chart1 .vega-embed,
       #cc4-chart1 > div {
         min-width: 650px;
       }
+    }
 
-      }
     }
 
     /* Notes box */
@@ -382,13 +390,13 @@ to a topic of policy debate.</p>
               <p class="text-muted small mb-0 mt-1">Find a chart that a policy organisation, a journalist, think tank, television
 channel or company has used. Your challenge this week is to replicate it, and then improve on it.</p>
               <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0">The following is a replication of <a href="https://www.goldmansachs.com/insights/articles/the-global-economy-forecast-to-post-sturdy-growth-in-2026">Goldman Sachs' stacked bar chart showing different components of US GDP growth</a>. The improved version uses interactive line charts with hover highlighting to reveal how each factor evolves over time, making it easier to compare individual trajectories.</div>
+                <div class="small mb-0">The following is a replication of <a href="https://www.ft.com/content/1af296f4-32af-4ec2-9d40-cd3c1c744a89">FT's abomination of a chart</a> illustrating GDP growth forecasts. The improved version uses interactive line charts with hover highlighting to reveal how each factor evolves over time, making it easier to compare individual trajectories.</div>
               </div>
               <div class="cc-chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>Original</strong></div>
                   <div class="chart-slot" style="padding: 1rem;">
-                    <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original Goldman Sachs Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original FT Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                   </div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
@@ -653,21 +661,27 @@ channel or company has used. Your challenge this week is to replicate it, and th
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
-    AOS.init({ })
+  window.addEventListener('load', () => {
+    AOS.init({ });
+    if (AOS && typeof AOS.refreshHard === 'function') {
+      AOS.refreshHard();
+    } else if (AOS && typeof AOS.refresh === 'function') {
+      AOS.refresh();
+    }
 
-    // Vega embeds (with reliable initial sizing)
-    const EMBED_OPTS = { actions: false };
+    const EMBED_OPTS = { actions: false, renderer: "svg" };
 
     function embedChart(selector, url) {
       return vegaEmbed(selector, url, EMBED_OPTS).then((res) => {
         const view = res.view;
         const el = document.querySelector(selector);
 
-        // 1) Force a couple of resizes after layout settles (fonts/AOS/flex)
+        // Force resizes after layout settles (fonts/AOS/flex)
         requestAnimationFrame(() => { view.resize(); view.runAsync(); });
         setTimeout(() => { view.resize(); view.runAsync(); }, 120);
+        setTimeout(() => { view.resize(); view.runAsync(); }, 450);
 
-        // 2) Keep it correct whenever the container size changes (mobile rotation, layout shifts)
+        // Keep it correct whenever the container size changes
         if (el && 'ResizeObserver' in window) {
           const ro = new ResizeObserver(() => {
             view.resize();
@@ -681,24 +695,21 @@ channel or company has used. Your challenge this week is to replicate it, and th
     }
 
     Promise.all([
-      // CC1 charts
       embedChart('#cc1-chart1', 'portfolio/charts/cc1_chart1.json'),
       embedChart('#cc1-chart2', 'portfolio/charts/cc1_chart2.json'),
 
-      // CC2 charts
       embedChart('#cc2-chart1', 'portfolio/charts/cc2_chart1.json'),
       embedChart('#cc2-chart2', 'portfolio/charts/cc2_chart2.json'),
 
-      // CC3 charts
       embedChart('#cc3-chart1', 'portfolio/charts/cc3_chart1.json'),
       embedChart('#cc3-chart2', 'portfolio/charts/cc3_chart2.json'),
 
-      // CC4 charts
       embedChart('#cc4-chart1', 'portfolio/charts/cc4_chart1.json'),
       embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json')
     ]).then(() => {
-      // Extra safety: one more pass after everything is in the DOM
-      setTimeout(() => window.dispatchEvent(new Event('resize')), 200);
-    });</script>
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
+    });
+  });
+</script>
 </body>
 </html>
