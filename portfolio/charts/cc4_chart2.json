@@ -118,24 +118,23 @@
           "scale": {"domain": [-1, 1]}
         },
         "color": {
-          "condition": {
-            "param": "highlight",
-            "field": "series",
-            "type": "nominal",
-            "scale": {
-              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
-              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
-            }
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
+            "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
           },
-          "value": "#ddd",
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
             "title": null,
             "labelFontSize": 10,
-            "symbolStrokeWidth": 2,
-            "titleFontSize": 0
+            "symbolStrokeWidth": 2
           }
+        },
+        "opacity": {
+          "condition": {"param": "highlight", "empty": false, "value": 1},
+          "value": 0.3
         },
         "strokeWidth": {
           "condition": {"test": "datum.series === 'Total'", "value": 5},
@@ -153,16 +152,17 @@
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
         "color": {
-          "condition": {
-            "param": "highlight",
-            "field": "series",
-            "type": "nominal",
-            "scale": {
-              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
-              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
-            }
+          "field": "series",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
+            "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
           },
-          "value": "#ddd"
+          "legend": null
+        },
+        "opacity": {
+          "condition": {"param": "highlight", "empty": false, "value": 1},
+          "value": 0.3
         },
         "size": {
           "condition": {"test": "datum.series === 'Total'", "value": 80},
