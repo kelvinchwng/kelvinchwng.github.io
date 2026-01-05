@@ -3,19 +3,20 @@
   "background": "#fff1e5",
   "width": "container",
   "height": "container",
-  "autosize": {"type": "fit", "contains": "padding"},
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "title": {
     "text": "Economists expect stronger 2026 growth in the US",
     "subtitle": "2026 GDP growth forecast, by date of forecast",
     "anchor": "start",
-    "font": "sans-serif",
     "fontSize": 18,
     "fontWeight": "bold",
-    "subtitleFont": "sans-serif",
     "subtitleFontSize": 13,
     "subtitleFontWeight": "normal",
     "color": "#2b2b2b",
-    "subtitleColor": "#6b6b6b",
+    "subtitleColor": "#6b6b6b"
   },
   "data": {
     "values": [
@@ -256,7 +257,6 @@
         ],
         "labelExpr": "datum.value==1 ? 'Q1 25' : datum.value==3 ? 'Q2 25' : datum.value==5 ? 'Q3 25' : datum.value==7 ? 'Q4 25' : 'Q4 25'",
         "labelColor": "#6b6b6b",
-        "labelFont": "Arial",
         "labelFontSize": 12,
         "tickColor": "#e8d5c7",
         "domainColor": "#e8d5c7",
@@ -286,7 +286,6 @@
           2.0
         ],
         "labelColor": "#6b6b6b",
-        "labelFont": "Arial",
         "labelFontSize": 12,
         "tickColor": "#e8d5c7",
         "domainColor": "#e8d5c7",
@@ -322,7 +321,8 @@
         "labelColor": "#4e4945",
         "symbolType": "stroke",
         "symbolStrokeWidth": 3,
-        "symbolSize": 200
+        "symbolSize": 200,
+        "offset": 6
       }
     }
   },
@@ -330,6 +330,13 @@
     "view": {
       "stroke": null,
       "fill": "#fff1e5"
+    },
+    "axis": {
+      "labelPadding": 6,
+      "tickSize": 4
+    },
+    "legend": {
+      "padding": 6
     }
   }
 }
