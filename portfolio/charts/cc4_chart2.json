@@ -2,13 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "US GDP Growth: Policy Impacts by Quarter",
-    "subtitle": ["Percentage point impact on quarter-over-quarter annualized GDP growth", "Source: Goldman Sachs Research. As of December 18, 2025."],
+    "subtitle": "Percentage point impact on quarter-over-quarter annualized GDP growth",
     "anchor": "start",
-    "fontSize": 16,
-    "fontWeight": "bold",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#666",
-    "subtitlePadding": 8
+    "fontSize": 13,
+    "subtitleFontSize": 10,
+    "subtitlePadding": 6
   },
   "width": "container",
   "height": "container",
@@ -125,8 +123,7 @@
             "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
           },
           "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
+            "orient": "right",
             "title": null,
             "labelFontSize": 10,
             "symbolStrokeWidth": 2
