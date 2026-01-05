@@ -2,8 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#fff1e5",
   "width": "container",
-  "height": "container",
-  "autosize": {"type": "fit"},
+  "height": 340,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "title": {
     "text": "Economists expect stronger 2026 growth in the US",
     "subtitle": "2026 GDP growth forecast, by date of forecast",
