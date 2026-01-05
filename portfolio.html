@@ -160,9 +160,11 @@
       width: 100%;
     }
     .chart-slot.tall {
-      min-height: 420px;
-      height: 420px;
-      padding: 1rem;
+      min-height: 500px;
+      height: 500px;
+      padding: 1rem 1rem 3rem 1rem;
+      overflow: visible;
+      align-items: flex-start;
     }
     .chart-slot.empty {
       border: 1px dashed rgba(0,0,0,0.18);
@@ -207,6 +209,17 @@
       .row.g-3 > .col-md-4 {
         flex: 0 0 100%;
         max-width: 100%;
+      /* CC4 replication: prevent horizontal squish on mobile by allowing horizontal scroll */
+      #cc4-chart1 {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Keep Vega-Embed contents wide enough so the chart doesn't compress */
+      #cc4-chart1 > div {
+        min-width: 650px;
+      }
+
       }
     }
 
@@ -644,21 +657,50 @@ channel or company has used. Your challenge this week is to replicate it, and th
   <script>
     AOS.init({ })
 
-    // CC1 charts 
-    vegaEmbed('#cc1-chart1', 'portfolio/charts/cc1_chart1.json');
-    vegaEmbed('#cc1-chart2', 'portfolio/charts/cc1_chart2.json');
+    // Vega embeds (with reliable initial sizing)
+    const EMBED_OPTS = { actions: false };
 
-    // CC2 charts
-    vegaEmbed('#cc2-chart1', 'portfolio/charts/cc2_chart1.json');
-    vegaEmbed('#cc2-chart2', 'portfolio/charts/cc2_chart2.json');
+    function embedChart(selector, url) {
+      return vegaEmbed(selector, url, EMBED_OPTS).then((res) => {
+        const view = res.view;
+        const el = document.querySelector(selector);
 
-    // CC3 charts
-    vegaEmbed('#cc3-chart1', 'portfolio/charts/cc3_chart1.json');
-    vegaEmbed('#cc3-chart2', 'portfolio/charts/cc3_chart2.json');
+        // 1) Force a couple of resizes after layout settles (fonts/AOS/flex)
+        requestAnimationFrame(() => { view.resize(); view.runAsync(); });
+        setTimeout(() => { view.resize(); view.runAsync(); }, 120);
 
-    // CC4 charts
-    vegaEmbed('#cc4-chart1', 'portfolio/charts/cc4_chart1.json');
-    vegaEmbed('#cc4-chart2', 'portfolio/charts/cc4_chart2.json');
-  </script>
+        // 2) Keep it correct whenever the container size changes (mobile rotation, layout shifts)
+        if (el && 'ResizeObserver' in window) {
+          const ro = new ResizeObserver(() => {
+            view.resize();
+            view.runAsync();
+          });
+          ro.observe(el);
+        }
+
+        return res;
+      });
+    }
+
+    Promise.all([
+      // CC1 charts
+      embedChart('#cc1-chart1', 'portfolio/charts/cc1_chart1.json'),
+      embedChart('#cc1-chart2', 'portfolio/charts/cc1_chart2.json'),
+
+      // CC2 charts
+      embedChart('#cc2-chart1', 'portfolio/charts/cc2_chart1.json'),
+      embedChart('#cc2-chart2', 'portfolio/charts/cc2_chart2.json'),
+
+      // CC3 charts
+      embedChart('#cc3-chart1', 'portfolio/charts/cc3_chart1.json'),
+      embedChart('#cc3-chart2', 'portfolio/charts/cc3_chart2.json'),
+
+      // CC4 charts
+      embedChart('#cc4-chart1', 'portfolio/charts/cc4_chart1.json'),
+      embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json')
+    ]).then(() => {
+      // Extra safety: one more pass after everything is in the DOM
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 200);
+    });</script>
 </body>
 </html>
