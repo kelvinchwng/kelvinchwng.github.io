@@ -175,13 +175,20 @@
     .cc-chart-row {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;
     }
-    .cc-chart-row > div {
-      flex: 1 1 300px;
-      min-width: 280px;
+    /* Direct chart-slot children (CC1-CC3 style) */
+    .cc-chart-row > .chart-slot {
+      flex: 1 1 0;
+      min-width: 0;
     }
-    .cc-chart-row .chart-slot {
+    
+    /* Grid layout for labeled chart pairs (CC4 style) */
+    .cc-chart-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .cc-chart-grid .chart-slot {
       width: 100%;
     }
 
@@ -202,20 +209,19 @@
       margin: 0;
     }
 
-    /* Mobile: stack columns and chart rows */
+    /* Tablet and below: stack all layouts */
     @media only screen and (max-width: 768px) {
+      .cc-chart-row { 
+        flex-direction: column; 
+      }
+      .cc-chart-row > .chart-slot {
+        width: 100%;
+      }
+      .cc-chart-grid {
+        grid-template-columns: 1fr;
+      }
       .column-container { flex-direction: column; }
       .column { min-width: 100%; }
-      .cc-chart-row { flex-direction: column; }
-      .cc-chart-row > div {
-        flex: 1 1 100%;
-        min-width: 100%;
-      }
-      .row.g-3 > .col-md-6,
-      .row.g-3 > .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
     }
 
     /* Notes box */
@@ -381,14 +387,14 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="card-soft-inner p-3 mt-3">
                 <div class="small mb-0">The following is a replication of <a href="https://www.goldmansachs.com/insights/articles/the-global-economy-forecast-to-post-sturdy-growth-in-2026">Goldman Sachs' stacked bar chart showing different components of US GDP growth</a>. The improved version uses interactive line charts with hover highlighting to reveal how each factor evolves over time, making it easier to compare individual trajectories.</div>
               </div>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
+              <div class="cc-chart-grid mt-3">
+                <div>
                   <div class="small text-muted mb-2"><strong>Original</strong></div>
                   <div class="chart-slot" style="padding: 1rem;">
                     <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original Goldman Sachs Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div>
                   <div class="small text-muted mb-2"><strong>Replication</strong></div>
                   <div class="chart-slot" id="cc4-chart1"></div>
                 </div>
