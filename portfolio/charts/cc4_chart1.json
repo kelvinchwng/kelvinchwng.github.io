@@ -3,13 +3,13 @@
   "background": "white",
   "vconcat": [
     {
-      "width": "container",
+      "width": "800",
       "height": "container",
       "title": {
         "text": "US growth is likely to benefit from reduced tariff drag, tax cuts, and easier financial conditions",
         "subtitle": "Impact on US quarter-over-quarter annualized GDP growth",
         "anchor": "start",
-        "fontSize": 22,
+        "fontSize": 18,
         "subtitleFontSize": 14,
         "subtitlePadding": 10,
         "offset": 10
