@@ -133,7 +133,8 @@
             "direction": "horizontal",
             "title": null,
             "labelFontSize": 10,
-            "symbolStrokeWidth": 2
+            "symbolStrokeWidth": 2,
+            "titleFontSize": 0
           }
         },
         "strokeWidth": {
