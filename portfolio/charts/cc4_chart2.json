@@ -12,79 +12,71 @@
   },
   "width": "container",
   "height": "container",
+  "autosize": {"type": "fit", "contains": "padding"},
   "background": "white",
+  "padding": {"top": 10, "left": 10, "right": 145, "bottom": 10},
   "data": {
     "values": [
       {"order": 1, "quarter": "2025 Q1", "series": "Financial conditions impulse", "value": 0.14},
       {"order": 1, "quarter": "2025 Q1", "series": "Fiscal impulse", "value": 0.0},
       {"order": 1, "quarter": "2025 Q1", "series": "Tariff effect", "value": -0.04},
       {"order": 1, "quarter": "2025 Q1", "series": "Immigration effect", "value": -0.1},
-      {"order": 1, "quarter": "2025 Q1", "series": "Total", "value": 0.0},
 
       {"order": 2, "quarter": "2025 Q2", "series": "Financial conditions impulse", "value": 0.1},
       {"order": 2, "quarter": "2025 Q2", "series": "Fiscal impulse", "value": 0.0},
       {"order": 2, "quarter": "2025 Q2", "series": "Tariff effect", "value": -0.28},
       {"order": 2, "quarter": "2025 Q2", "series": "Immigration effect", "value": -0.12},
-      {"order": 2, "quarter": "2025 Q2", "series": "Total", "value": -0.3},
 
       {"order": 3, "quarter": "2025 Q3", "series": "Financial conditions impulse", "value": 0.2},
       {"order": 3, "quarter": "2025 Q3", "series": "Tariff effect", "value": -0.5},
       {"order": 3, "quarter": "2025 Q3", "series": "Immigration effect", "value": -0.1},
       {"order": 3, "quarter": "2025 Q3", "series": "Fiscal impulse", "value": -0.05},
-      {"order": 3, "quarter": "2025 Q3", "series": "Total", "value": -0.45},
 
       {"order": 4, "quarter": "2025 Q4", "series": "Financial conditions impulse", "value": 0.35},
       {"order": 4, "quarter": "2025 Q4", "series": "Fiscal impulse", "value": 0.15},
       {"order": 4, "quarter": "2025 Q4", "series": "Tariff effect", "value": -0.6},
       {"order": 4, "quarter": "2025 Q4", "series": "Immigration effect", "value": -0.12},
-      {"order": 4, "quarter": "2025 Q4", "series": "Total", "value": -0.22},
 
-      {"order": 5, "quarter": "2026 Q1", "series": "Financial conditions", "value": 0.35},
+      {"order": 5, "quarter": "2026 Q1", "series": "Financial conditions impulse", "value": 0.35},
       {"order": 5, "quarter": "2026 Q1", "series": "Fiscal impulse", "value": 0.5},
       {"order": 5, "quarter": "2026 Q1", "series": "Tariff effect", "value": -0.55},
       {"order": 5, "quarter": "2026 Q1", "series": "Immigration effect", "value": -0.12},
-      {"order": 5, "quarter": "2026 Q1", "series": "Total", "value": 0.18},
 
       {"order": 6, "quarter": "2026 Q2", "series": "Financial conditions impulse", "value": 0.2},
       {"order": 6, "quarter": "2026 Q2", "series": "Fiscal impulse", "value": 0.72},
       {"order": 6, "quarter": "2026 Q2", "series": "Tariff effect", "value": -0.4},
       {"order": 6, "quarter": "2026 Q2", "series": "Immigration effect", "value": -0.12},
-      {"order": 6, "quarter": "2026 Q2", "series": "Total", "value": 0.4},
 
       {"order": 7, "quarter": "2026 Q3", "series": "Financial conditions impulse", "value": 0.08},
       {"order": 7, "quarter": "2026 Q3", "series": "Fiscal impulse", "value": 0.3},
       {"order": 7, "quarter": "2026 Q3", "series": "Tariff effect", "value": -0.27},
       {"order": 7, "quarter": "2026 Q3", "series": "Immigration effect", "value": -0.12},
-      {"order": 7, "quarter": "2026 Q3", "series": "Total", "value": -0.01},
 
       {"order": 8, "quarter": "2026 Q4", "series": "Financial conditions impulse", "value": 0.02},
       {"order": 8, "quarter": "2026 Q4", "series": "Fiscal impulse", "value": 0.0},
       {"order": 8, "quarter": "2026 Q4", "series": "Tariff effect", "value": -0.1},
       {"order": 8, "quarter": "2026 Q4", "series": "Immigration effect", "value": -0.12},
-      {"order": 8, "quarter": "2026 Q4", "series": "Total", "value": -0.2},
 
       {"order": 9, "quarter": "2027 Q1", "series": "Financial conditions impulse", "value": 0.0},
       {"order": 9, "quarter": "2027 Q1", "series": "Fiscal impulse", "value": -0.25},
       {"order": 9, "quarter": "2027 Q1", "series": "Tariff effect", "value": 0.0},
       {"order": 9, "quarter": "2027 Q1", "series": "Immigration effect", "value": -0.12},
-      {"order": 9, "quarter": "2027 Q1", "series": "Total", "value": -0.37},
 
       {"order": 10, "quarter": "2027 Q2", "series": "Financial conditions impulse", "value": -0.02},
       {"order": 10, "quarter": "2027 Q2", "series": "Fiscal impulse", "value": -0.3},
       {"order": 10, "quarter": "2027 Q2", "series": "Tariff effect", "value": 0.0},
-      {"order": 10, "quarter": "2027 Q2", "series": "Immigration effect", "value": -0.12},
-      {"order": 10, "quarter": "2027 Q2", "series": "Total", "value": -0.44}
+      {"order": 10, "quarter": "2027 Q2", "series": "Immigration effect", "value": -0.12}
     ]
   },
   "encoding": {
     "x": {
       "field": "quarter",
       "type": "ordinal",
-      "sort": ["2025 Q1", "2025 Q2", "2025 Q3", "2025 Q4", "2026 Q1", "2026 Q2", "2026 Q3", "2026 Q4", "2027 Q1", "2027 Q2"],
+      "sort": {"field": "order"},
       "axis": {
         "title": null,
         "labelAngle": 0,
-        "labelFontSize": 10,
+        "labelFontSize": 11,
         "labelPadding": 10,
         "domain": true,
         "domainColor": "#333"
@@ -112,33 +104,52 @@
           "axis": {
             "title": null,
             "grid": true,
-            "gridColor": "#eee",
-            "labelFontSize": 10
+            "gridColor": "#e0e0e0",
+            "domain": true,
+            "domainColor": "#333",
+            "labelFontSize": 11,
+            "values": [-1, -0.5, 0, 0.5, 1]
           },
           "scale": {"domain": [-1, 1]}
         },
         "color": {
-          "field": "series",
-          "type": "nominal",
-          "scale": {
-            "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
-            "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
           },
-          "legend": {
-            "orient": "bottom",
-            "direction": "horizontal",
-            "title": null,
-            "labelFontSize": 10,
-            "symbolStrokeWidth": 2
-          }
+          "value": "#bbb"
         },
-        "opacity": {
-          "condition": {"param": "highlight", "empty": false, "value": 1},
-          "value": 0.3
-        },
+        "detail": {"field": "series"},
         "strokeWidth": {
-          "condition": {"test": "datum.series === 'Total'", "value": 5},
+          "condition": {"param": "highlight", "empty": false, "value": 3.5},
           "value": 2
+        }
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 50},
+      "encoding": {
+        "y": {"field": "value", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
+          },
+          "value": "#bbb"
         },
         "tooltip": [
           {"field": "series", "type": "nominal", "title": "Effect"},
@@ -148,26 +159,123 @@
       }
     },
     {
-      "mark": {"type": "point", "filled": true, "size": 40},
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Tariff effect'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "dy": -12, "fontSize": 11, "fontWeight": "bold"},
       "encoding": {
         "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "series"},
         "color": {
-          "field": "series",
-          "type": "nominal",
-          "scale": {
-            "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse", "Total"],
-            "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b", "#4e79a7"]
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
           },
-          "legend": null
-        },
-        "opacity": {
-          "condition": {"param": "highlight", "empty": false, "value": 1},
-          "value": 0.3
-        },
-        "size": {
-          "condition": {"test": "datum.series === 'Total'", "value": 80},
-          "value": 40
+          "value": "#999"
         }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Financial conditions impulse'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "dy": 12, "fontSize": 11, "fontWeight": "bold"},
+      "encoding": {
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "series"},
+        "color": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
+          },
+          "value": "#999"
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Immigration effect'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "dy": 4, "fontSize": 11, "fontWeight": "bold"},
+      "encoding": {
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "series"},
+        "color": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
+          },
+          "value": "#999"
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.order == 10 && datum.series == 'Fiscal impulse'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "dy": -8, "fontSize": 11, "fontWeight": "bold"},
+      "encoding": {
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "series"},
+        "color": {
+          "condition": {
+            "param": "highlight",
+            "empty": false,
+            "field": "series",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Tariff effect", "Immigration effect", "Fiscal impulse", "Financial conditions impulse"],
+              "range": ["#e15759", "#9c755f", "#59a14f", "#f28e2b"]
+            },
+            "legend": null
+          },
+          "value": "#999"
+        }
+      }
+    },
+    {
+      "transform": [
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]}
+      ],
+      "mark": {"type": "line", "strokeWidth": 4, "color": "#4e79a7"},
+      "encoding": {"y": {"field": "total", "type": "quantitative"}}
+    },
+    {
+      "transform": [
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]}
+      ],
+      "mark": {"type": "point", "filled": true, "size": 70, "color": "#4e79a7"},
+      "encoding": {
+        "y": {"field": "total", "type": "quantitative"},
+        "tooltip": [
+          {"value": "Total"},
+          {"field": "quarter", "type": "ordinal", "title": "Quarter"},
+          {"field": "total", "type": "quantitative", "title": "Impact (pp)", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"aggregate": [{"op": "sum", "field": "value", "as": "total"}], "groupby": ["quarter", "order"]},
+        {"filter": "datum.order == 10"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 10, "dy": 4, "fontSize": 12, "fontWeight": "bold", "color": "#4e79a7"},
+      "encoding": {
+        "y": {"field": "total", "type": "quantitative"},
+        "text": {"value": "Total"}
       }
     }
   ],
