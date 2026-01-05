@@ -14,7 +14,7 @@
   "height": "container",
   "autosize": {"type": "fit", "contains": "padding"},
   "background": "white",
-  "padding": {"right": 160},
+  "padding": {"top": 10, "left": 10, "right": 145, "bottom": 10},
   "data": {
     "values": [
       {"order": 1, "quarter": "2025 Q1", "series": "Financial conditions impulse", "value": 0.14},
