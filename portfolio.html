@@ -358,34 +358,29 @@ to a topic of policy debate.</p>
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC4</span>
-                  <h2 class="cc-title mb-0">Replication</h2>
+                  <h2 class="cc-title mb-0">Replication. Re-create, then improve, someone else’s chart.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Replicate and improve an existing chart.</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-4">
+              <p class="text-muted small mb-0 mt-1">Find a chart that a policy organisation, a journalist, think tank, television
+channel or company has used. Your challenge this week is to replicate it, and then improve on it.</p>
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0">The following is a replication of <a href="https://www.goldmansachs.com/insights/articles/the-global-economy-forecast-to-post-sturdy-growth-in-2026">Goldman Sachs' stacked bar chart showing different components of US GDP growth</a>. The improved version uses interactive line charts with hover highlighting to reveal how each factor evolves over time, making it easier to compare individual trajectories.</div>
+              </div>
+              <div class="cc-chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>Original</strong></div>
-                  <div class="chart-slot empty" style="min-height: 220px;">Add original image or link</div>
+                  <div class="chart-slot" style="min-height: 320px; padding: 1rem;">
+                    <img src="https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc4.png" alt="Original Goldman Sachs Chart" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                  </div>
                 </div>
-                <div class="col-md-4">
+                <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>Replication</strong></div>
-                  <div class="chart-slot empty" id="cc4-chart1" style="min-height: 220px;">Chart placeholder</div>
-                </div>
-                <div class="col-md-4">
-                  <div class="small text-muted mb-2"><strong>Improved</strong></div>
-                  <div class="chart-slot empty" id="cc4-chart2" style="min-height: 220px;">Chart placeholder</div>
+                  <div class="chart-slot" id="cc4-chart1" style="min-height: 320px;"></div>
                 </div>
               </div>
-              <div class="small text-muted mt-2"><strong>Improvements (≤25 words):</strong> …</div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Replication JSON</a> ·
-                  <a class="link-dark" href="#">Improved JSON</a>
-                </div>
-              </div>
+              <div class="small text-muted mb-2 mt-3"><strong>Improved</strong></div>
+              <div class="chart-slot" id="cc4-chart2" style="min-height: 420px;"></div>
             </section>
 
             <!-- CC5 -->
@@ -654,6 +649,10 @@ to a topic of policy debate.</p>
     // CC3 charts
     vegaEmbed('#cc3-chart1', 'portfolio/charts/cc3_chart1.json');
     vegaEmbed('#cc3-chart2', 'portfolio/charts/cc3_chart2.json');
+
+    // CC4 charts
+    vegaEmbed('#cc4-chart1', 'portfolio/charts/cc4_chart1.json');
+    vegaEmbed('#cc4-chart2', 'portfolio/charts/cc4_chart2.json');
   </script>
 </body>
 </html>
