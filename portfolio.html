@@ -202,11 +202,17 @@
       margin: 0;
     }
 
-    /* Mobile: stack columns and chart rows */
-    @media only screen and (max-width: 768px) {
+    /* Mobile/Tablet: stack columns and chart rows */
+    @media only screen and (max-width: 992px) {
       .column-container { flex-direction: column; }
       .column { min-width: 100%; }
       .cc-chart-row { flex-direction: column; }
+      
+      /* Ensure inline-styled flex children also stack */
+      .cc-chart-row > div[style*="flex: 1"] {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+      }
 
       .row.g-3 > .col-md-6,
       .row.g-3 > .col-md-4 {
@@ -411,33 +417,45 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC5</span>
-                  <h2 class="cc-title mb-0">Accessing Data</h2>
+                  <h2 class="cc-title mb-0">Accessing Data: API &amp; Scraper</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">API + scraper (programmatic data access).</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>API chart</strong></div>
-                  <div class="chart-slot empty" id="cc5-chart1">Chart placeholder</div>
-                  <div class="card-soft-inner p-3 mt-2 small">
-                    <div class="text-muted"><strong>API description:</strong></div>
-                    <div class="text-muted">Base URL: <code>…</code></div>
-                    <div class="text-muted">Full URL used: <code>…</code></div>
+              <p class="text-muted small mb-0 mt-1">Programmatic data access using live APIs and web scraping.</p>
+              
+              <!-- Two charts side-by-side -->
+              <div class="cc-chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>API Chart</strong></div>
+                  <div class="chart-slot" id="cc5-chart1"></div>
+                  <!-- API Notes Box -->
+                  <div class="card-soft-inner p-3 mt-2">
+                    <div class="small mb-2"><strong>API Description:</strong></div>
+                    <div class="small text-muted mb-1"><strong>Base URL:</strong> <code>https://api.worldbank.org/v2/country/</code></div>
+                    <div class="small text-muted mb-1"><strong>Endpoint:</strong> <code>{countries}/indicator/{indicator}</code></div>
+                    <div class="small text-muted mb-1"><strong>Parameters:</strong> <code>format=json</code>, <code>per_page=500</code>, <code>date=2000:2023</code></div>
+                    <div class="small text-muted mb-2"><strong>Full URL:</strong><br><code class="small" style="word-break: break-all;">https://api.worldbank.org/v2/country/SWE;NOR;DNK/indicator/NY.GDP.PCAP.CD?format=json&amp;per_page=500&amp;date=2000:2023</code></div>
+                    <div class="small text-muted">
+                      <strong>Links:</strong>
+                      <a class="link-dark" href="portfolio/charts/cc5_chart1.json" target="_blank">Chart JSON</a> ·
+                      <a class="link-dark" href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation" target="_blank">API Docs</a>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>Scraped chart</strong></div>
-                  <div class="chart-slot empty" id="cc5-chart2">Chart placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Description (≤25 words):</strong> …</div>
-                </div>
-              </div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Notebook</a> ·
-                  <a class="link-dark" href="#">API spec</a>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Scraped Chart</strong></div>
+                  <div class="chart-slot" id="cc5-chart2"></div>
+                  <!-- Scraper Notes Box -->
+                  <div class="card-soft-inner p-3 mt-2">
+                    <div class="small mb-2"><strong>Description (≤25 words):</strong></div>
+                    <div class="small text-muted mb-2">…</div>
+                    <div class="small text-muted">
+                      <strong>Links:</strong>
+                      <a class="link-dark" href="#">Colab Notebook</a> ·
+                      <a class="link-dark" href="#">Chart JSON</a> ·
+                      <a class="link-dark" href="#">Data Source</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -703,7 +721,10 @@ channel or company has used. Your challenge this week is to replicate it, and th
       embedChart('#cc3-chart2', 'portfolio/charts/cc3_chart2.json'),
 
       embedChart('#cc4-chart1', 'portfolio/charts/cc4_chart1.json'),
-      embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json')
+      embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json'),
+
+      embedChart('#cc5-chart1', 'portfolio/charts/cc5_chart1.json'),
+      embedChart('#cc5-chart2', 'portfolio/charts/cc5_chart2.json')
     ]).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
     });
