@@ -1,0 +1,170 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "GDP per capita comparison between Nordic countries using World Bank Indicators API",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/SWE;NOR;DNK/indicator/NY.GDP.PCAP.CD?format=json&per_page=500&date=1995:2024",
+    "format": {"property": "[1]"}
+  },
+  "width": "container",
+  "height": "container",
+  "title": {
+    "text": "GDP per Capita (1995-2024): Nordic Countries",
+    "subtitle": "Current USD. Source: World Bank Indicators API",
+    "anchor": "start",
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666"
+  },
+  "transform": [
+    {"filter": "datum.value != null"},
+    {"calculate": "datum.country.value", "as": "Country"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {
+        "grid": false,
+        "tickCount": {"interval": "year", "step": 5},
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {
+        "format": "~s",
+        "gridOpacity": 0.4
+      },
+      "scale": {"zero": false}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": ["Sweden", "Norway", "Denmark"],
+        "range": ["#2563eb", "#dc2626", "#16a34a"]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      },
+      "params": [
+        {
+          "name": "highlight",
+          "select": {
+            "type": "point",
+            "fields": ["Country"],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "encoding": {
+        "opacity": {
+          "condition": {"param": "highlight", "value": 1, "empty": true},
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 80
+      },
+      "encoding": {
+        "opacity": {
+          "condition": {"param": "highlight", "value": 1, "empty": false},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "date", "type": "temporal", "title": "Year", "timeUnit": "year"},
+          {"field": "value", "type": "quantitative", "title": "GDP per capita (USD)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 11,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "x": {"aggregate": "max", "field": "date"},
+        "y": {"aggregate": {"argmax": "date"}, "field": "value"},
+        "text": {"aggregate": {"argmax": "date"}, "field": "Country"},
+        "opacity": {
+          "condition": {"param": "highlight", "value": 1, "empty": true},
+          "value": 0.3
+        }
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "layer": [
+        {
+          "mark": {"type": "rule", "strokeDash": [4, 4], "opacity": 0.4},
+          "encoding": {
+            "x": {"datum": {"year": 2008}},
+            "color": {"value": "#666"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 4,
+            "dy": -160,
+            "fontSize": 9,
+            "opacity": 0.6
+          },
+          "encoding": {
+            "x": {"datum": {"year": 2008}},
+            "text": {"value": "2008 Crisis"},
+            "color": {"value": "#666"}
+          }
+        }
+      ]
+    },
+    {
+      "data": {"values": [{}]},
+      "layer": [
+        {
+          "mark": {"type": "rule", "strokeDash": [4, 4], "opacity": 0.4},
+          "encoding": {
+            "x": {"datum": {"year": 2020}},
+            "color": {"value": "#666"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -4,
+            "dy": -160,
+            "fontSize": 9,
+            "opacity": 0.6
+          },
+          "encoding": {
+            "x": {"datum": {"year": 2020}},
+            "text": {"value": "COVID-19"},
+            "color": {"value": "#666"}
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Inter, system-ui, sans-serif"
+  }
+}
