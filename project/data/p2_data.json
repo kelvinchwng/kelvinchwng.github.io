@@ -1,0 +1,842 @@
+[
+  {
+    "year": 2005,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 55.5
+  },
+  {
+    "year": 2006,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 55.8
+  },
+  {
+    "year": 2007,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 56.9
+  },
+  {
+    "year": 2008,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 57.7
+  },
+  {
+    "year": 2009,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 55.8
+  },
+  {
+    "year": 2010,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 55.1
+  },
+  {
+    "year": 2011,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 56.4
+  },
+  {
+    "year": 2012,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 56.9
+  },
+  {
+    "year": 2013,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 57.5
+  },
+  {
+    "year": 2014,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 58.5
+  },
+  {
+    "year": 2015,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 59.2
+  },
+  {
+    "year": 2016,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 59.9
+  },
+  {
+    "year": 2017,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 61.4
+  },
+  {
+    "year": 2018,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 61.4
+  },
+  {
+    "year": 2019,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 61.4
+  },
+  {
+    "year": 2020,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 59.2
+  },
+  {
+    "year": 2021,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 60.4
+  },
+  {
+    "year": 2022,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 64.2
+  },
+  {
+    "year": 2023,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 67.1
+  },
+  {
+    "year": 2024,
+    "view": "Birth Status",
+    "category": "Foreign-born",
+    "employment_rate": 65.8
+  },
+  {
+    "year": 2005,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 66.6
+  },
+  {
+    "year": 2006,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 67.3
+  },
+  {
+    "year": 2007,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 68.3
+  },
+  {
+    "year": 2008,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 68.2
+  },
+  {
+    "year": 2009,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 66.1
+  },
+  {
+    "year": 2010,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 66.0
+  },
+  {
+    "year": 2011,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 67.0
+  },
+  {
+    "year": 2012,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 67.0
+  },
+  {
+    "year": 2013,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 67.3
+  },
+  {
+    "year": 2014,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 67.8
+  },
+  {
+    "year": 2015,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 68.2
+  },
+  {
+    "year": 2016,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 68.6
+  },
+  {
+    "year": 2017,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 69.3
+  },
+  {
+    "year": 2018,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 70.0
+  },
+  {
+    "year": 2019,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 70.1
+  },
+  {
+    "year": 2020,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 69.1
+  },
+  {
+    "year": 2021,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 69.2
+  },
+  {
+    "year": 2022,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 70.3
+  },
+  {
+    "year": 2023,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 70.2
+  },
+  {
+    "year": 2024,
+    "view": "Birth Status",
+    "category": "Native-born",
+    "employment_rate": 70.0
+  },
+  {
+    "year": 2005,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 38.4
+  },
+  {
+    "year": 2006,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 39.2
+  },
+  {
+    "year": 2007,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 38.8
+  },
+  {
+    "year": 2008,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 37.7
+  },
+  {
+    "year": 2009,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.5
+  },
+  {
+    "year": 2010,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.9
+  },
+  {
+    "year": 2011,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.2
+  },
+  {
+    "year": 2012,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.5
+  },
+  {
+    "year": 2013,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.0
+  },
+  {
+    "year": 2014,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.4
+  },
+  {
+    "year": 2015,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.4
+  },
+  {
+    "year": 2016,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 34.1
+  },
+  {
+    "year": 2017,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.0
+  },
+  {
+    "year": 2018,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.8
+  },
+  {
+    "year": 2019,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.3
+  },
+  {
+    "year": 2020,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 32.9
+  },
+  {
+    "year": 2021,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 32.2
+  },
+  {
+    "year": 2022,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.7
+  },
+  {
+    "year": 2023,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 36.0
+  },
+  {
+    "year": 2024,
+    "view": "Education",
+    "category": "Primary",
+    "employment_rate": 35.9
+  },
+  {
+    "year": 2005,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 72.4
+  },
+  {
+    "year": 2006,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 72.5
+  },
+  {
+    "year": 2007,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 73.4
+  },
+  {
+    "year": 2008,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 73.4
+  },
+  {
+    "year": 2009,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.9
+  },
+  {
+    "year": 2010,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.4
+  },
+  {
+    "year": 2011,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.6
+  },
+  {
+    "year": 2012,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.4
+  },
+  {
+    "year": 2013,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.0
+  },
+  {
+    "year": 2014,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.9
+  },
+  {
+    "year": 2015,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.0
+  },
+  {
+    "year": 2016,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.8
+  },
+  {
+    "year": 2017,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.9
+  },
+  {
+    "year": 2018,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.8
+  },
+  {
+    "year": 2019,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 70.8
+  },
+  {
+    "year": 2020,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.5
+  },
+  {
+    "year": 2021,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 68.6
+  },
+  {
+    "year": 2022,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.1
+  },
+  {
+    "year": 2023,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.8
+  },
+  {
+    "year": 2024,
+    "view": "Education",
+    "category": "Secondary",
+    "employment_rate": 69.1
+  },
+  {
+    "year": 2005,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.6
+  },
+  {
+    "year": 2006,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.9
+  },
+  {
+    "year": 2007,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 79.3
+  },
+  {
+    "year": 2008,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 79.5
+  },
+  {
+    "year": 2009,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.1
+  },
+  {
+    "year": 2010,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.4
+  },
+  {
+    "year": 2011,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.6
+  },
+  {
+    "year": 2012,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.5
+  },
+  {
+    "year": 2013,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.9
+  },
+  {
+    "year": 2014,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.9
+  },
+  {
+    "year": 2015,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.0
+  },
+  {
+    "year": 2016,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.4
+  },
+  {
+    "year": 2017,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.5
+  },
+  {
+    "year": 2018,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.7
+  },
+  {
+    "year": 2019,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.9
+  },
+  {
+    "year": 2020,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 77.4
+  },
+  {
+    "year": 2021,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 78.5
+  },
+  {
+    "year": 2022,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 79.9
+  },
+  {
+    "year": 2023,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 80.2
+  },
+  {
+    "year": 2024,
+    "view": "Education",
+    "category": "Tertiary",
+    "employment_rate": 79.5
+  },
+  {
+    "year": 2005,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 67.8
+  },
+  {
+    "year": 2006,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.5
+  },
+  {
+    "year": 2007,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 69.5
+  },
+  {
+    "year": 2008,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 69.5
+  },
+  {
+    "year": 2009,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 67.0
+  },
+  {
+    "year": 2010,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 67.3
+  },
+  {
+    "year": 2011,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.0
+  },
+  {
+    "year": 2012,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 67.7
+  },
+  {
+    "year": 2013,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.0
+  },
+  {
+    "year": 2014,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.5
+  },
+  {
+    "year": 2015,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.7
+  },
+  {
+    "year": 2016,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 68.8
+  },
+  {
+    "year": 2017,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 69.8
+  },
+  {
+    "year": 2018,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 70.3
+  },
+  {
+    "year": 2019,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 70.5
+  },
+  {
+    "year": 2020,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 69.5
+  },
+  {
+    "year": 2021,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 69.9
+  },
+  {
+    "year": 2022,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 71.6
+  },
+  {
+    "year": 2023,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 71.8
+  },
+  {
+    "year": 2024,
+    "view": "Sex",
+    "category": "Men",
+    "employment_rate": 71.0
+  },
+  {
+    "year": 2005,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 62.1
+  },
+  {
+    "year": 2006,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 62.5
+  },
+  {
+    "year": 2007,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 63.5
+  },
+  {
+    "year": 2008,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 63.5
+  },
+  {
+    "year": 2009,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 61.8
+  },
+  {
+    "year": 2010,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 61.0
+  },
+  {
+    "year": 2011,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 62.3
+  },
+  {
+    "year": 2012,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 62.7
+  },
+  {
+    "year": 2013,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 63.0
+  },
+  {
+    "year": 2014,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 63.5
+  },
+  {
+    "year": 2015,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 64.2
+  },
+  {
+    "year": 2016,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 64.8
+  },
+  {
+    "year": 2017,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 65.4
+  },
+  {
+    "year": 2018,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 65.9
+  },
+  {
+    "year": 2019,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 65.7
+  },
+  {
+    "year": 2020,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 64.0
+  },
+  {
+    "year": 2021,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 64.2
+  },
+  {
+    "year": 2022,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 65.9
+  },
+  {
+    "year": 2023,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 67.0
+  },
+  {
+    "year": 2024,
+    "view": "Sex",
+    "category": "Women",
+    "employment_rate": 66.8
+  }
+]
