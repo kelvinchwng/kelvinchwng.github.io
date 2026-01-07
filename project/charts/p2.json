@@ -1,0 +1,215 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Sweden Employment Rate (2005–2024)",
+    "subtitle": "Source: Statistics Sweden (SCB), Labour Force Survey",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/project/data/p2_data.json"
+  },
+  "params": [
+    {
+      "name": "viewSelect",
+      "value": "Birth Status",
+      "bind": {
+        "input": "select",
+        "options": ["Birth Status", "Education", "Sex"],
+        "labels": ["By Birth Status", "By Education Level", "By Sex"],
+        "name": "View: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.view == viewSelect"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "values": [2005, 2008, 2011, 2014, 2017, 2020, 2024]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "y": {
+          "field": "employment_rate",
+          "type": "quantitative",
+          "title": "Employment rate (%)",
+          "scale": {"domain": [30, 90]},
+          "axis": {
+            "grid": true,
+            "gridOpacity": 0.3
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "window": [{"op": "rank", "as": "rank"}],
+          "sort": [{"field": "year", "order": "descending"}],
+          "groupby": ["category"]
+        },
+        {"filter": "datum.rank == 1"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "circle", "size": 60}
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 8,
+            "fontSize": 11,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {"field": "category", "type": "nominal"}
+          }
+        }
+      ],
+      "encoding": {
+        "y": {"field": "employment_rate", "type": "quantitative"},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "joinaggregate": [
+            {"op": "max", "field": "employment_rate", "as": "max_rate"},
+            {"op": "min", "field": "employment_rate", "as": "min_rate"}
+          ],
+          "groupby": ["year"]
+        },
+        {"calculate": "datum.max_rate - datum.min_rate", "as": "gap"},
+        {"calculate": "(datum.max_rate + datum.min_rate) / 2", "as": "mid_rate"}
+      ],
+      "layer": [
+        {
+          "params": [
+            {
+              "name": "hover",
+              "select": {
+                "type": "point",
+                "fields": ["year"],
+                "on": "pointerover",
+                "clear": "pointerout",
+                "nearest": true
+              }
+            }
+          ],
+          "mark": {"type": "point", "opacity": 0, "size": 200},
+          "encoding": {
+            "y": {"field": "employment_rate", "type": "quantitative"},
+            "tooltip": [
+              {"field": "year", "title": "Year"},
+              {"field": "category", "title": "Group"},
+              {"field": "employment_rate", "title": "Employment rate", "format": ".1f"},
+              {"field": "gap", "title": "Gap (pp)", "format": ".1f"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "hover", "empty": false}}
+          ],
+          "mark": {
+            "type": "rule",
+            "strokeWidth": 2,
+            "strokeDash": [4, 4],
+            "color": "#888"
+          },
+          "encoding": {
+            "y": {"field": "min_rate", "type": "quantitative"},
+            "y2": {"field": "max_rate"}
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "hover", "empty": false}},
+            {
+              "aggregate": [
+                {"op": "mean", "field": "mid_rate", "as": "mid_rate"},
+                {"op": "mean", "field": "gap", "as": "gap"}
+              ],
+              "groupby": ["year"]
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 10,
+                "fontSize": 13,
+                "fontWeight": "bold",
+                "color": "#333"
+              },
+              "encoding": {
+                "y": {"field": "mid_rate", "type": "quantitative"},
+                "text": {"field": "gap", "type": "quantitative", "format": ".1f"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 10,
+                "dy": 14,
+                "fontSize": 10,
+                "color": "#666"
+              },
+              "encoding": {
+                "y": {"field": "mid_rate", "type": "quantitative"},
+                "text": {"value": "pp gap"}
+              }
+            }
+          ]
+        },
+        {
+          "transform": [
+            {"filter": {"param": "hover", "empty": false}}
+          ],
+          "mark": {
+            "type": "circle",
+            "size": 80,
+            "stroke": "white",
+            "strokeWidth": 1.5
+          },
+          "encoding": {
+            "y": {"field": "employment_rate", "type": "quantitative"},
+            "color": {"field": "category", "type": "nominal", "legend": null}
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
+}
