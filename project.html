@@ -144,11 +144,61 @@
       transform: translateY(-1px);
       white-space: nowrap;
     }
+    .sec-badge a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .sec-badge a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
     .sec-title {
       font-size: 1.35rem;
       line-height: 1.15;
       font-weight: 700;
       margin: 0;
+    }
+
+    /* Note box text */
+    .note-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.8);
+    }
+
+    /* Chart label row */
+    .chart-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .chart-label {
+      font-size: 0.875rem;
+      color: rgba(0,0,0,0.6);
+    }
+    .colab-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-weight: 600;
+      font-size: .7rem;
+      line-height: 1;
+      letter-spacing: .02em;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .colab-btn:hover {
+      background: #333;
+      color: #fff;
+      text-decoration: none;
     }
 
     /* Chart slots */
@@ -302,14 +352,6 @@
             <h1 class="text-black mb-2"><strong>PP434 Data Science Project</strong></h1>
             <p class="lead text-muted mb-0">Migration, integration and the employment gap in Sweden</p>
             <p class="lead text-muted mb-0">Candidate Number 67247</p>
-            <div class="section-sep"></div>
-            <div aria-label="Jump to sections" class="pill-row">
-              <a href="#intro">Introduction &amp; aims</a>
-              <a href="#background">Background</a>
-              <a href="#findings">Findings</a>
-              <a href="#data-tools">Data &amp; tools</a>
-              <a href="#conclusion">Conclusion</a>
-            </div>
           </div>
 
           <div class="py-vh-3">
@@ -325,8 +367,8 @@
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-0">
-                  Sweden's employment gap between native- and foreign-born residents is among the largest in the OECD, fuelling political narratives that immigration "doesn't work." This project investigates how much of that gap reflects <em>who</em> arrived (cohort composition, reason for migration) versus persistent structural barriers (skills transfer, discrimination, weak local labour markets). Using Swedish administrative data, I decompose integration outcomes by arrival cohort, residence category, and time since arrival—then translate findings into policy-relevant conclusions about where intervention can realistically move the dial.
+                <p class="note-text mb-0">
+                  Sweden's employment gap between native- and foreign-born residents is among the largest in the OECD, fuelling political narratives that <a href="https://www.nytimes.com/2025/03/28/opinion/sweden-migration-policy.html">immigration "doesn't work"</a>. This project investigates how much of that gap reflects <em>who</em> arrived (cohort composition, reason for migration) versus persistent structural barriers (skills transfer, discrimination, weak local labour markets). Using Swedish administrative data, I decompose integration outcomes by arrival cohort, residence category, and time since arrival, translating findings into policy-relevant conclusions about where intervention can realistically improve the situation.
                 </p>
               </div>
             </section>
@@ -342,18 +384,24 @@
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-0">
-                  Sweden's migration profile shifted dramatically through the 2010s: a large asylum inflow peaked in 2015–16, alongside continuing family reunification and labour migration. The Public Employment Service (<em>Arbetsförmedlingen</em>) runs the two-year Establishment Programme for newly arrived refugees, combining language training, civic orientation, and job-matching. Despite these efforts, official statistics show persistently lower employment rates among foreign-born residents—particularly non-EU migrants—compared to Swedish-born. The policy question is not "migration: good or bad?" but rather which mechanisms sustain the gap and where targeted reform (credential recognition, employer incentives, activation design) can make a difference.
+                <p class="note-text mb-0">
+                  Sweden's migration profile shifted dramatically through the 2010s: a large asylum inflow peaked in 2015–16, alongside continuing family reunification and economic migration. The Public Employment Service (<em>Arbetsförmedlingen</em>) runs the two-year Establishment Programme for newly arrived refugees, combining language training, civic orientation, and job-matching. Despite these efforts, official statistics show persistently lower employment rates among foreign-born residents, especially non-EU migrants when compared to natives. The issue is then not "migration: good or bad?" but rather which mechanisms sustain the gap and where targeted reform (credential recognition, employer incentives, activation design) can make a difference.
                 </p>
               </div>
 
               <div class="chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 1.</strong> Immigration to Sweden by category (2000–2023)</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 1.</strong> Immigration to Sweden by category (2000–2023)</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1rKfOAtzZ2Ehl9gAoK6gGIr0-IqM7_M9d?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart1"></div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 2.</strong> Employment rate: Swedish-born vs foreign-born (2006–2023)</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 2.</strong> Employment rate: Swedish-born vs foreign-born (2006–2023)</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1gp2YNZy3EE9LhUlXePQagoCJFRp1tOKL?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart2"></div>
                 </div>
               </div>
@@ -371,36 +419,48 @@
 
               <!-- Lens 1: Integration outcomes -->
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-0">
-                  <strong>Lens 1: Time-to-employment and cohort composition.</strong> Employment outcomes improve markedly with time since arrival, but convergence speed varies by migration category. Refugees and family migrants start from low employment rates (~30–40%) but show steady gains; after 10+ years, refugees approach 70%. Labour migrants, by contrast, arrive with near-native employment but show limited further convergence. These patterns suggest the gap is partly compositional: years with large refugee inflows mechanically lower the aggregate foreign-born employment rate. Policy implication: fast early attachment to work (workplace-linked language training, accelerated credential validation, employer matching) can compress integration timelines—particularly for groups that start furthest behind.
+                <p class="note-text mb-0">
+                  <strong>Time-to-employment and cohort composition.</strong> Employment outcomes improve markedly with time since arrival, but convergence speed varies by category. Refugees and family migrants start from low employment rates (~30–40%) but show steady gains; after 10+ years, refugees approach 70%. Labour migrants, by contrast, arrive with near-native employment but show limited further convergence. These patterns suggest the gap is partly due to structural factors, years with large refugee inflows mechanically lower the aggregate foreign-born employment rate. The implication is that fast and early attachment to work (workplace-linked language training, accelerated credential validation, employer matching) can compress integration timelines, particularly for groups that start furthest behind since the refugee crisis.
                 </p>
               </div>
 
               <div class="chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 3.</strong> Employment rate by residence category and years since arrival</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 3.</strong> Employment rate by residence category and years since arrival</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1_EI7K0BLACpdrG9EbHnCQHVULYm_1EWu?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart3"></div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 4.</strong> Employment gap by country/region of origin</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 4.</strong> Employment gap by country/region of origin</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1aOdaj4A2lPMhwmatyV87iXRsk75SlIZT?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart4"></div>
                 </div>
               </div>
 
               <!-- Lens 2: Fiscal and macro stakes -->
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-0">
-                  <strong>Lens 2: Fiscal contribution and the macro stakes.</strong> Public debate often frames immigration through a fiscal lens—whether migrants "pay their way." Cross-country evidence shows Sweden's net fiscal position for immigrants improved substantially between 2005 and 2022, converging toward the EU average as employment rates rose. Longitudinal Swedish data reinforces this: refugee employment grows roughly 11-fold over 26 years of residence (R² = 0.94), translating directly into tax contributions and reduced transfer dependency. The Riksbank notes that post-pandemic foreign-born employment gains have been notable. The policy lever is clear: because taxes and transfers both scale with labour-market attachment, even modest employment-rate improvements yield large fiscal dividends over time.
+                <p class="note-text mb-0">
+                  <strong>Fiscal contribution and the macro stakes.</strong> Public debate often frames immigration through a fiscal lens—whether migrants "pay their way". Cross-country evidence however, shows that Sweden's net fiscal position for immigrants improved substantially between 2005 and 2022, converging toward the EU average as employment rates rose. Longitudinal Swedish data reinforces this, as refugee employment grows roughly 11-fold over 26 years of residence (R² = 0.94), translating directly into tax contributions and reduced transfer dependency. <a href="https://www.riksbank.se/en-gb/press-and-published/publications/economic-commentaries/labour-market-matching-in-sweden/other-indicators-give-a-mixed-picture-of-matching-efficiency/sharp-increase-in-employment-rate-among-foreign-born-persons-suggests-improved-matching-efficiency-since-the-pandemic/">The Riksbank notes that post-pandemic foreign-born employment gains have been notable.</a> The policy lever is clear: because taxes and transfers both scale with labour-market attachment, even modest employment-rate improvements yield large fiscal dividends over time.
                 </p>
               </div>
 
               <div class="chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 5.</strong> Net fiscal contribution of immigrants: EU comparison (2005 vs 2022)</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 5.</strong> Net fiscal contribution of immigrants: EU comparison (2005 vs 2022)</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1frsiGs-igLsAszneaIWv6YCYMcgOrSQM?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart5"></div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
-                  <div class="small text-muted mb-2"><strong>Chart 6.</strong> Refugee employment trajectory: regression analysis</div>
+                  <div class="chart-label-row">
+                    <span class="chart-label"><strong>Chart 6.</strong> Refugee employment trajectory: regression analysis</span>
+                    <a class="colab-btn" href="https://colab.research.google.com/drive/1Lugefh-DSczhi_0DXzPUV4ZeLcLXGtyJ?usp=sharing" target="_blank">Colab Notebook</a>
+                  </div>
                   <div class="chart-slot" id="proj-chart6"></div>
                 </div>
               </div>
@@ -417,20 +477,21 @@
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-2">
-                  The primary data source is Statistics Sweden (SCB), accessed via their <em>Statistikdatabasen</em> interface. Unlike many national statistics offices, SCB does not offer a straightforward public API for bulk downloads; instead, data must be manually configured through their web interface and exported as CSV or Excel files. This created workflow challenges: each table (migration flows, employment by residence category, cohort-tracked refugee employment) required separate downloads with careful attention to Swedish-language headers, date formats, and encoding (Latin-1). I used Google Colab (Python/pandas) to clean, reshape, and export tidy JSON for Vega-Lite visualisation.
+                <p class="note-text mb-2">
+                  The primary data source is Statistics Sweden (SCB), accessed via their <em>Statistikdatabasen</em> interface. Unlike many national statistics offices, SCB does not offer a straightforward public API for bulk downloads; data must be manually configured through their web interface and exported as CSV or Excel. This created workflow friction, as each table (migration flows, employment by residence category, cohort-tracked refugee employment) required separate downloads with careful attention to Swedish-language column headers and date formats.
                 </p>
-                <p class="small mb-2">
-                  Additional context came from OECD fiscal-contribution estimates (for the EU cross-country comparison), the Swedish Migration Agency (<em>Migrationsverket</em>) for permit categories, and Riksbank/NIER publications for macro framing. All processing notebooks are publicly accessible via the Colab links below.
+                <p class="note-text mb-2">
+                  <strong>Encoding challenges.</strong> Swedish administrative data uses Latin-1 (ISO-8859-1) encoding with special characters (å, ä, ö) that break standard UTF-8 parsers. Early attempts to scrape OECD PDF reports programmatically failed: tables extracted as malformed strings, row boundaries were lost, and numeric columns merged unpredictably. Rather than interpolate or guess, I switched to manual CSV exports from SCB and hand-verified the OECD fiscal-contribution data against the original PDF. The portfolio challenges (CC5–CC7) built up the skills needed to handle these issues systematically: web scraping, API batch downloads with loops, and tidy-data reshaping.
+                </p>
+                <p class="note-text mb-2">
+                  All processing was done in Google Colab, with cleaned JSON exported to GitHub for Vega-Lite visualisation. Additional context came from the Swedish Migration Agency (<em>Migrationsverket</em>) for permit categories, OECD fiscal-contribution estimates for the EU cross-country comparison, and Riksbank/NIER publications for macro framing.
                 </p>
                 <div class="section-sep"></div>
-                <div class="small text-muted">
-                  <strong>Data &amp; code links:</strong>
+                <div class="note-text text-muted">
+                  <strong>Sources:</strong>
                   <a class="link-dark" href="https://www.statistikdatabasen.scb.se/" target="_blank" rel="noreferrer">SCB Statistikdatabasen</a> ·
                   <a class="link-dark" href="https://www.migrationsverket.se/English/About-the-Migration-Agency/Statistics.html" target="_blank" rel="noreferrer">Migrationsverket</a> ·
-                  <a class="link-dark" href="https://www.oecd.org/migration/" target="_blank" rel="noreferrer">OECD Migration</a> ·
-                  <a class="link-dark" href="https://github.com/kelvinchwng/kelvinchwng.github.io/tree/main/project" target="_blank" rel="noreferrer">GitHub repo</a>
-                </div>
+                  <a class="link-dark" href="https://www.oecd.org/migration/" target="_blank" rel="noreferrer">OECD Migration</a>                 </div>
               </div>
             </section>
 
@@ -445,8 +506,8 @@
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <p class="small mb-0">
-                  Sweden's employment gap is real but not immutable. Part reflects cohort composition—large refugee inflows take time to integrate—and part reflects structural barriers that policy can address. The evidence points to a clear lever: employment. Each year of labour-market attachment drives convergence in both employment rates and fiscal contribution. Effective reform means compressing the integration timeline through faster credential recognition, employer-facing incentives, and workplace-linked language training—while targeting resources where gaps persist longest (refugees, women, weak local labour markets). If employment gaps narrow, the political and fiscal narratives that currently dominate debate become less salient.
+                <p class="note-text mb-0">
+                  Sweden's employment gap is real but not immutable. Part reflects structural factors (depending on which cohort), but refugee inflows take time to integrate. Policy can address these structural barriers, as the evidence points employment as a clear way of solving it. Each year of labour-market attachment drives convergence in both employment rates and fiscal contribution. Effective reform means compressing the integration timeline through faster credential recognition, employer-facing incentives, and workplace-linked language training—while targeting resources where gaps persist longest. If employment gaps narrow, the political and fiscal narratives that currently dominate debate become less salient.
                 </p>
               </div>
             </section>
@@ -504,44 +565,26 @@
   <script src="js/aos.js"></script>
   <script>
   window.addEventListener('load', () => {
-    // Animate-on-scroll
-    AOS.init({ duration: 600, easing: 'ease-out', once: true });
-    if (AOS && typeof AOS.refreshHard === 'function') AOS.refreshHard();
-    else if (AOS && typeof AOS.refresh === 'function') AOS.refresh();
-
-    const EMBED_OPTS = { actions: false, renderer: 'svg' };
-
-    const charts = [
-      { id: 'proj-chart1', spec: 'project/charts/p1_chart.json' },
-      { id: 'proj-chart2', spec: 'project/charts/p2_chart.json' },
-      { id: 'proj-chart3', spec: 'project/charts/p3_chart.json' },
-      { id: 'proj-chart4', spec: 'project/charts/p4_chart.json' },
-      { id: 'proj-chart5', spec: 'project/charts/p5_chart.json' },
-      { id: 'proj-chart6', spec: 'project/charts/p6_chart.json' }
-    ];
-
-    function showMissing(el, spec) {
-      if (!el) return;
-      el.classList.add('empty');
-      if (el.querySelector('.chart-error')) return; // avoid duplicates
-      const msg = document.createElement('div');
-      msg.className = 'chart-error';
-      msg.innerHTML = `<div class="small"><strong>Chart placeholder</strong><br/>Missing: <code>${spec}</code><br/>Add the JSON spec (and any data files) to render this box.</div>`;
-      el.appendChild(msg);
+    AOS.init({ });
+    if (AOS && typeof AOS.refreshHard === 'function') {
+      AOS.refreshHard();
+    } else if (AOS && typeof AOS.refresh === 'function') {
+      AOS.refresh();
     }
 
-    function embedChart(id, spec) {
-      const selector = '#' + id;
-      return vegaEmbed(selector, spec, EMBED_OPTS).then((res) => {
+    const EMBED_OPTS = { actions: false, renderer: "svg" };
+
+    function embedChart(selector, url) {
+      return vegaEmbed(selector, url, EMBED_OPTS).then((res) => {
         const view = res.view;
         const el = document.querySelector(selector);
 
-        // Kick a few resizes after layout settles (fonts / AOS / flex)
+        // Force resizes after layout settles (fonts/AOS/flex)
         requestAnimationFrame(() => { view.resize(); view.runAsync(); });
         setTimeout(() => { view.resize(); view.runAsync(); }, 120);
         setTimeout(() => { view.resize(); view.runAsync(); }, 450);
 
-        // Keep it correct when containers resize
+        // Keep it correct whenever the container size changes
         if (el && 'ResizeObserver' in window) {
           const ro = new ResizeObserver(() => {
             view.resize();
@@ -551,14 +594,41 @@
         }
 
         return res;
-      }).catch(() => {
-        showMissing(document.getElementById(id), spec);
       });
     }
 
-    Promise.all(charts.map(c => embedChart(c.id, c.spec)))
-      .then(() => setTimeout(() => window.dispatchEvent(new Event('resize')), 250));
+    Promise.all([
+      embedChart('#proj-chart1', 'project/charts/p1.json'),
+      embedChart('#proj-chart2', 'project/charts/p2.json'),
+
+      embedChart('#proj-chart3', 'project/charts/p3.json'),
+      embedChart('#proj-chart4', 'project/charts/p4.json'),
+
+      embedChart('#proj-chart5', 'project/charts/p5.json'),
+      embedChart('#proj-chart6', 'project/charts/p6.json'),
+
+      embedChart('#cc4-chart1', 'portfolio/charts/cc4_chart1.json'),
+      embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json'),
+
+      embedChart('#cc5-chart1', 'portfolio/charts/cc5_chart1.json'),
+      embedChart('#cc5-chart2', 'portfolio/charts/cc5_chart2.json'),
+
+      embedChart('#cc7-chart1', 'portfolio/charts/cc7_chart1.json'),
+      embedChart('#cc7-chart2', 'portfolio/charts/cc7_chart2.json'),
+
+      embedChart('#cc8-chart1', 'portfolio/charts/cc8_chart1.json'),
+      embedChart('#cc8-chart2', 'portfolio/charts/cc8_chart2.json').then(result => {
+        const view = result.view;
+        const select = document.getElementById('cc8-year-select');
+        select.addEventListener('change', function() {
+          view.signal('yearParam', parseInt(this.value)).run();
+        });
+      })
+    ]).then(() => {
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
+    });
+
   });
-  </script>
+</script>
 </body>
 </html>
