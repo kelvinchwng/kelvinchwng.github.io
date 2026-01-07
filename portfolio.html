@@ -423,7 +423,6 @@ channel or company has used. Your challenge this week is to replicate it, and th
               </div>
               <p class="text-muted small mb-0 mt-1">Add a chart to your site that uses a live link to an API, with its functional description. Scrape a website, clean, normalise the data and export, then build a chart.</p>
               
-              <!-- Two charts side-by-side -->
               <div class="cc-chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
                   <div class="small text-muted mb-2"><strong>API Chart</strong></div>
@@ -494,35 +493,34 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC7</span>
-                  <h2 class="cc-title mb-0">Maps</h2>
+                  <h2 class="cc-title mb-0">Maps. Base maps and choropleths.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Base maps + choropleths (Scotland &amp; Wales).</p>
+              <p class="text-muted small mb-0 mt-1">Produce two maps of Scotland and Wales, one choropleth and one coordinates map.</p>
               
-              <!-- Two charts side-by-side -->
               <div class="cc-chart-row mt-3">
                 <div style="flex: 1; min-width: 0;">
                   <div class="chart-slot" id="cc7-chart1"></div>
                   <!-- Scotland Notes Box -->
                   <div class="card-soft-inner p-3 mt-2">
-                    <div class="small mb-2"><strong>Scotland Choropleth:</strong> Population density across Scotland's 32 council areas, showing the stark contrast between urban centres (Glasgow at 3,338/km²) and rural Highlands (9/km²).</div>
+                    <div class="small mb-2"><strong>Scotland Choropleth:</strong> Population density across Scotland's 32 council areas. Data scraped and processed, then linked to a GeoJSON file of Scotland.</div>
                     <div class="small text-muted">
                       <strong>Links:</strong>
-                      <a class="link-dark" href="https://raw.githubusercontent.com/martinjc/UK-GeoJSON/master/json/administrative/sco/topo_lad.json" target="_blank">GeoJSON</a> ·
+                      <a class="link-dark" href="https://raw.githubusercontent.com/martinjc/UK-GeoJSON/master/json/administrative/sco/topo_lad.json" target="_blank">TopoJSON</a> ·
                       <a class="link-dark" href="https://www.undiscoveredscotland.co.uk/usfeatures/areas/councilareas.html" target="_blank">Data Source</a>
                     </div>
                   </div>
                 </div>
                 <div style="flex: 1; min-width: 0;">
-                  <div class="chart-slot empty" id="cc7-chart2">Map placeholder</div>
+                  <div class="chart-slot" id="cc7-chart2"></div>
                   <!-- Wales Notes Box -->
                   <div class="card-soft-inner p-3 mt-2">
-                    <div class="small mb-2"><strong>Wales Coordinates Map:</strong> …</div>
+                    <div class="small mb-2"><strong>Wales Coordinates Map:</strong> 45 major Welsh localities (2021 Census). Circle size = population; red = official cities (inc. small cathedral cities St Davids &amp; St Asaph), blue = towns. Data scraped and processed, then linked to a TopoJSON file from RADataHub.</div>
                     <div class="small text-muted">
                       <strong>Links:</strong>
-                      <a class="link-dark" href="#">GeoJSON</a> ·
-                      <a class="link-dark" href="#">Data Source</a>
+                      <a class="link-dark" href="https://raw.githubusercontent.com/jhellingsdata/RADataHub/main/MappingWorkshop/geo_data/LAD_WLS_2025_05.topojson" target="_blank">TopoJSON</a> ·
+                      <a class="link-dark" href="https://www.citypopulation.de/en/uk/wales/" target="_blank">Data Source</a>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Major Localities in Wales by Population",
+    "subtitle": "Circle size represents population (2021 Census)",
+    "fontSize": 14,
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "projection": {
+    "type": "mercator"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/RADataHub/main/MappingWorkshop/geo_data/LAD_WLS_2025_05.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "object_name"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8e8e8",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc7_data2.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "domain": [1500, 350000],
+            "range": [20, 1800]
+          },
+          "legend": {
+            "title": "Population",
+            "format": ",d",
+            "symbolFillColor": "#1f77b4",
+            "symbolOpacity": 0.75
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["city", "town"],
+            "range": ["#d62728", "#1f77b4"]
+          },
+          "legend": {
+            "title": "Type",
+            "orient": "bottom-left"
+          }
+        },
+        "tooltip": [
+          {"field": "name", "type": "nominal", "title": "Name"},
+          {"field": "population", "type": "quantitative", "title": "Population", "format": ",d"},
+          {"field": "category", "type": "nominal", "title": "Type"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    }
+  }
+}
