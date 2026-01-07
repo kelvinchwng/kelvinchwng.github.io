@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Refugee Employment Growth: A Strong Integration Trajectory",
+    "subtitle": ["Employment index by years in Sweden (Year 1 = 100), averaged across 1997-2006 cohorts", "Source: SCB Registerdata för integration"],
+    "fontSize": 16,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/project/data/p6_data.json"
+  },
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeDash": [4, 4], "stroke": "#999", "strokeWidth": 1},
+      "encoding": {
+        "y": {"datum": 100}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "fontSize": 10, "color": "#666"},
+      "encoding": {
+        "x": {"datum": 0},
+        "y": {"datum": 100},
+        "text": {"value": "Year 1 baseline (index = 100)"}
+      }
+    },
+    {
+      "mark": {"type": "line", "stroke": "#d62728", "strokeWidth": 2.5, "opacity": 0.8},
+      "transform": [
+        {"regression": "employment_index", "on": "years_in_sweden"}
+      ],
+      "encoding": {
+        "x": {"field": "years_in_sweden", "type": "quantitative"},
+        "y": {"field": "employment_index", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 80, "color": "#1f77b4", "opacity": 0.8},
+      "encoding": {
+        "x": {
+          "field": "years_in_sweden",
+          "type": "quantitative",
+          "scale": {"domain": [-1, 28]},
+          "axis": {"title": "Years in Sweden", "tickMinStep": 5}
+        },
+        "y": {
+          "field": "employment_index",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1200]},
+          "axis": {"title": "Employment Index (Year 1 = 100)"}
+        },
+        "tooltip": [
+          {"field": "years_in_sweden", "title": "Years in Sweden"},
+          {"field": "employment_index", "title": "Employment Index", "format": ".0f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "fontSize": 12, "fontWeight": "bold", "color": "#d62728"},
+      "encoding": {
+        "x": {"datum": 15},
+        "y": {"datum": 450},
+        "text": {"value": "Slope: +37 index points/year"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "fontSize": 11, "color": "#d62728"},
+      "encoding": {
+        "x": {"datum": 15},
+        "y": {"datum": 380},
+        "text": {"value": "R² = 0.94"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "right", "fontSize": 10, "color": "#666", "fontStyle": "italic"},
+      "encoding": {
+        "x": {"datum": 26},
+        "y": {"datum": 1105},
+        "text": {"value": "11× growth"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Arial, sans-serif",
+    "view": {"stroke": null}
+  }
+}
