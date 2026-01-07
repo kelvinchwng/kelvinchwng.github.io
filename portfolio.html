@@ -499,22 +499,32 @@ channel or company has used. Your challenge this week is to replicate it, and th
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
               <p class="text-muted small mb-0 mt-1">Base maps + choropleths (Scotland &amp; Wales).</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>Scotland</strong></div>
-                  <div class="chart-slot empty" id="cc7-chart1">Map placeholder</div>
+              
+              <!-- Two charts side-by-side -->
+              <div class="cc-chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
+                  <div class="chart-slot" id="cc7-chart1"></div>
+                  <!-- Scotland Notes Box -->
+                  <div class="card-soft-inner p-3 mt-2">
+                    <div class="small mb-2"><strong>Scotland Choropleth:</strong> Population density across Scotland's 32 council areas, showing the stark contrast between urban centres (Glasgow at 3,338/km²) and rural Highlands (9/km²).</div>
+                    <div class="small text-muted">
+                      <strong>Links:</strong>
+                      <a class="link-dark" href="https://raw.githubusercontent.com/martinjc/UK-GeoJSON/master/json/administrative/sco/topo_lad.json" target="_blank">GeoJSON</a> ·
+                      <a class="link-dark" href="https://www.undiscoveredscotland.co.uk/usfeatures/areas/councilareas.html" target="_blank">Data Source</a>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>Wales</strong></div>
+                <div style="flex: 1; min-width: 0;">
                   <div class="chart-slot empty" id="cc7-chart2">Map placeholder</div>
-                </div>
-              </div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">GeoJSON</a> ·
-                  <a class="link-dark" href="#">Chart JSON</a>
+                  <!-- Wales Notes Box -->
+                  <div class="card-soft-inner p-3 mt-2">
+                    <div class="small mb-2"><strong>Wales Coordinates Map:</strong> …</div>
+                    <div class="small text-muted">
+                      <strong>Links:</strong>
+                      <a class="link-dark" href="#">GeoJSON</a> ·
+                      <a class="link-dark" href="#">Data Source</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -713,7 +723,10 @@ channel or company has used. Your challenge this week is to replicate it, and th
       embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json'),
 
       embedChart('#cc5-chart1', 'portfolio/charts/cc5_chart1.json'),
-      embedChart('#cc5-chart2', 'portfolio/charts/cc5_chart2.json')
+      embedChart('#cc5-chart2', 'portfolio/charts/cc5_chart2.json'),
+
+      embedChart('#cc7-chart1', 'portfolio/charts/cc7_chart1.json'),
+      embedChart('#cc7-chart2', 'portfolio/charts/cc7_chart2.json')
     ]).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
     });

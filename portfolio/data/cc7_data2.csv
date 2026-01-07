@@ -1,0 +1,46 @@
+name,population,lat,lon,category
+Cardiff,348546,51.4816,-3.1791,city
+Newport,130900,51.5842,-2.9970,city
+Swansea,238490,51.6214,-3.9436,city
+Wrexham,65000,53.0463,-2.9925,city
+Bangor,16993,53.2274,-4.1276,city
+St Davids,1844,51.8820,-5.2690,city
+St Asaph,3500,53.2580,-3.4430,city
+Bridgend,51785,51.5041,-3.5764,town
+Barry,56587,51.3967,-3.2671,town
+Neath,40717,51.6636,-3.8042,town
+Port Talbot,31550,51.5909,-3.7841,town
+Llanelli,42175,51.6840,-4.1629,town
+Merthyr Tydfil,39537,51.7485,-3.3764,town
+Caerphilly,33118,51.5786,-3.2193,town
+Pontypridd,31914,51.6018,-3.3425,town
+Aberdare,37691,51.7148,-3.4500,town
+Colwyn Bay,29268,53.2945,-3.7266,town
+Cwmbran,47091,51.6538,-3.0221,town
+Pontypool,29062,51.7008,-3.0405,town
+Rhyl,25700,53.3192,-3.4892,town
+Prestatyn,16680,53.3348,-3.4067,town
+Ebbw Vale,19633,51.7787,-3.2067,town
+Aberystwyth,14648,52.4153,-4.0829,town
+Haverfordwest,12086,51.8018,-4.9689,town
+Carmarthen,16460,51.8576,-4.3122,town
+Llandudno,14709,53.3241,-3.8261,town
+Caernarfon,9827,53.1395,-4.2762,town
+Newtown,10882,52.5129,-3.3140,town
+Milford Haven,14249,51.7129,-5.0363,town
+Pembroke Dock,9663,51.6928,-4.9393,town
+Holyhead,11760,53.3094,-4.6330,town
+Maesteg,18332,51.6098,-3.6550,town
+Blackwood,12615,51.6694,-3.1997,town
+Flint,12775,53.2485,-3.1350,town
+Conwy,15725,53.2800,-3.8320,town
+Abergavenny,13691,51.8242,-3.0177,town
+Chepstow,11934,51.6416,-2.6738,town
+Porthcawl,15798,51.4794,-3.7026,town
+Monmouth,10317,51.8117,-2.7163,town
+Brecon,8254,51.9449,-3.3979,town
+Llangefni,5261,53.2575,-4.3115,town
+Dolgellau,2602,52.7423,-3.8858,town
+Pwllheli,3622,52.8891,-4.4163,town
+Tenby,4897,51.6725,-4.7018,town
+Fishguard,3421,51.9940,-4.9746,town

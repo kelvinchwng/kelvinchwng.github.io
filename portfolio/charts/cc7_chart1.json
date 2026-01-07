@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Population Density in Scotland by Council Area",
+    "subtitle": "People per km², 2014 estimates",
+    "fontSize": 16,
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/martinjc/UK-GeoJSON/master/json/administrative/sco/topo_lad.json",
+    "format": {
+      "type": "topojson",
+      "feature": "lad"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.LAD13CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc7_data1.csv"
+        },
+        "key": "geo_id",
+        "fields": ["name", "density", "population", "area_km2"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "density",
+      "type": "quantitative",
+      "scale": {
+        "type": "log",
+        "scheme": "blues"
+      },
+      "legend": {
+        "title": "Density (per km²)",
+        "orient": "bottom-left"
+      }
+    },
+    "tooltip": [
+      {"field": "name", "type": "nominal", "title": "Council Area"},
+      {"field": "density", "type": "quantitative", "title": "Density (per km²)", "format": ","},
+      {"field": "population", "type": "quantitative", "title": "Population", "format": ","},
+      {"field": "area_km2", "type": "quantitative", "title": "Area (km²)", "format": ","}
+    ]
+  }
+}
