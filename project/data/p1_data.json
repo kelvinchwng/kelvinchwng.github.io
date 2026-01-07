@@ -1,0 +1,1127 @@
+[
+  {
+    "region": "Americas & Oceania",
+    "year": 2000,
+    "immigrants": 4265
+  },
+  {
+    "region": "Asia",
+    "year": 2000,
+    "immigrants": 4610
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2000,
+    "immigrants": 8247
+  },
+  {
+    "region": "European non-EU",
+    "year": 2000,
+    "immigrants": 5820
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2000,
+    "immigrants": 11329
+  },
+  {
+    "region": "Other",
+    "year": 2000,
+    "immigrants": 119
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2000,
+    "immigrants": 8604
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2000,
+    "immigrants": 2183
+  },
+  {
+    "region": "Sweden",
+    "year": 2000,
+    "immigrants": 13482
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2001,
+    "immigrants": 4339
+  },
+  {
+    "region": "Asia",
+    "year": 2001,
+    "immigrants": 4931
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2001,
+    "immigrants": 8684
+  },
+  {
+    "region": "European non-EU",
+    "year": 2001,
+    "immigrants": 5328
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2001,
+    "immigrants": 11955
+  },
+  {
+    "region": "Other",
+    "year": 2001,
+    "immigrants": 57
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2001,
+    "immigrants": 9223
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2001,
+    "immigrants": 2481
+  },
+  {
+    "region": "Sweden",
+    "year": 2001,
+    "immigrants": 13797
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2002,
+    "immigrants": 4315
+  },
+  {
+    "region": "Asia",
+    "year": 2002,
+    "immigrants": 5707
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2002,
+    "immigrants": 9119
+  },
+  {
+    "region": "European non-EU",
+    "year": 2002,
+    "immigrants": 5459
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2002,
+    "immigrants": 13207
+  },
+  {
+    "region": "Other",
+    "year": 2002,
+    "immigrants": 57
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2002,
+    "immigrants": 10076
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2002,
+    "immigrants": 2881
+  },
+  {
+    "region": "Sweden",
+    "year": 2002,
+    "immigrants": 13266
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2003,
+    "immigrants": 4279
+  },
+  {
+    "region": "Asia",
+    "year": 2003,
+    "immigrants": 7085
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2003,
+    "immigrants": 8514
+  },
+  {
+    "region": "European non-EU",
+    "year": 2003,
+    "immigrants": 5615
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2003,
+    "immigrants": 12025
+  },
+  {
+    "region": "Other",
+    "year": 2003,
+    "immigrants": 80
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2003,
+    "immigrants": 9961
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2003,
+    "immigrants": 3648
+  },
+  {
+    "region": "Sweden",
+    "year": 2003,
+    "immigrants": 12588
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2004,
+    "immigrants": 4298
+  },
+  {
+    "region": "Asia",
+    "year": 2004,
+    "immigrants": 7662
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2004,
+    "immigrants": 10512
+  },
+  {
+    "region": "European non-EU",
+    "year": 2004,
+    "immigrants": 5385
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2004,
+    "immigrants": 9839
+  },
+  {
+    "region": "Other",
+    "year": 2004,
+    "immigrants": 77
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2004,
+    "immigrants": 8847
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2004,
+    "immigrants": 3941
+  },
+  {
+    "region": "Sweden",
+    "year": 2004,
+    "immigrants": 11467
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2005,
+    "immigrants": 4382
+  },
+  {
+    "region": "Asia",
+    "year": 2005,
+    "immigrants": 9160
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2005,
+    "immigrants": 12098
+  },
+  {
+    "region": "European non-EU",
+    "year": 2005,
+    "immigrants": 5256
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2005,
+    "immigrants": 9419
+  },
+  {
+    "region": "Other",
+    "year": 2005,
+    "immigrants": 52
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2005,
+    "immigrants": 9096
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2005,
+    "immigrants": 4700
+  },
+  {
+    "region": "Sweden",
+    "year": 2005,
+    "immigrants": 11066
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2006,
+    "immigrants": 5287
+  },
+  {
+    "region": "Asia",
+    "year": 2006,
+    "immigrants": 10503
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2006,
+    "immigrants": 18257
+  },
+  {
+    "region": "European non-EU",
+    "year": 2006,
+    "immigrants": 9483
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2006,
+    "immigrants": 22232
+  },
+  {
+    "region": "Other",
+    "year": 2006,
+    "immigrants": 97
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2006,
+    "immigrants": 9765
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2006,
+    "immigrants": 7305
+  },
+  {
+    "region": "Sweden",
+    "year": 2006,
+    "immigrants": 12821
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2007,
+    "immigrants": 4964
+  },
+  {
+    "region": "Asia",
+    "year": 2007,
+    "immigrants": 11451
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2007,
+    "immigrants": 23918
+  },
+  {
+    "region": "European non-EU",
+    "year": 2007,
+    "immigrants": 5458
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2007,
+    "immigrants": 23575
+  },
+  {
+    "region": "Other",
+    "year": 2007,
+    "immigrants": 104
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2007,
+    "immigrants": 9581
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2007,
+    "immigrants": 8094
+  },
+  {
+    "region": "Sweden",
+    "year": 2007,
+    "immigrants": 12340
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2008,
+    "immigrants": 5471
+  },
+  {
+    "region": "Asia",
+    "year": 2008,
+    "immigrants": 13228
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2008,
+    "immigrants": 23962
+  },
+  {
+    "region": "European non-EU",
+    "year": 2008,
+    "immigrants": 5784
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2008,
+    "immigrants": 21895
+  },
+  {
+    "region": "Other",
+    "year": 2008,
+    "immigrants": 104
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2008,
+    "immigrants": 8439
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2008,
+    "immigrants": 8900
+  },
+  {
+    "region": "Sweden",
+    "year": 2008,
+    "immigrants": 13388
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2009,
+    "immigrants": 5637
+  },
+  {
+    "region": "Asia",
+    "year": 2009,
+    "immigrants": 14689
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2009,
+    "immigrants": 20676
+  },
+  {
+    "region": "European non-EU",
+    "year": 2009,
+    "immigrants": 6161
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2009,
+    "immigrants": 20679
+  },
+  {
+    "region": "Other",
+    "year": 2009,
+    "immigrants": 123
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2009,
+    "immigrants": 7938
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2009,
+    "immigrants": 12392
+  },
+  {
+    "region": "Sweden",
+    "year": 2009,
+    "immigrants": 13985
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2010,
+    "immigrants": 5676
+  },
+  {
+    "region": "Asia",
+    "year": 2010,
+    "immigrants": 15217
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2010,
+    "immigrants": 18970
+  },
+  {
+    "region": "European non-EU",
+    "year": 2010,
+    "immigrants": 6187
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2010,
+    "immigrants": 17553
+  },
+  {
+    "region": "Other",
+    "year": 2010,
+    "immigrants": 117
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2010,
+    "immigrants": 7699
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2010,
+    "immigrants": 12512
+  },
+  {
+    "region": "Sweden",
+    "year": 2010,
+    "immigrants": 14870
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2011,
+    "immigrants": 5476
+  },
+  {
+    "region": "Asia",
+    "year": 2011,
+    "immigrants": 12708
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2011,
+    "immigrants": 20194
+  },
+  {
+    "region": "European non-EU",
+    "year": 2011,
+    "immigrants": 6551
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2011,
+    "immigrants": 19363
+  },
+  {
+    "region": "Other",
+    "year": 2011,
+    "immigrants": 118
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2011,
+    "immigrants": 7568
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2011,
+    "immigrants": 8907
+  },
+  {
+    "region": "Sweden",
+    "year": 2011,
+    "immigrants": 15582
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2012,
+    "immigrants": 5575
+  },
+  {
+    "region": "Asia",
+    "year": 2012,
+    "immigrants": 12694
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2012,
+    "immigrants": 21072
+  },
+  {
+    "region": "European non-EU",
+    "year": 2012,
+    "immigrants": 7274
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2012,
+    "immigrants": 23204
+  },
+  {
+    "region": "Other",
+    "year": 2012,
+    "immigrants": 74
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2012,
+    "immigrants": 7260
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2012,
+    "immigrants": 10565
+  },
+  {
+    "region": "Sweden",
+    "year": 2012,
+    "immigrants": 15341
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2013,
+    "immigrants": 5432
+  },
+  {
+    "region": "Asia",
+    "year": 2013,
+    "immigrants": 11530
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2013,
+    "immigrants": 21884
+  },
+  {
+    "region": "European non-EU",
+    "year": 2013,
+    "immigrants": 6448
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2013,
+    "immigrants": 30147
+  },
+  {
+    "region": "Other",
+    "year": 2013,
+    "immigrants": 101
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2013,
+    "immigrants": 6807
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2013,
+    "immigrants": 18164
+  },
+  {
+    "region": "Sweden",
+    "year": 2013,
+    "immigrants": 15332
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2014,
+    "immigrants": 5287
+  },
+  {
+    "region": "Asia",
+    "year": 2014,
+    "immigrants": 12442
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2014,
+    "immigrants": 23240
+  },
+  {
+    "region": "European non-EU",
+    "year": 2014,
+    "immigrants": 7061
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2014,
+    "immigrants": 42169
+  },
+  {
+    "region": "Other",
+    "year": 2014,
+    "immigrants": 162
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2014,
+    "immigrants": 6960
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2014,
+    "immigrants": 14451
+  },
+  {
+    "region": "Sweden",
+    "year": 2014,
+    "immigrants": 15194
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2015,
+    "immigrants": 5456
+  },
+  {
+    "region": "Asia",
+    "year": 2015,
+    "immigrants": 12794
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2015,
+    "immigrants": 24434
+  },
+  {
+    "region": "European non-EU",
+    "year": 2015,
+    "immigrants": 7325
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2015,
+    "immigrants": 47329
+  },
+  {
+    "region": "Other",
+    "year": 2015,
+    "immigrants": 175
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2015,
+    "immigrants": 7333
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2015,
+    "immigrants": 14814
+  },
+  {
+    "region": "Sweden",
+    "year": 2015,
+    "immigrants": 14580
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2016,
+    "immigrants": 5542
+  },
+  {
+    "region": "Asia",
+    "year": 2016,
+    "immigrants": 13938
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2016,
+    "immigrants": 24757
+  },
+  {
+    "region": "European non-EU",
+    "year": 2016,
+    "immigrants": 7852
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2016,
+    "immigrants": 72044
+  },
+  {
+    "region": "Other",
+    "year": 2016,
+    "immigrants": 210
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2016,
+    "immigrants": 7541
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2016,
+    "immigrants": 15803
+  },
+  {
+    "region": "Sweden",
+    "year": 2016,
+    "immigrants": 15318
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2017,
+    "immigrants": 6329
+  },
+  {
+    "region": "Asia",
+    "year": 2017,
+    "immigrants": 17886
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2017,
+    "immigrants": 24495
+  },
+  {
+    "region": "European non-EU",
+    "year": 2017,
+    "immigrants": 9278
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2017,
+    "immigrants": 51828
+  },
+  {
+    "region": "Other",
+    "year": 2017,
+    "immigrants": 215
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2017,
+    "immigrants": 7208
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2017,
+    "immigrants": 12822
+  },
+  {
+    "region": "Sweden",
+    "year": 2017,
+    "immigrants": 14428
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2018,
+    "immigrants": 6724
+  },
+  {
+    "region": "Asia",
+    "year": 2018,
+    "immigrants": 21467
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2018,
+    "immigrants": 23062
+  },
+  {
+    "region": "European non-EU",
+    "year": 2018,
+    "immigrants": 9851
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2018,
+    "immigrants": 39747
+  },
+  {
+    "region": "Other",
+    "year": 2018,
+    "immigrants": 199
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2018,
+    "immigrants": 6597
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2018,
+    "immigrants": 12150
+  },
+  {
+    "region": "Sweden",
+    "year": 2018,
+    "immigrants": 12805
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2019,
+    "immigrants": 6729
+  },
+  {
+    "region": "Asia",
+    "year": 2019,
+    "immigrants": 22002
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2019,
+    "immigrants": 20601
+  },
+  {
+    "region": "European non-EU",
+    "year": 2019,
+    "immigrants": 9517
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2019,
+    "immigrants": 27763
+  },
+  {
+    "region": "Other",
+    "year": 2019,
+    "immigrants": 132
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2019,
+    "immigrants": 5981
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2019,
+    "immigrants": 11125
+  },
+  {
+    "region": "Sweden",
+    "year": 2019,
+    "immigrants": 11955
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2020,
+    "immigrants": 5233
+  },
+  {
+    "region": "Asia",
+    "year": 2020,
+    "immigrants": 13877
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2020,
+    "immigrants": 17001
+  },
+  {
+    "region": "European non-EU",
+    "year": 2020,
+    "immigrants": 7397
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2020,
+    "immigrants": 15483
+  },
+  {
+    "region": "Other",
+    "year": 2020,
+    "immigrants": 71
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2020,
+    "immigrants": 5069
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2020,
+    "immigrants": 6727
+  },
+  {
+    "region": "Sweden",
+    "year": 2020,
+    "immigrants": 11660
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2021,
+    "immigrants": 6371
+  },
+  {
+    "region": "Asia",
+    "year": 2021,
+    "immigrants": 17289
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2021,
+    "immigrants": 19751
+  },
+  {
+    "region": "European non-EU",
+    "year": 2021,
+    "immigrants": 7347
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2021,
+    "immigrants": 16251
+  },
+  {
+    "region": "Other",
+    "year": 2021,
+    "immigrants": 184
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2021,
+    "immigrants": 4961
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2021,
+    "immigrants": 7997
+  },
+  {
+    "region": "Sweden",
+    "year": 2021,
+    "immigrants": 10480
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2022,
+    "immigrants": 6669
+  },
+  {
+    "region": "Asia",
+    "year": 2022,
+    "immigrants": 20570
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2022,
+    "immigrants": 26713
+  },
+  {
+    "region": "European non-EU",
+    "year": 2022,
+    "immigrants": 8502
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2022,
+    "immigrants": 18141
+  },
+  {
+    "region": "Other",
+    "year": 2022,
+    "immigrants": 66
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2022,
+    "immigrants": 5084
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2022,
+    "immigrants": 6822
+  },
+  {
+    "region": "Sweden",
+    "year": 2022,
+    "immigrants": 9869
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2023,
+    "immigrants": 6055
+  },
+  {
+    "region": "Asia",
+    "year": 2023,
+    "immigrants": 19894
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2023,
+    "immigrants": 24705
+  },
+  {
+    "region": "European non-EU",
+    "year": 2023,
+    "immigrants": 6745
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2023,
+    "immigrants": 15672
+  },
+  {
+    "region": "Other",
+    "year": 2023,
+    "immigrants": 49
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2023,
+    "immigrants": 5037
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2023,
+    "immigrants": 5764
+  },
+  {
+    "region": "Sweden",
+    "year": 2023,
+    "immigrants": 10593
+  },
+  {
+    "region": "Americas & Oceania",
+    "year": 2024,
+    "immigrants": 5984
+  },
+  {
+    "region": "Asia",
+    "year": 2024,
+    "immigrants": 19013
+  },
+  {
+    "region": "EU (excl. Nordic)",
+    "year": 2024,
+    "immigrants": 21143
+  },
+  {
+    "region": "European non-EU",
+    "year": 2024,
+    "immigrants": 34083
+  },
+  {
+    "region": "Middle East & North Africa",
+    "year": 2024,
+    "immigrants": 13268
+  },
+  {
+    "region": "Other",
+    "year": 2024,
+    "immigrants": 24
+  },
+  {
+    "region": "Other Nordic",
+    "year": 2024,
+    "immigrants": 4805
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2024,
+    "immigrants": 5970
+  },
+  {
+    "region": "Sweden",
+    "year": 2024,
+    "immigrants": 11907
+  }
+]
