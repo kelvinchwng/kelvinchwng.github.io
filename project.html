@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+  <meta content="Kelvin Ng - PP434 Data Science Project" name="description">
+
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+
+  <title>PP434 Data Science Project</title>
+
+  <!-- Theme (matches index / portfolio) -->
+  <link href="css/min/theme.css" rel="stylesheet">
+  <link href="css/aos.css" rel="stylesheet">
+
+  <!-- Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <style>
+    /* Fonts (match index.html / portfolio.html) */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+          url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
+          url('./fonts/inter-v12-latin-300.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+          url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
+          url('./fonts/inter-v12-latin-500.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+          url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
+          url('./fonts/inter-v12-latin-700.woff') format('woff');
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    /* Hide scrollbars (keep scrolling) */
+    html, body, .container-fluid, .row, main, .py-vh-3, .page-hero {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overflow-x: clip;
+    }
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar,
+    .container-fluid::-webkit-scrollbar,
+    .row::-webkit-scrollbar,
+    main::-webkit-scrollbar,
+    .py-vh-3::-webkit-scrollbar,
+    .page-hero::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    /* Cards + separators */
+    .page-hero { background: #f8f9fa; }
+    .card-soft {
+      background: #f8f9fa;
+      border-radius: 16px;
+    }
+    .card-soft-inner {
+      background: #ffffff;
+      border-radius: 12px;
+    }
+    .section-sep {
+      height: 1px;
+      background: rgba(0,0,0,0.06);
+      margin: 1.25rem 0;
+    }
+
+    /* Jump-to pills */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5rem;
+      overflow: hidden;
+      height: auto;
+      max-height: none;
+      white-space: normal;
+      padding-bottom: 0;
+      padding-top: 2px;
+    }
+    .pill-row::-webkit-scrollbar { width: 0; height: 0; }
+    .pill-row { scrollbar-width: none; }
+    .pill-row a {
+      display: inline-block;
+      margin: 0;
+      padding: .4rem .75rem;
+      border-radius: 999px;
+      background: #fff;
+      color: rgba(0,0,0,0.7);
+      text-decoration: none;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+      transition: transform .15s ease, color .15s ease;
+    }
+    .pill-row a:hover { color: rgba(0,0,0,0.95); transform: translateY(-1px); }
+
+    /* Section header layout */
+    .sec-headrow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sec-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-weight: 700;
+      font-size: .75rem;
+      line-height: 1;
+      letter-spacing: .02em;
+      transform: translateY(-1px);
+      white-space: nowrap;
+    }
+    .sec-title {
+      font-size: 1.35rem;
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* Chart slots */
+    .chart-slot { min-width: 0; }
+    .chart-slot .vega-embed { width: 100%; }
+
+    .chart-slot {
+      min-height: 400px;
+      height: 400px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .chart-slot.compact {
+      min-height: 320px;
+      height: 320px;
+    }
+
+    .chart-slot.empty {
+      border: 1px dashed rgba(0,0,0,0.18);
+      color: rgba(0,0,0,0.45);
+      box-shadow: none;
+    }
+
+    /* Two charts side-by-side */
+    .chart-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .chart-row .chart-slot {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Small helper blocks */
+    .meta-kv {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .5rem;
+    }
+    .meta-kv .rowline {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: .75rem;
+      align-items: start;
+    }
+    .meta-kv .k {
+      font-weight: 700;
+      color: rgba(0,0,0,0.75);
+    }
+    .meta-kv .v {
+      color: rgba(0,0,0,0.7);
+    }
+
+    /* Mobile */
+    @media only screen and (max-width: 992px) {
+      .chart-row { flex-direction: column; }
+      .chart-row > div[style*="flex"] {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+      }
+      .row.g-3 > .col-md-6,
+      .row.g-3 > .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .px-vw-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+      .p-5 { padding: 1.5rem !important; }
+      .navbar { padding-left: 0 !important; padding-right: 0 !important; }
+      #navScroll .nav-link { padding: 0.25rem 0.5rem !important; font-size: 0.875rem; }
+      h1 { font-size: 1.7rem !important; }
+      .chart-slot { min-height: 240px; height: 240px; }
+      .chart-slot.compact { min-height: 220px; height: 220px; }
+      .sec-title { font-size: 1.2rem; }
+      .meta-kv .rowline { grid-template-columns: 1fr; }
+    }
+
+    /* Error overlay (only shows if a chart JSON is missing) */
+    .chart-error {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      color: rgba(0,0,0,0.55);
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      border: 1px dashed rgba(0,0,0,0.18);
+    }
+  </style>
+</head>
+
+<body class="position-relative d-flex h-100 w-100" data-bs-spy="scroll" data-bs-target="#navScroll">
+  <div class="h-100 container-fluid position-relative">
+    <div class="h-100 row d-flex align-items-stretch position-relative z-1">
+      <div class="p-0 col-12 d-flex align-items-start flex-column">
+
+        <!-- Header -->
+        <header class="mb-auto py-vh-2 col-12 px-vw-5">
+          <nav class="navbar navbar-expand-lg navbar-dark d-flex px-3" id="navScroll" tabindex="0">
+            <a class="navbar-brand d-flex align-items-center flex-grow-1 link-opacity-50-hover link-dark" href="index.html">
+              <div class="fw-bold fs-4">Kelvin Ng</div>
+            </a>
+            <div class="col-auto ps-2 ms-2">
+              <ul class="nav ms-auto mb-2 mb-lg-0 ms-2 list-inline list-unstyled align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark link-opacity-50-hover" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark link-opacity-50-hover" href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pe-3 link-dark" href="project.html"><span class="fw-bold">Project</span></a>
+                </li>
+                <li class="nav-item">
+                  <a aria-label="GitHub" class="nav-link pe-2 link-dark link-opacity-50-hover" href="https://github.com/kelvinchwng" rel="noreferrer" target="_blank">
+                    <svg fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a aria-label="LinkedIn" class="nav-link link-dark link-opacity-50-hover" href="https://linkedin.com/in/kelvinchwng" rel="noreferrer" target="_blank">
+                    <svg fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main -->
+        <main class="mb-auto col-12 px-vw-5">
+
+          <!-- Hero -->
+          <div class="page-hero rounded p-5" data-aos="fade-up">
+            <h1 class="text-black mb-2"><strong>PP434 Data Science Project</strong></h1>
+            <p class="lead text-muted mb-0">A story-driven page: aims → data → tools → findings → conclusions (5–8 charts; ≤800 words).</p>
+            <p class="lead text-muted mb-0">Candidate Number 67247</p>
+            <div class="section-sep"></div>
+            <div aria-label="Jump to sections" class="pill-row">
+              <a href="#overview">Overview</a>
+              <a href="#aims">Aims</a>
+              <a href="#data">Data</a>
+              <a href="#tools">Tools</a>
+              <a href="#findings">Findings</a>
+              <a href="#conclusions">Conclusions</a>
+              <a href="#repro">Reproducibility</a>
+            </div>
+          </div>
+
+          <div class="py-vh-3">
+
+            <!-- OVERVIEW -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="overview">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">1</span>
+                  <h2 class="sec-title mb-0">Overview</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="meta-kv">
+                  <div class="rowline">
+                    <div class="k">Question</div>
+                    <div class="v">[One sentence. A policy-relevant question that can be tracked with online data.]</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Why now</div>
+                    <div class="v">[One sentence. Why the question matters (policy window / recent change / current debate).]</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Headline</div>
+                    <div class="v">[One sentence. Your punchline — what the reader should remember.]</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-sep"></div>
+
+              <p class="text-muted small mb-0">
+                Tip: keep the whole write-up under 800 words, and let the charts carry the story.
+              </p>
+            </section>
+
+            <!-- AIMS -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="aims">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">2</span>
+                  <h2 class="sec-title mb-0">Aims</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <ul class="mb-0 small">
+                  <li><strong>Goal:</strong> [What you are trying to measure / explain / forecast.]</li>
+                  <li><strong>Unit of analysis:</strong> [UK / region / sector / firm / household / time period.]</li>
+                  <li><strong>Hypotheses:</strong> [1–2 testable statements, written plainly.]</li>
+                  <li><strong>Reader benefit:</strong> [What decision could this inform?]</li>
+                </ul>
+              </div>
+
+              <div class="chart-row mt-3">
+                <div class="chart-slot" id="proj-chart1"></div>
+                <div class="chart-slot" id="proj-chart2"></div>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>What these show:</strong> [2–3 short lines interpreting charts 1–2. Keep it tight.]</div>
+              </div>
+            </section>
+
+            <!-- DATA -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="data">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">3</span>
+                  <h2 class="sec-title mb-0">Data</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <p class="text-muted small mb-0 mt-1">
+                Be explicit about where the data comes from and how it could be updated (API endpoints / scraper links / file paths).
+              </p>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="meta-kv">
+                  <div class="rowline">
+                    <div class="k">Sources</div>
+                    <div class="v">[List 1–3 sources. Prefer open sources and link them.]</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Access</div>
+                    <div class="v">[API / scrape / manual download. Include final API URL(s) if used.]</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Refresh</div>
+                    <div class="v">[How often could this update? Daily / weekly / monthly. What breaks?]</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-row mt-3">
+                <div class="chart-slot compact" id="proj-chart3"></div>
+                <div class="chart-slot compact" id="proj-chart4"></div>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Data notes:</strong> [Any caveats (coverage, missingness, definitions, cleaning decisions).]</div>
+              </div>
+            </section>
+
+            <!-- TOOLS -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="tools">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">4</span>
+                  <h2 class="sec-title mb-0">Tools & methods</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="card-soft-inner p-3 h-100">
+                      <div class="small"><strong>Cleaning</strong></div>
+                      <div class="small text-muted">[Pandas steps: reshape → tidy; de-dup; outliers; joins; units.]</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-soft-inner p-3 h-100">
+                      <div class="small"><strong>Automation</strong></div>
+                      <div class="small text-muted">[Notebook link(s); cron idea; loop downloads; storage in /project/data.]</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-soft-inner p-3 h-100">
+                      <div class="small"><strong>Analysis</strong></div>
+                      <div class="small text-muted">[Descriptives / regression / clustering / forecasting / diff-in-diff — as relevant.]</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-soft-inner p-3 h-100">
+                      <div class="small"><strong>Visualisation</strong></div>
+                      <div class="small text-muted">[Vega-Lite + interactivity (slider, dropdown, clickable legend).]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chart-slot mt-3" id="proj-chart5"></div>
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Method note:</strong> [Explain the key modelling choice and one limitation.]</div>
+              </div>
+            </section>
+
+            <!-- FINDINGS -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="findings">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">5</span>
+                  <h2 class="sec-title mb-0">Findings</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <p class="text-muted small mb-0 mt-1">Use charts as “story beats”: describe what changes, when, and why it matters for policy.</p>
+
+              <div class="chart-slot mt-3" id="proj-chart6"></div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Interpretation:</strong> [3–5 lines. Be concrete. Mention timing and magnitudes.]</div>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Robustness / sensitivity:</strong> [One short paragraph: alternative definitions / placebo / other sources.]</div>
+              </div>
+            </section>
+
+            <!-- CONCLUSIONS -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="conclusions">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">6</span>
+                  <h2 class="sec-title mb-0">Conclusions</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <ul class="mb-0 small">
+                  <li><strong>Answer:</strong> [Return to the original question.]</li>
+                  <li><strong>Policy implication:</strong> [One concrete implication (who should do what differently).]</li>
+                  <li><strong>What I’d do next:</strong> [Next dataset, better identification, more interactivity.]</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- REPRODUCIBILITY -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="repro">
+              <div class="sec-headrow">
+                <div class="sec-header">
+                  <span class="sec-badge">7</span>
+                  <h2 class="sec-title mb-0">Reproducibility</h2>
+                </div>
+                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="meta-kv">
+                  <div class="rowline">
+                    <div class="k">Repo</div>
+                    <div class="v">Link your GitHub repository (and point to /project/ for data + notebooks).</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Code</div>
+                    <div class="v">Add notebook links (Colab) and a short “how to update” note (run order, dependencies).</div>
+                  </div>
+                  <div class="rowline">
+                    <div class="k">Data</div>
+                    <div class="v">List files + schema notes (e.g., tidy long format; units; time zone; missing values).</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0"><strong>Folder convention (suggested):</strong></div>
+                <pre class="small mb-0" style="white-space: pre-wrap;">
+project/
+  charts/   # your vega-lite json specs used on this page
+  data/     # cleaned datasets (csv/json) used by specs
+  notebooks/# colab links in a README
+                </pre>
+              </div>
+            </section>
+
+          </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-auto py-vh-3 col-12 px-vw-5">
+          <div class="text-muted small">© Kelvin Ng · PP434 Automated Data Visualisation for Policymaking</div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out',
+      once: true
+    });
+  </script>
+
+  <!-- Project chart embedding (safe: fails gracefully if JSON not present yet) -->
+  <script>
+    const projectCharts = [
+      { id: 'proj-chart1', spec: 'project/charts/project_chart1.json' },
+      { id: 'proj-chart2', spec: 'project/charts/project_chart2.json' },
+      { id: 'proj-chart3', spec: 'project/charts/project_chart3.json' },
+      { id: 'proj-chart4', spec: 'project/charts/project_chart4.json' },
+      { id: 'proj-chart5', spec: 'project/charts/project_chart5.json' },
+      { id: 'proj-chart6', spec: 'project/charts/project_chart6.json' }
+    ];
+
+    const embedOpts = {
+      actions: false,
+      renderer: 'canvas'
+    };
+
+    function showMissing(el, spec) {
+      if (!el) return;
+      el.classList.add('empty');
+      const msg = document.createElement('div');
+      msg.className = 'chart-error';
+      msg.innerHTML = `<div class="small"><strong>Chart placeholder</strong><br/>Missing: <code>${spec}</code><br/>Add the JSON spec (and any data files) to render this box.</div>`;
+      el.appendChild(msg);
+    }
+
+    (async function embedAll() {
+      for (const c of projectCharts) {
+        const el = document.getElementById(c.id);
+        if (!el) continue;
+        try {
+          await vegaEmbed('#' + c.id, c.spec, embedOpts);
+        } catch (e) {
+          showMissing(el, c.spec);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
