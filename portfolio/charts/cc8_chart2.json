@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
+  "title": {
+    "text": "Butter Prices Across UK Regions",
+    "subtitle": [
+      "Median yearly price of 250g pack",
+      "Source: ONS Microdata via Davies (2021)"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc8_data2.csv"
+  },
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 2025,
+      "bind": {
+        "input": "select",
+        "options": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/uk_region_map.json",
+          "format": {"property": "features"}
+        },
+        "key": "properties.id",
+        "fields": ["geometry", "properties", "type"]
+      }
+    },
+    {"filter": "yearParam == datum.year"}
+  ],
+  "mark": {"type": "geoshape", "stroke": "lightgrey", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "price",
+      "type": "quantitative",
+      "scale": {"scheme": "blues", "domain": [1.0, 3.0]},
+      "legend": {
+        "labelExpr": "'£' + format(datum.value, '.2f')",
+        "orient": "top",
+        "title": null
+      }
+    },
+    "tooltip": [
+      {"field": "properties.NAME_LATN", "title": "Region"},
+      {"field": "year", "title": "Year"},
+      {"field": "price", "title": "Price (£)", "format": ".2f"}
+    ]
+  }
+}

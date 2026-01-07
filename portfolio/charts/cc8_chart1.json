@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "UK Butter Price Distribution",
+    "subtitle": [
+      "Price dispersion across stores (250g), 10th–90th percentile bands",
+      "Source: ONS microdata via Davies (2021)"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitlePadding": 5,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/cc8_data1.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.percentile_label === '10' ? '0 to 10th percentile' : datum.percentile_label === '1020' ? '10th to 20th percentile' : datum.percentile_label === '2030' ? '20th to 30th percentile' : datum.percentile_label === '3040' ? '30th to 40th percentile' : datum.percentile_label === '4050' ? '40th to 50th percentile' : datum.percentile_label === '5060' ? '50th to 60th percentile' : datum.percentile_label === '6070' ? '60th to 70th percentile' : datum.percentile_label === '7080' ? '70th to 80th percentile' : datum.percentile_label === '8090' ? '80th to 90th percentile' : datum.percentile_label",
+      "as": "percentile_label_display"
+    }
+  ],
+  "mark": {"type": "area", "orient": "vertical", "opacity": 0.8},
+  "encoding": {
+    "x": {
+      "field": "quote_date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false, "format": "%Y"}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "price",
+      "type": "quantitative",
+      "title": "Price (£)",
+      "stack": "zero"
+    },
+    "color": {
+      "legend": null,
+      "field": "percentile_label",
+      "scale": {
+        "domain": ["10", "1020", "2030", "3040", "4050", "5060", "6070", "7080", "8090"],
+        "range": [
+          "#deebf7",
+          "#c6dbef",
+          "#9ecae1",
+          "#6baed6",
+          "#3182bd",
+          "#6baed6",
+          "#9ecae1",
+          "#c6dbef",
+          "#deebf7"
+        ]
+      }
+    },
+    "order": {"field": "percentile_label"},
+    "tooltip": [
+      {
+        "field": "quote_date",
+        "type": "temporal",
+        "title": "Date",
+        "format": "%b %Y"
+      },
+      {
+        "field": "percentile_label_display",
+        "type": "nominal",
+        "title": "Percentile Range"
+      },
+      {
+        "field": "price",
+        "type": "quantitative",
+        "aggregate": "sum",
+        "title": "Band width (£)",
+        "format": ".2f"
+      }
+    ]
+  }
+}
