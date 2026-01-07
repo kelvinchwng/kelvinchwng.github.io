@@ -1,0 +1,137 @@
+[
+  {
+    "years_in_sweden": 0,
+    "employment_index": 42.2,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 1,
+    "employment_index": 100.0,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 2,
+    "employment_index": 180.4,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 3,
+    "employment_index": 262.5,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 4,
+    "employment_index": 330.7,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 5,
+    "employment_index": 385.9,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 6,
+    "employment_index": 434.3,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 7,
+    "employment_index": 475.0,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 8,
+    "employment_index": 516.2,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 9,
+    "employment_index": 560.6,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 10,
+    "employment_index": 599.6,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 11,
+    "employment_index": 639.1,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 12,
+    "employment_index": 676.0,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 13,
+    "employment_index": 722.1,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 14,
+    "employment_index": 762.8,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 15,
+    "employment_index": 796.2,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 16,
+    "employment_index": 834.0,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 17,
+    "employment_index": 865.3,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 18,
+    "employment_index": 936.3,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 19,
+    "employment_index": 999.5,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 20,
+    "employment_index": 994.3,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 21,
+    "employment_index": 993.9,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 22,
+    "employment_index": 960.4,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 23,
+    "employment_index": 918.4,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 24,
+    "employment_index": 919.7,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 25,
+    "employment_index": 985.0,
+    "type": "observed"
+  },
+  {
+    "years_in_sweden": 26,
+    "employment_index": 1105.0,
+    "type": "observed"
+  }
+]
