@@ -573,29 +573,22 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC9</span>
-                  <h2 class="cc-title mb-0">Interactive Charts</h2>
+                  <h2 class="cc-title mb-0">Two interactive charts.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Two interactive visualisations (beyond tooltips).</p>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc9-chart1">Interactive placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Interactivity:</strong> …</div>
-                </div>
-                <div class="col-md-6">
-                  <div class="chart-slot empty" id="cc9-chart2">Interactive placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Interactivity:</strong> …</div>
-                </div>
+              <p class="text-muted small mb-0 mt-1">Produce two charts that include interactivity.</p>
+
+              <div class="card-soft-inner p-3 mt-3">
+                <div class="small mb-0">The following illustrations are taken from the Data Visualisation Project.</div>
               </div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Chart JSON</a> ·
-                  <a class="link-dark" href="#">Data</a>
-                </div>
+
+              <div class="cc-chart-row mt-3">
+                <div class="chart-slot" id="cc9-chart1"></div>
+                <div class="chart-slot" id="cc9-chart2"></div>
               </div>
+
+            
             </section>
 
             <!-- CC10 -->
@@ -603,37 +596,32 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC10</span>
-                  <h2 class="cc-title mb-0">Advanced Analysis &amp; Machine Learning</h2>
+                  <h2 class="cc-title mb-0">Advanced Analysis and Machine Learning.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Advanced analytics + ML output (clear hypothesis &amp; takeaway).</p>
+              <p class="text-muted small mb-0 mt-1">Produce a chart that uses more advanced analytics that standard line,
+bar or scatter charts. Conduct an applied data analysis using any of the machine learning
+techniques taught in the Week 10 lecture and seminar.</p>
+
               <div class="card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-0"><strong>Hypothesis (≤25 words):</strong> …</div>
+                <div class="small mb-0">The following illustrations are taken from the Data Visualisation Project.</div>
               </div>
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>Advanced analytics</strong></div>
-                  <div class="chart-slot empty" id="cc10-chart1">Chart placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Method:</strong> …</div>
+
+
+              <div class="cc-chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
+                  <div class="chart-slot" id="cc10-chart1"></div>
                 </div>
-                <div class="col-md-6">
-                  <div class="small text-muted mb-2"><strong>Machine learning</strong></div>
-                  <div class="chart-slot empty" id="cc10-chart2">Chart placeholder</div>
-                  <div class="small text-muted mt-2"><strong>Method:</strong> …</div>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="chart-slot" id="cc10-chart2"></div>
                 </div>
               </div>
-              <div class="small text-muted mt-2"><strong>Findings (≤25 words):</strong> …</div>
-              <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small text-muted mb-1"><strong>Notes:</strong> …</div>
-                <div class="small text-muted">
-                  <strong>Links:</strong>
-                  <a class="link-dark" href="#">Notebook</a> ·
-                  <a class="link-dark" href="#">Model</a> ·
-                  <a class="link-dark" href="#">Chart JSON</a>
-                </div>
-              </div>
+
+
             </section>
+
+
 
           </div>
         </main>
@@ -745,7 +733,15 @@ channel or company has used. Your challenge this week is to replicate it, and th
         select.addEventListener('change', function() {
           view.signal('yearParam', parseInt(this.value)).run();
         });
-      })
+      }),
+
+      embedChart('#cc9-chart1', 'project/charts/p2.json'),
+      embedChart('#cc9-chart2', 'project/charts/p5.json'),
+
+      embedChart('#cc10-chart1', 'project/charts/p3.json'),
+      embedChart('#cc10-chart2', 'project/charts/p6.json'),
+
+
     ]).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
     });

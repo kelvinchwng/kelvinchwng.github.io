@@ -574,10 +574,27 @@
 
     const EMBED_OPTS = { actions: false, renderer: "svg" };
 
+    function showChartError(container, url, err) {
+      if (!container) return;
+      container.classList.add('empty');
+      // avoid stacking overlays
+      if (container.querySelector('.chart-error')) return;
+      const overlay = document.createElement('div');
+      overlay.className = 'chart-error';
+      overlay.innerHTML = `
+        <div>
+          <div class="fw-bold mb-1">Chart placeholder</div>
+          <div class="small">Could not load: <code>${url}</code></div>
+          <div class="small text-muted mt-2">Check the JSON path/name, or that the file is committed to GitHub Pages.</div>
+        </div>`;
+      container.appendChild(overlay);
+      if (err) console.error('Vega embed error for', url, err);
+    }
+
     function embedChart(selector, url) {
+      const el = document.querySelector(selector);
       return vegaEmbed(selector, url, EMBED_OPTS).then((res) => {
         const view = res.view;
-        const el = document.querySelector(selector);
 
         // Force resizes after layout settles (fonts/AOS/flex)
         requestAnimationFrame(() => { view.resize(); view.runAsync(); });
@@ -594,36 +611,19 @@
         }
 
         return res;
+      }).catch((err) => {
+        showChartError(el, url, err);
+        return null; // don't break Promise.all
       });
     }
 
     Promise.all([
       embedChart('#proj-chart1', 'project/charts/p1.json'),
       embedChart('#proj-chart2', 'project/charts/p2.json'),
-
       embedChart('#proj-chart3', 'project/charts/p3.json'),
       embedChart('#proj-chart4', 'project/charts/p4.json'),
-
       embedChart('#proj-chart5', 'project/charts/p5.json'),
-      embedChart('#proj-chart6', 'project/charts/p6.json'),
-
-      embedChart('#cc4-chart1', 'portfolio/charts/cc4_chart1.json'),
-      embedChart('#cc4-chart2', 'portfolio/charts/cc4_chart2.json'),
-
-      embedChart('#cc5-chart1', 'portfolio/charts/cc5_chart1.json'),
-      embedChart('#cc5-chart2', 'portfolio/charts/cc5_chart2.json'),
-
-      embedChart('#cc7-chart1', 'portfolio/charts/cc7_chart1.json'),
-      embedChart('#cc7-chart2', 'portfolio/charts/cc7_chart2.json'),
-
-      embedChart('#cc8-chart1', 'portfolio/charts/cc8_chart1.json'),
-      embedChart('#cc8-chart2', 'portfolio/charts/cc8_chart2.json').then(result => {
-        const view = result.view;
-        const select = document.getElementById('cc8-year-select');
-        select.addEventListener('change', function() {
-          view.signal('yearParam', parseInt(this.value)).run();
-        });
-      })
+      embedChart('#proj-chart6', 'project/charts/p6.json')
     ]).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
     });
