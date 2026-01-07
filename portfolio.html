@@ -463,42 +463,27 @@ channel or company has used. Your challenge this week is to replicate it, and th
               <div class="cc-headrow">
                 <div class="cc-header">
                   <span class="cc-badge">CC6</span>
-                  <h2 class="cc-title mb-0">Loops: Nordic Unemployment Dashboard</h2>
+                  <h2 class="cc-title mb-0">Loops. Build a dashboard.</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
-              <p class="text-muted small mb-0 mt-1">Harmonised unemployment rates (%) across Nordic countries and the UK, 2015–2025. Data batch-downloaded via FRED API using a Python loop; charts embedded via JavaScript loop.</p>
-              <div class="row g-3 mt-3 cc-grid-6">
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-0"></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-1"></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-2"></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-3"></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-4"></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="chart-slot" id="cc6-chart-5"></div>
-                </div>
-              </div>
+              <p class="text-muted small mb-0 mt-1">Use a loop to batch download six different series as JSON files. Use a loop in JavaScript in order to embed the six charts.</p>
+            <div class="cc-chart-row mt-3">
+              <div class="chart-slot" id="cc6-chart-0"></div>
+              <div class="chart-slot" id="cc6-chart-1"></div>
+              <div class="chart-slot" id="cc6-chart-2"></div>
+            </div>
+            <div class="cc-chart-row mt-3">
+              <div class="chart-slot" id="cc6-chart-3"></div>
+              <div class="chart-slot" id="cc6-chart-4"></div>
+              <div class="chart-slot" id="cc6-chart-5"></div>
+            </div>
+
               <div class="note-box card-soft-inner p-3 mt-3">
-                <div class="small mb-2"><strong>API Functional Description:</strong></div>
-                <div class="small text-muted mb-1"><strong>Base URL:</strong> <code>https://api.stlouisfed.org/fred/series/observations</code></div>
-                <div class="small text-muted mb-1"><strong>Parameters:</strong> <code>series_id</code>, <code>api_key</code>, <code>file_type=json</code>, <code>observation_start=2015-01-01</code></div>
-                <div class="small text-muted mb-1"><strong>Series codes:</strong> LRHUTTTTSEM156S (Sweden), LRHUTTTTDKM156S (Denmark), LRHUTTTTFIM156S (Finland), LRHUTTTTISM156S (Iceland), LRHUTTTTNOM156S (Norway), LRHUTTTTGBM156S (UK)</div>
-                <div class="small text-muted mb-2"><strong>Example URL:</strong> <code class="small" style="word-break: break-all;">https://api.stlouisfed.org/fred/series/observations?series_id=LRHUTTTTSEM156S&api_key=YOUR_KEY&file_type=json&observation_start=2015-01-01</code></div>
-                <div class="small text-muted mb-2"><strong>Approach:</strong> Python loop to batch download 6 series from FRED API → transform to Vega-Lite JSON → JavaScript <code>for</code> loop to embed all 6 charts with a single spec template.</div>
+                <div class="small mb-0">Harmonised monthly unemployment rates (%) across Nordic countries and the United Kingdom, 2015–2025. Data batch-downloaded via FRED API using a loop, charts embedded via JavaScript loop at the end of the <code>portfolio.html</code> file.</div>
                 <div class="small text-muted">
                   <strong>Links:</strong>
-                  <a class="cc-badge" href="https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID" target="_blank" style="text-decoration: none; color: #fff;">Google Colab Notebook</a> ·
-                  <a class="link-dark" href="https://github.com/kelvinchwng/kelvinchwng.github.io/tree/main/portfolio/data" target="_blank">Data files on GitHub</a> ·
+                  <a class="cc-badge" href="https://colab.research.google.com/drive/1DLFWiD73Hr21ScfCVajn7XUlrDbJzLg1?usp=sharing" target="_blank" style="text-decoration: none; color: #fff;"> Google Colab Notebook</a> ·
                   <a class="link-dark" href="https://fred.stlouisfed.org/tags/series?t=harmonized+unemployment+rate" target="_blank">FRED Source</a>
                 </div>
               </div>
@@ -733,8 +718,7 @@ channel or company has used. Your challenge this week is to replicate it, and th
       setTimeout(() => window.dispatchEvent(new Event('resize')), 250);
     });
 
-    // CC6: JavaScript loop to embed 6 charts (satisfies 2nd point requirement)
-    // Using a for loop with a single vegaEmbed call template, not 6 separate calls
+    // CC6: Using a for loop with a single vegaEmbed call template
     (function() {
       const cc6Countries = [
         { id: 'sweden', name: 'Sweden', color: '#1f77b4' },
@@ -753,11 +737,12 @@ channel or company has used. Your challenge this week is to replicate it, and th
           "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
           "title": {
             "text": country.name,
-            "fontSize": 13,
+            "subtitle": "Unemployment (%)",
+            "fontSize": 14,
             "anchor": "start"
           },
           "width": "container",
-          "height": 180,
+          "height": "container",
           "data": {
             "url": "portfolio/data/cc6_chart_" + country.id + ".json"
           },
@@ -781,7 +766,7 @@ channel or company has used. Your challenge this week is to replicate it, and th
               "field": "value",
               "type": "quantitative",
               "axis": {
-                "title": "Unemployment (%)",
+                "title": null,
                 "grid": true,
                 "gridOpacity": 0.3
               },
