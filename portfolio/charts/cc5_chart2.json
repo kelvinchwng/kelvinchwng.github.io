@@ -4,6 +4,7 @@
     "text": "Sweden: Population Density by County (Län)",
     "subtitle": "Inhabitants per km², 2025",
     "fontSize": 16,
+    "anchor": "start",
     "subtitleFontSize": 12
   },
   "width": "container",
