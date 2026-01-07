@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Sweden: Employment Gap by County",
+    "subtitle": "Difference between native-born and foreign-born employment rate (pp), 2023",
+    "fontSize": 16,
+    "anchor": "start",
+    "subtitleFontSize": 12
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/portfolio/data/se.json",
+    "format": {"property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/project/data/p4_data.csv"
+        },
+        "key": "name",
+        "fields": ["employment_gap", "native_rate", "foreign_rate"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "color": {
+      "field": "employment_gap",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered",
+        "domain": [10, 20]
+      },
+      "legend": {
+        "title": "Gap (pp)",
+        "format": ".1f"
+      }
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "County"},
+      {"field": "native_rate", "type": "quantitative", "title": "Native-born (%)", "format": ".1f"},
+      {"field": "foreign_rate", "type": "quantitative", "title": "Foreign-born (%)", "format": ".1f"},
+      {"field": "employment_gap", "type": "quantitative", "title": "Gap (pp)", "format": ".1f"}
+    ]
+  }
+}
