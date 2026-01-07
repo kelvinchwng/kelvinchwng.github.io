@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Immigration to Sweden by Region of Origin (2000–2024)",
+    "subtitle": "Source: Statistics Sweden (SCB)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/project/data/p1_data.json"
+  },
+  "transform": [
+    {"filter": "datum.region != 'Other'"}
+  ],
+  "mark": {
+    "type": "area",
+    "line": true,
+    "opacity": 0.85
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "values": [2000, 2005, 2010, 2015, 2020, 2024]
+      }
+    },
+    "y": {
+      "field": "immigrants",
+      "type": "quantitative",
+      "title": "Number of immigrants",
+      "stack": "zero",
+      "axis": {
+        "format": "~s",
+        "grid": true,
+        "gridOpacity": 0.3
+      }
+    },
+    "color": {
+      "field": "region",
+      "type": "nominal",
+      "title": "Region of birth",
+      "scale": {
+        "domain": [
+          "Sweden",
+          "Other Nordic",
+          "EU (excl. Nordic)",
+          "European non-EU",
+          "Middle East & North Africa",
+          "Sub-Saharan Africa",
+          "Asia",
+          "Americas & Oceania"
+        ],
+        "range": [
+          "#2166ac",
+          "#67a9cf",
+          "#4393c3",
+          "#92c5de",
+          "#d6604d",
+          "#b2182b",
+          "#f4a582",
+          "#fddbc7"
+        ]
+      },
+      "legend": {
+        "orient": "right",
+        "direction": "vertical"
+      }
+    },
+    "order": {
+      "field": "region",
+      "sort": ["Sweden", "Other Nordic", "EU (excl. Nordic)", "European non-EU", "Middle East & North Africa", "Sub-Saharan Africa", "Asia", "Americas & Oceania"]
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "region", "title": "Region of birth"},
+      {"field": "immigrants", "title": "Immigrants", "format": ","}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null}
+  }
+}
