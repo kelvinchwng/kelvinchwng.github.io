@@ -1,0 +1,157 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Fiscal Integration: Most Immigrant Groups Now Net Contributors",
+    "subtitle": ["Net contribution per person, 2005 vs 2022 (thousands SEK, 2022 prices)", "Source: Konjunkturinstitutet, Specialstudie 117"],
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "values": [
+      {"country": "Afghanistan", "year": 2005, "value": -166},
+      {"country": "Afghanistan", "year": 2022, "value": -19},
+      {"country": "Bosnia & Herzegovina", "year": 2005, "value": -31},
+      {"country": "Bosnia & Herzegovina", "year": 2022, "value": 60},
+      {"country": "Chile", "year": 2005, "value": 2},
+      {"country": "Chile", "year": 2022, "value": 30},
+      {"country": "Denmark", "year": 2005, "value": -25},
+      {"country": "Denmark", "year": 2022, "value": -18},
+      {"country": "Eritrea", "year": 2005, "value": -7},
+      {"country": "Eritrea", "year": 2022, "value": -35},
+      {"country": "Ethiopia", "year": 2005, "value": -8},
+      {"country": "Ethiopia", "year": 2022, "value": 1},
+      {"country": "Philippines", "year": 2005, "value": -24},
+      {"country": "Philippines", "year": 2022, "value": 27},
+      {"country": "Finland", "year": 2005, "value": -2},
+      {"country": "Finland", "year": 2022, "value": -99},
+      {"country": "Greece", "year": 2005, "value": -49},
+      {"country": "Greece", "year": 2022, "value": -5},
+      {"country": "India", "year": 2005, "value": -8},
+      {"country": "India", "year": 2022, "value": 119},
+      {"country": "Iraq", "year": 2005, "value": -137},
+      {"country": "Iraq", "year": 2022, "value": -8},
+      {"country": "Iran", "year": 2005, "value": -28},
+      {"country": "Iran", "year": 2022, "value": 60},
+      {"country": "Italy", "year": 2005, "value": -9},
+      {"country": "Italy", "year": 2022, "value": 49},
+      {"country": "Yugoslavia", "year": 2005, "value": -60},
+      {"country": "Yugoslavia", "year": 2022, "value": -5},
+      {"country": "China", "year": 2005, "value": -56},
+      {"country": "China", "year": 2022, "value": 32},
+      {"country": "Lebanon", "year": 2005, "value": -80},
+      {"country": "Lebanon", "year": 2022, "value": 9},
+      {"country": "Netherlands", "year": 2005, "value": 66},
+      {"country": "Netherlands", "year": 2022, "value": 71},
+      {"country": "Norway", "year": 2005, "value": -37},
+      {"country": "Norway", "year": 2022, "value": -15},
+      {"country": "Poland", "year": 2005, "value": -1},
+      {"country": "Poland", "year": 2022, "value": 36},
+      {"country": "Romania", "year": 2005, "value": 5},
+      {"country": "Romania", "year": 2022, "value": 53},
+      {"country": "Russia", "year": 2005, "value": -70},
+      {"country": "Russia", "year": 2022, "value": 72},
+      {"country": "Somalia", "year": 2005, "value": -150},
+      {"country": "Somalia", "year": 2022, "value": -79},
+      {"country": "United Kingdom", "year": 2005, "value": 106},
+      {"country": "United Kingdom", "year": 2022, "value": 100},
+      {"country": "Syria", "year": 2005, "value": -89},
+      {"country": "Syria", "year": 2022, "value": -89},
+      {"country": "Thailand", "year": 2005, "value": -47},
+      {"country": "Thailand", "year": 2022, "value": 13},
+      {"country": "Turkey", "year": 2005, "value": -67},
+      {"country": "Turkey", "year": 2022, "value": 13},
+      {"country": "Germany", "year": 2005, "value": -34},
+      {"country": "Germany", "year": 2022, "value": -2},
+      {"country": "USA", "year": 2005, "value": 11},
+      {"country": "USA", "year": 2022, "value": 74},
+      {"country": "Hungary", "year": 2005, "value": -37},
+      {"country": "Hungary", "year": 2022, "value": -24},
+      {"country": "Vietnam", "year": 2005, "value": -50},
+      {"country": "Vietnam", "year": 2022, "value": 11}
+    ]
+  },
+  "transform": [
+    {
+      "window": [{"op": "first_value", "field": "value", "as": "val_2005"}],
+      "groupby": ["country"],
+      "sort": [{"field": "year"}]
+    },
+    {
+      "window": [{"op": "last_value", "field": "value", "as": "val_2022"}],
+      "groupby": ["country"],
+      "sort": [{"field": "year"}]
+    },
+    {"calculate": "datum.val_2022 - datum.val_2005", "as": "change"},
+    {"calculate": "datum.change >= 0 ? 'Improved' : 'Worsened'", "as": "direction"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 1.5, "opacity": 0.6},
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {"field": "val_2022", "order": "descending"},
+          "axis": {"title": null, "labelFontSize": 10}
+        },
+        "x": {"field": "val_2005", "type": "quantitative"},
+        "x2": {"field": "val_2022"},
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {"domain": ["Improved", "Worsened"], "range": ["#2e7d32", "#c62828"]},
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 80, "opacity": 0.4},
+      "encoding": {
+        "y": {"field": "country", "type": "nominal", "sort": {"field": "val_2022", "order": "descending"}},
+        "x": {"field": "val_2005", "type": "quantitative"},
+        "color": {"value": "#888"},
+        "tooltip": [
+          {"field": "country", "title": "Country"},
+          {"field": "val_2005", "title": "2005", "format": ".0f"},
+          {"field": "val_2022", "title": "2022", "format": ".0f"},
+          {"field": "change", "title": "Change", "format": "+.0f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 100},
+      "encoding": {
+        "y": {"field": "country", "type": "nominal", "sort": {"field": "val_2022", "order": "descending"}},
+        "x": {
+          "field": "val_2022",
+          "type": "quantitative",
+          "axis": {"title": "Net contribution per person (thousands SEK)", "grid": true, "gridDash": [2,2]}
+        },
+        "color": {
+          "field": "direction",
+          "type": "nominal",
+          "scale": {"domain": ["Improved", "Worsened"], "range": ["#2e7d32", "#c62828"]}
+        },
+        "tooltip": [
+          {"field": "country", "title": "Country"},
+          {"field": "val_2005", "title": "2005", "format": ".0f"},
+          {"field": "val_2022", "title": "2022", "format": ".0f"},
+          {"field": "change", "title": "Change", "format": "+.0f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [4,4], "stroke": "#666", "strokeWidth": 1},
+      "encoding": {"x": {"datum": 0}}
+    }
+  ],
+  "config": {
+    "font": "Arial, sans-serif",
+    "view": {"stroke": null},
+    "legend": {"title": null, "orient": "top", "labelFontSize": 11}
+  }
+}
