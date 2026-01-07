@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Employment Convergence by Migration Category",
+    "subtitle": "Source: Statistics Sweden (SCB), Integration Statistics",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 11,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kelvinchwng/kelvinchwng.github.io/main/project/data/p3_data.json"
+  },
+  "params": [
+    {
+      "name": "yearSelect",
+      "value": 2023,
+      "bind": {
+        "input": "range",
+        "min": 2020,
+        "max": 2023,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.year == yearSelect"}
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "years_in_sweden",
+          "type": "ordinal",
+          "title": "Years in Sweden",
+          "sort": ["0-3 yrs", "4-9 yrs", "10+ yrs"],
+          "axis": {
+            "labelAngle": 0,
+            "orient": "top"
+          }
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "title": null,
+          "sort": ["Labour migrants", "Other", "Family reunion", "Refugees & relatives"]
+        },
+        "color": {
+          "field": "employment_rate",
+          "type": "quantitative",
+          "title": "Employment rate (%)",
+          "scale": {
+            "scheme": "blues",
+            "domain": [30, 80]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 200
+          }
+        },
+        "tooltip": [
+          {"field": "category", "title": "Migration category"},
+          {"field": "years_in_sweden", "title": "Time in Sweden"},
+          {"field": "employment_rate", "title": "Employment rate", "format": ".1f"},
+          {"field": "year", "title": "Year"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "years_in_sweden",
+          "type": "ordinal",
+          "sort": ["0-3 yrs", "4-9 yrs", "10+ yrs"]
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": ["Labour migrants", "Other", "Family reunion", "Refugees & relatives"]
+        },
+        "text": {
+          "field": "employment_rate",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.employment_rate < 50",
+            "value": "white"
+          },
+          "value": "black"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {
+      "domain": false,
+      "ticks": false
+    }
+  }
+}

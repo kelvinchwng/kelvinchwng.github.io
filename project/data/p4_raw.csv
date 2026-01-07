@@ -1,0 +1,129 @@
+"Andel sysselsatta efter region, kön, utbildningsnivå, bakgrundsvariabel och år"
+
+"region","kön","utbildningsnivå","bakgrundsvariabel","2022","2023"
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","samtliga",81.7,81.2
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",86.3,85.5
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",81.7,80.6
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",72.7,72.0
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",72.3,72.9
+"01 Stockholms län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",72.9,73.1
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","samtliga",79.9,79.5
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",83.9,83.1
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",77.9,77.0
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",68.7,68.5
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",67.4,68.7
+"03 Uppsala län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",68.3,69.2
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",80.1,79.6
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.0,84.1
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",77.2,74.6
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",73.6,73.3
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",64.9,65.9
+"04 Södermanlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",66.9,67.5
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",80.2,79.9
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",84.2,83.6
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",74.9,74.2
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",71.3,71.2
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",65.3,66.6
+"05 Östergötlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",66.6,67.6
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","samtliga",83.8,83.1
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",88.0,87.2
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",76.6,74.1
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",72.0,71.7
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",71.9,71.4
+"06 Jönköpings län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",72.1,71.5
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","samtliga",81.3,80.8
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",86.6,86.0
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",73.1,72.4
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",72.3,71.4
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",65.9,66.2
+"07 Kronobergs län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",67.7,67.7
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","samtliga",82.4,81.8
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.9,85.1
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",75.6,74.5
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",67.7,68.0
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",68.1,68.7
+"08 Kalmar län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",68.4,68.8
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",82.2,82.3
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",84.5,84.4
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",73.9,74.5
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",61.5,60.7
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",64.4,66.6
+"09 Gotlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",64.6,65.8
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","samtliga",80.8,80.9
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.4,84.7
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",74.6,73.4
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",71.6,71.5
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",59.6,63.2
+"10 Blekinge län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",62.7,65.4
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","samtliga",78.5,77.9
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",83.9,83.1
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",74.5,74.1
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",69.5,69.0
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",64.5,64.9
+"12 Skåne län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",66.2,66.4
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",84.7,84.2
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",87.9,87.0
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",82.0,80.8
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",75.5,76.5
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",70.3,70.8
+"13 Hallands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",72.1,72.6
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",82.0,81.6
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",86.0,85.3
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",77.8,76.7
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",73.1,73.5
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",69.9,70.6
+"14 Västra Götalands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",70.8,71.4
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",81.6,81.3
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",84.9,84.3
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",70.7,70.5
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",66.5,67.3
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",65.1,67.1
+"17 Värmlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",66.1,67.6
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","samtliga",80.9,80.4
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",84.6,83.7
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",75.3,73.2
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",70.9,70.9
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",67.4,68.4
+"18 Örebro län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",68.3,69.0
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",80.9,80.5
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.2,84.5
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",77.1,75.5
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",73.4,74.1
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",68.5,69.4
+"19 Västmanlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",69.6,70.3
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","samtliga",83.1,82.9
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",86.5,85.8
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",76.5,75.9
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",72.8,73.0
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",64.3,66.8
+"20 Dalarnas län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",66.4,68.4
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","samtliga",81.1,80.9
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.0,84.2
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",75.1,74.7
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",68.0,69.6
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",63.1,65.3
+"21 Gävleborgs län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",64.3,66.3
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",82.9,82.7
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.6,85.1
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",78.4,76.5
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",66.7,67.4
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",67.3,69.5
+"22 Västernorrlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",68.1,69.7
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga",85.2,84.9
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",87.4,87.0
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",79.6,79.7
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",68.4,67.7
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",71.6,72.1
+"23 Jämtlands län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",71.8,72.0
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","samtliga",82.5,82.7
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",84.8,84.7
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",77.9,77.7
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",65.6,68.4
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",70.7,73.4
+"24 Västerbottens län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",70.6,72.9
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","samtliga",83.9,83.8
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Sverige",85.7,85.4
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: Norden exkl. Sverige",78.5,77.9
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: EU/EFTA exkl. Norden",67.4,69.3
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","födelseregion: övriga världen",73.9,75.4
+"25 Norrbottens län","män och kvinnor","samtliga utbildningsnivåer","samtliga utrikes födda invandrare",73.9,75.0
