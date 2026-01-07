@@ -300,253 +300,194 @@
           <!-- Hero -->
           <div class="page-hero rounded p-5" data-aos="fade-up">
             <h1 class="text-black mb-2"><strong>PP434 Data Science Project</strong></h1>
-            <p class="lead text-muted mb-0">A story-driven page: aims → data → tools → findings → conclusions (5–8 charts; ≤800 words).</p>
+            <p class="lead text-muted mb-0">Migration, integration and the employment gap in Sweden</p>
             <p class="lead text-muted mb-0">Candidate Number 67247</p>
             <div class="section-sep"></div>
             <div aria-label="Jump to sections" class="pill-row">
-              <a href="#overview">Overview</a>
-              <a href="#aims">Aims</a>
-              <a href="#data">Data</a>
-              <a href="#tools">Tools</a>
+              <a href="#intro">Introduction &amp; aims</a>
+              <a href="#background">Background</a>
               <a href="#findings">Findings</a>
-              <a href="#conclusions">Conclusions</a>
-              <a href="#repro">Reproducibility</a>
+              <a href="#data-tools">Data &amp; tools</a>
+              <a href="#conclusion">Conclusion</a>
             </div>
           </div>
 
           <div class="py-vh-3">
 
-            <!-- OVERVIEW -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="overview">
+            <!-- 1. INTRODUCTION & AIMS -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="intro">
               <div class="sec-headrow">
                 <div class="sec-header">
                   <span class="sec-badge">1</span>
-                  <h2 class="sec-title mb-0">Overview</h2>
+                  <h2 class="sec-title mb-0">Introduction &amp; aims</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <div class="meta-kv">
-                  <div class="rowline">
-                    <div class="k">Question</div>
-                    <div class="v">[One sentence. A policy-relevant question that can be tracked with online data.]</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Why now</div>
-                    <div class="v">[One sentence. Why the question matters (policy window / recent change / current debate).]</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Headline</div>
-                    <div class="v">[One sentence. Your punchline — what the reader should remember.]</div>
-                  </div>
-                </div>
+                <p class="small mb-0">
+                  Across Europe, the rise of right-wing populism has been tied to perceptions that migration is “not working” —
+                  that newcomers are not finding jobs, are concentrated in a few neighbourhoods, and impose fiscal costs.
+                  Sweden is a high-salience case: it experienced large inflows during the 2010s, yet still shows sizeable
+                  labour-market gaps between native- and foreign-born residents. This project asks how much of the observed
+                  employment gap is explained by <em>who</em> arrived (cohort composition and reason for migration), versus persistent
+                  barriers after arrival (skills transfer, matching, discrimination, and local labour markets). The charts below
+                  decompose these patterns and translate them into policy-relevant implications.
+                </p>
               </div>
-
-              <div class="section-sep"></div>
-
-              <p class="text-muted small mb-0">
-                Tip: keep the whole write-up under 800 words, and let the charts carry the story.
-              </p>
             </section>
 
-            <!-- AIMS -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="aims">
+            <!-- 2. BACKGROUND (NOTE + 2 CHARTS) -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="background">
               <div class="sec-headrow">
                 <div class="sec-header">
                   <span class="sec-badge">2</span>
-                  <h2 class="sec-title mb-0">Aims</h2>
+                  <h2 class="sec-title mb-0">Background</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <ul class="mb-0 small">
-                  <li><strong>Goal:</strong> [What you are trying to measure / explain / forecast.]</li>
-                  <li><strong>Unit of analysis:</strong> [UK / region / sector / firm / household / time period.]</li>
-                  <li><strong>Hypotheses:</strong> [1–2 testable statements, written plainly.]</li>
-                  <li><strong>Reader benefit:</strong> [What decision could this inform?]</li>
-                </ul>
+                <p class="small mb-0">
+                  Sweden’s migration profile changed markedly over the past decade, with a large mid-2010s inflow alongside
+                  continuing family and labour migration. At the same time, official statistics show consistently higher
+                  unemployment and lower employment among foreign-born residents than among Swedish-born residents.
+                  The policy question is therefore not “migration: good or bad?” but <em>which</em> mechanisms sustain the gap — and
+                  where policy can realistically move the dial (language acquisition, credential recognition, employer demand,
+                  and the design of activation programmes).
+                </p>
               </div>
 
               <div class="chart-row mt-3">
-                <div class="chart-slot" id="proj-chart1"></div>
-                <div class="chart-slot" id="proj-chart2"></div>
-              </div>
-
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>What these show:</strong> [2–3 short lines interpreting charts 1–2. Keep it tight.]</div>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 1.</strong> Migration wave and composition (refer to notebook)</div>
+                  <div class="chart-slot" id="proj-chart1"></div>
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 2.</strong> Employment gap (native vs foreign-born; refer to notebook)</div>
+                  <div class="chart-slot" id="proj-chart2"></div>
+                </div>
               </div>
             </section>
 
-            <!-- DATA -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="data">
-              <div class="sec-headrow">
-                <div class="sec-header">
-                  <span class="sec-badge">3</span>
-                  <h2 class="sec-title mb-0">Data</h2>
-                </div>
-                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
-              </div>
-
-              <p class="text-muted small mb-0 mt-1">
-                Be explicit about where the data comes from and how it could be updated (API endpoints / scraper links / file paths).
-              </p>
-
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="meta-kv">
-                  <div class="rowline">
-                    <div class="k">Sources</div>
-                    <div class="v">[List 1–3 sources. Prefer open sources and link them.]</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Access</div>
-                    <div class="v">[API / scrape / manual download. Include final API URL(s) if used.]</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Refresh</div>
-                    <div class="v">[How often could this update? Daily / weekly / monthly. What breaks?]</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="chart-row mt-3">
-                <div class="chart-slot compact" id="proj-chart3"></div>
-                <div class="chart-slot compact" id="proj-chart4"></div>
-              </div>
-
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>Data notes:</strong> [Any caveats (coverage, missingness, definitions, cleaning decisions).]</div>
-              </div>
-            </section>
-
-            <!-- TOOLS -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="tools">
-              <div class="sec-headrow">
-                <div class="sec-header">
-                  <span class="sec-badge">4</span>
-                  <h2 class="sec-title mb-0">Tools & methods</h2>
-                </div>
-                <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
-              </div>
-
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="card-soft-inner p-3 h-100">
-                      <div class="small"><strong>Cleaning</strong></div>
-                      <div class="small text-muted">[Pandas steps: reshape → tidy; de-dup; outliers; joins; units.]</div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-soft-inner p-3 h-100">
-                      <div class="small"><strong>Automation</strong></div>
-                      <div class="small text-muted">[Notebook link(s); cron idea; loop downloads; storage in /project/data.]</div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-soft-inner p-3 h-100">
-                      <div class="small"><strong>Analysis</strong></div>
-                      <div class="small text-muted">[Descriptives / regression / clustering / forecasting / diff-in-diff — as relevant.]</div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card-soft-inner p-3 h-100">
-                      <div class="small"><strong>Visualisation</strong></div>
-                      <div class="small text-muted">[Vega-Lite + interactivity (slider, dropdown, clickable legend).]</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="chart-slot mt-3" id="proj-chart5"></div>
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>Method note:</strong> [Explain the key modelling choice and one limitation.]</div>
-              </div>
-            </section>
-
-            <!-- FINDINGS -->
+            <!-- 3. FINDINGS (NOTE + 2 CHARTS, NOTE + 2 CHARTS) -->
             <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="findings">
               <div class="sec-headrow">
                 <div class="sec-header">
-                  <span class="sec-badge">5</span>
+                  <span class="sec-badge">3</span>
                   <h2 class="sec-title mb-0">Findings</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
 
-              <p class="text-muted small mb-0 mt-1">Use charts as “story beats”: describe what changes, when, and why it matters for policy.</p>
-
-              <div class="chart-slot mt-3" id="proj-chart6"></div>
-
               <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>Interpretation:</strong> [3–5 lines. Be concrete. Mention timing and magnitudes.]</div>
+                <p class="small mb-0">
+                  <strong>Policy lens: “time-to-employment” and cohort composition.</strong> Employment outcomes improve with time
+                  since arrival, but not at the same speed for every group. If the gap is driven mostly by cohort mix (e.g., more
+                  refugees arriving in certain years, different education profiles), then policy should prioritise fast early
+                  attachment to work: Swedish language linked to workplaces, accelerated validation of foreign credentials, and
+                  employer-facing job matching. If the gap persists even after many years, it points to deeper barriers — such as
+                  weak matching for low-skilled workers, occupational licensing bottlenecks, or discrimination — and argues for
+                  sustained, targeted interventions (especially for women and those with weaker networks).
+                </p>
+              </div>
+
+              <div class="chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 3.</strong> Cohort convergence: employment by years since arrival (Chart 2 in mapping)</div>
+                  <div class="chart-slot compact" id="proj-chart3"></div>
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 4.</strong> Net fiscal position by group (Chart 3 in mapping)</div>
+                  <div class="chart-slot compact" id="proj-chart4"></div>
+                </div>
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>Robustness / sensitivity:</strong> [One short paragraph: alternative definitions / placebo / other sources.]</div>
+                <p class="small mb-0">
+                  <strong>Policy lens: place, public finances, and the macro stakes.</strong> Fiscal narratives often dominate public debate,
+                  but the charts suggest a more direct “lever”: employment. Because taxes and transfers both scale with labour
+                  market attachment, even modest improvements in employment rates can materially shift net fiscal balance over
+                  time. The spatial distribution also matters: large gaps concentrated in particular regions can overwhelm local
+                  services and worsen segregation, even if national averages improve. That points to a blend of national reforms
+                  (credential recognition, stronger employer involvement in integration, and better design of activation) and
+                  place-based implementation (targeted matching in weak labour markets, mobility/housing constraints, and
+                  coordination with municipalities).
+                </p>
+              </div>
+
+              <div class="chart-row mt-3">
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 5.</strong> Regional variation in the employment gap (Chart 4 in mapping)</div>
+                  <div class="chart-slot" id="proj-chart5"></div>
+                </div>
+                <div style="flex: 1; min-width: 0;">
+                  <div class="small text-muted mb-2"><strong>Chart 6.</strong> Macro implications / GDP contribution (Chart 5 in mapping)</div>
+                  <div class="chart-slot" id="proj-chart6"></div>
+                </div>
               </div>
             </section>
 
-            <!-- CONCLUSIONS -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="conclusions">
+            <!-- 4. DATA SOURCES & TOOLS (NOTE ONLY) -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="data-tools">
               <div class="sec-headrow">
                 <div class="sec-header">
-                  <span class="sec-badge">6</span>
-                  <h2 class="sec-title mb-0">Conclusions</h2>
+                  <span class="sec-badge">4</span>
+                  <h2 class="sec-title mb-0">Data sources &amp; tools</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <ul class="mb-0 small">
-                  <li><strong>Answer:</strong> [Return to the original question.]</li>
-                  <li><strong>Policy implication:</strong> [One concrete implication (who should do what differently).]</li>
-                  <li><strong>What I’d do next:</strong> [Next dataset, better identification, more interactivity.]</li>
+                <p class="small mb-2">
+                  This project uses open, regularly updated statistical sources to track employment outcomes by country of birth
+                  (and, where possible, reason for residence). Data is prepared in Python (pandas) and exported as tidy files used
+                  by Vega-Lite charts on this page. Where the data is updated frequently, scripts can be re-run to refresh the site.
+                </p>
+                <ul class="small mb-0">
+                  <li><strong>Core labour outcomes:</strong> Statistics Sweden (SCB) labour force and employment statistics (foreign-born vs Swedish-born).</li>
+                  <li><strong>Migration flows / composition:</strong> Swedish Migration Agency (Migrationsverket) statistics on permits/asylum decisions (for wave + mix).</li>
+                  <li><strong>Policy context:</strong> OECD work on immigrant integration in Sweden; Nordic Council / Nordregio background where helpful.</li>
+                  <li><strong>Macro/fiscal framing:</strong> Swedish public agencies and central bank publications (e.g., NIER and Riksbank) for fiscal/macro discussion.</li>
+                  <li><strong>Tools:</strong> Python (pandas, requests), Jupyter/Colab, GitHub Pages, Vega-Lite + vegaEmbed for responsive charts.</li>
                 </ul>
+                <div class="section-sep"></div>
+                <div class="small text-muted">
+                  <strong>Links (update with your final sources):</strong>
+                  <a class="link-dark" href="https://www.scb.se/en/finding-statistics/" target="_blank" rel="noreferrer">SCB</a> ·
+                  <a class="link-dark" href="https://www.migrationsverket.se/English/About-the-Migration-Agency/Statistics.html" target="_blank" rel="noreferrer">Migrationsverket</a> ·
+                  <a class="link-dark" href="https://www.oecd.org/migration/" target="_blank" rel="noreferrer">OECD Migration</a> ·
+                  <a class="link-dark" href="https://www.konj.se/english/" target="_blank" rel="noreferrer">NIER</a> ·
+                  <a class="link-dark" href="https://www.riksbank.se/en-gb/" target="_blank" rel="noreferrer">Riksbank</a>
+                </div>
               </div>
             </section>
 
-            <!-- REPRODUCIBILITY -->
-            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="repro">
+            <!-- 5. CONCLUSION (NOTE ONLY) -->
+            <section class="card-soft rounded p-4 mb-5" data-aos="fade-up" id="conclusion">
               <div class="sec-headrow">
                 <div class="sec-header">
-                  <span class="sec-badge">7</span>
-                  <h2 class="sec-title mb-0">Reproducibility</h2>
+                  <span class="sec-badge">5</span>
+                  <h2 class="sec-title mb-0">Conclusion</h2>
                 </div>
                 <a class="small link-dark link-opacity-50-hover" href="#navScroll">Back to top</a>
               </div>
 
               <div class="card-soft-inner p-3 mt-3">
-                <div class="meta-kv">
-                  <div class="rowline">
-                    <div class="k">Repo</div>
-                    <div class="v">Link your GitHub repository (and point to /project/ for data + notebooks).</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Code</div>
-                    <div class="v">Add notebook links (Colab) and a short “how to update” note (run order, dependencies).</div>
-                  </div>
-                  <div class="rowline">
-                    <div class="k">Data</div>
-                    <div class="v">List files + schema notes (e.g., tidy long format; units; time zone; missing values).</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-soft-inner p-3 mt-3">
-                <div class="small mb-0"><strong>Folder convention (suggested):</strong></div>
-                <pre class="small mb-0" style="white-space: pre-wrap;">
-project/
-  charts/   # your vega-lite json specs used on this page
-  data/     # cleaned datasets (csv/json) used by specs
-  notebooks/# colab links in a README
-                </pre>
+                <p class="small mb-0">
+                  The evidence points to a mixed story: part of Sweden’s employment gap reflects cohort composition and the
+                  initial difficulty of entering the labour market after arrival, but persistent differences for some groups suggest
+                  structural barriers that do not disappear automatically with time. For policy, the practical implication is to
+                  maximise early attachment to work (language + workplace, faster validation, employer matching) while
+                  targeting resources where the gap is most durable (low-skilled workers, women, and weak local labour markets).
+                  If those levers reduce the employment gap, the political and fiscal debate becomes less polarised because the
+                  most visible “cost” mechanism — labour market non-participation — is directly addressed.
+                </p>
               </div>
             </section>
 
           </div>
-        </main>
+</main>
 
         <!-- Footer -->
         <footer class="mt-auto py-vh-3 col-12 px-vw-5">
@@ -561,16 +502,15 @@ project/
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 600,
-      easing: 'ease-out',
-      once: true
-    });
-  </script>
+  window.addEventListener('load', () => {
+    // Animate-on-scroll
+    AOS.init({ duration: 600, easing: 'ease-out', once: true });
+    if (AOS && typeof AOS.refreshHard === 'function') AOS.refreshHard();
+    else if (AOS && typeof AOS.refresh === 'function') AOS.refresh();
 
-  <!-- Project chart embedding (safe: fails gracefully if JSON not present yet) -->
-  <script>
-    const projectCharts = [
+    const EMBED_OPTS = { actions: false, renderer: 'svg' };
+
+    const charts = [
       { id: 'proj-chart1', spec: 'project/charts/project_chart1.json' },
       { id: 'proj-chart2', spec: 'project/charts/project_chart2.json' },
       { id: 'proj-chart3', spec: 'project/charts/project_chart3.json' },
@@ -579,31 +519,45 @@ project/
       { id: 'proj-chart6', spec: 'project/charts/project_chart6.json' }
     ];
 
-    const embedOpts = {
-      actions: false,
-      renderer: 'canvas'
-    };
-
     function showMissing(el, spec) {
       if (!el) return;
       el.classList.add('empty');
+      if (el.querySelector('.chart-error')) return; // avoid duplicates
       const msg = document.createElement('div');
       msg.className = 'chart-error';
       msg.innerHTML = `<div class="small"><strong>Chart placeholder</strong><br/>Missing: <code>${spec}</code><br/>Add the JSON spec (and any data files) to render this box.</div>`;
       el.appendChild(msg);
     }
 
-    (async function embedAll() {
-      for (const c of projectCharts) {
-        const el = document.getElementById(c.id);
-        if (!el) continue;
-        try {
-          await vegaEmbed('#' + c.id, c.spec, embedOpts);
-        } catch (e) {
-          showMissing(el, c.spec);
+    function embedChart(id, spec) {
+      const selector = '#' + id;
+      return vegaEmbed(selector, spec, EMBED_OPTS).then((res) => {
+        const view = res.view;
+        const el = document.querySelector(selector);
+
+        // Kick a few resizes after layout settles (fonts / AOS / flex)
+        requestAnimationFrame(() => { view.resize(); view.runAsync(); });
+        setTimeout(() => { view.resize(); view.runAsync(); }, 120);
+        setTimeout(() => { view.resize(); view.runAsync(); }, 450);
+
+        // Keep it correct when containers resize
+        if (el && 'ResizeObserver' in window) {
+          const ro = new ResizeObserver(() => {
+            view.resize();
+            view.runAsync();
+          });
+          ro.observe(el);
         }
-      }
-    })();
+
+        return res;
+      }).catch(() => {
+        showMissing(document.getElementById(id), spec);
+      });
+    }
+
+    Promise.all(charts.map(c => embedChart(c.id, c.spec)))
+      .then(() => setTimeout(() => window.dispatchEvent(new Event('resize')), 250));
+  });
   </script>
 </body>
 </html>

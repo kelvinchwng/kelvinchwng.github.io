@@ -1,0 +1,290 @@
+[
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2020,
+    "employment_rate": 65.8
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2021,
+    "employment_rate": 67.1
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2022,
+    "employment_rate": 68.0
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2023,
+    "employment_rate": 72.0
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "10+ yrs",
+    "year": 2020,
+    "employment_rate": 74.8
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "10+ yrs",
+    "year": 2021,
+    "employment_rate": 75.2
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "10+ yrs",
+    "year": 2022,
+    "employment_rate": 75.6
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "10+ yrs",
+    "year": 2023,
+    "employment_rate": 76.9
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2020,
+    "employment_rate": 71.6
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2021,
+    "employment_rate": 72.2
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2022,
+    "employment_rate": 72.1
+  },
+  {
+    "category": "Labour migrants",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2023,
+    "employment_rate": 78.1
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2020,
+    "employment_rate": 50.2
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2021,
+    "employment_rate": 58.0
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2022,
+    "employment_rate": 56.5
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2023,
+    "employment_rate": 60.6
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "10+ yrs",
+    "year": 2020,
+    "employment_rate": 74.7
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "10+ yrs",
+    "year": 2021,
+    "employment_rate": 76.4
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "10+ yrs",
+    "year": 2022,
+    "employment_rate": 77.9
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "10+ yrs",
+    "year": 2023,
+    "employment_rate": 77.8
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2020,
+    "employment_rate": 66.6
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2021,
+    "employment_rate": 73.4
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2022,
+    "employment_rate": 76.1
+  },
+  {
+    "category": "Other",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2023,
+    "employment_rate": 76.4
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2020,
+    "employment_rate": 32.2
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2021,
+    "employment_rate": 37.0
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2022,
+    "employment_rate": 37.9
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2023,
+    "employment_rate": 33.5
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "10+ yrs",
+    "year": 2020,
+    "employment_rate": 64.8
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "10+ yrs",
+    "year": 2021,
+    "employment_rate": 66.3
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "10+ yrs",
+    "year": 2022,
+    "employment_rate": 67.7
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "10+ yrs",
+    "year": 2023,
+    "employment_rate": 67.6
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2020,
+    "employment_rate": 51.5
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2021,
+    "employment_rate": 56.6
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2022,
+    "employment_rate": 61.1
+  },
+  {
+    "category": "Refugees & relatives",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2023,
+    "employment_rate": 62.2
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2020,
+    "employment_rate": 37.5
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2021,
+    "employment_rate": 40.6
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2022,
+    "employment_rate": 43.7
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "0-3 yrs",
+    "year": 2023,
+    "employment_rate": 41.8
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "10+ yrs",
+    "year": 2020,
+    "employment_rate": 68.6
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "10+ yrs",
+    "year": 2021,
+    "employment_rate": 70.5
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "10+ yrs",
+    "year": 2022,
+    "employment_rate": 72.0
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "10+ yrs",
+    "year": 2023,
+    "employment_rate": 72.0
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2020,
+    "employment_rate": 60.7
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2021,
+    "employment_rate": 62.9
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2022,
+    "employment_rate": 64.9
+  },
+  {
+    "category": "Family reunion",
+    "years_in_sweden": "4-9 yrs",
+    "year": 2023,
+    "employment_rate": 65.0
+  }
+]
